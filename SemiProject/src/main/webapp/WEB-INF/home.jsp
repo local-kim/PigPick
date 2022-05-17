@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="css/style.css"  rel="stylesheet" type="text/css" />
 <title>x SEMI PROJECT MENUx</title>
+<title>x SEMI PROJECT* x</title>
 </head>
  <body>
       <div class="single-page-nav">
@@ -38,8 +39,7 @@
          
          <div class="section" id="section2">
          
-      <!--<div id="con1"><a href="lolweb_pt.html" target="_blank"><img class="hoverimg" src="images/lolweb.png"></a></div>
-         <div id="con2"><a href="lolui_pt.html" target="_blank"><img class="hoverimg" src="images/lolui.png"></a></div>-->
+     
          <img src="images/menu_pick.png" alt=""
          class="menupicktag">
          
