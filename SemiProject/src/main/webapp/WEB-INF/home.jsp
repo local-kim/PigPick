@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="css/style.css"  rel="stylesheet" type="text/css" />
-<title>x SEMI PROJECT x</title>
+<title>x SEMI PROJECT MENUx</title>
 </head>
  <body>
       <div class="single-page-nav">
