@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="css/style.css"  rel="stylesheet" type="text/css" />
 <title>x SEMI PROJECT MENUx</title>
-<title>x SEMI PROJECT* x</title>
 </head>
  <body>
       <div class="single-page-nav">
