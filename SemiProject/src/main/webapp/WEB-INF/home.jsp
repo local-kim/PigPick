@@ -12,6 +12,11 @@
 <title>x SEMI PROJECT* x</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<h1>Hello 11</h1>
+=======
+	<h1>Hello 11</h1>
+	<h3>Hi! I'm suhyoon</h3>
+>>>>>>> branch 'master' of https://github.com/local-kim/SemiProject.git
 </body>
 </html>
