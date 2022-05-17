@@ -13,6 +13,7 @@
 <title>x SEMI PROJECT MENUx</title>
 </head>
  <body>
+ 	<!-- push -->
       <div class="single-page-nav">
           <div id="logo"><a href="#section1">
               <img class="nav01" src="images/main.jpg" alt="logo">
