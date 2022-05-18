@@ -57,7 +57,7 @@ body {
     width: auto;
     height: auto;
     position: relative;
-    left: 50%;
+    left: 40%; /*초기값50% 변동예정*/
     top: 35%;
 }
 
@@ -177,7 +177,7 @@ div.round{
     z-index: 1;
     position: relative;
     width:10%;
-    top:-18%;
+    top:-3%;
     left:75%;
     opacity: 0.9;
     transform: rotate(2deg);
@@ -190,28 +190,70 @@ div.round{
     position: relative;
 }
 
+/* Login Page*/
 #section4 {
     width: 100%;
     height: 1107px;
     background: url(images/page_04.jpg);
     position: relative;
+    border:1px solid #2d35af;
 }
-
+div.loginform{
+	position:relative;
+	top:40%;
+	left:40%;
+}
 #section5 {
     width: 100%;
     height: 1310px;
-    background: url(images/page_05.jpg);
     position: relative;
 }
 
 #section6 {
     width: 100%;
     height: 860px;
-    background: url(images/page_06.jpg);
     position: relative;
+    border:1px solid #2d35af;
 }
-
-
+#section6 h1{
+	position:relative;
+	left:37%;
+	top:6%;
+	font-size:4.8em;
+	font-weight:bold;
+	color:white;
+	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
+	
+}
+div.mymenulist{
+	position :relative;
+	top:10%;
+	background-color:#ffffff;
+	width:830px;
+	height:50px;
+	border-radius:20px;
+	border:3px solid #fdca3d;
+	margin-top:15px;
+	left:28%;
+}
+div.mymenulist b{
+	
+	line-height:42px;
+	color:#223a5e;
+	font-weight:bold;
+	font-size:20px;
+	margin-left:15px;
+	
+}
+div.mymenulistmore{
+	position:relative;
+	left:28%;
+	top:15%;
+	font-size:30px;
+	width:inherit;
+	color:#2d36af;
+	cursor:pointer;
+}
 
 /*#con1{ width:550px; height:699px; position:absolute; top:98px; left:410px;}
 #con2{ width:550px; height:699px; position:absolute; top:98px; left:1176px;}*/

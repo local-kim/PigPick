@@ -27,7 +27,7 @@
                 <li><a href="#section2"><b class="nav03">MENU</b></a></li>
                 <li><a href="#section3"><b class="nav04">BOARD</b></a></li>
                 <li><a href="#section4"><b class="nav05">MY PAGE</b></a></li>
-                <!--<li><a href="#section6"><b class="nav06">메뉴5</b></a></li>-->
+                <li><a href="#section6"><b class="nav06">MY MENU LIST</b></a></li>
        
          </ul>
          </div>
@@ -106,8 +106,6 @@
 		</table>	
 	</form>		
 </div>      
-
-          
          </div>  
              
          
@@ -130,12 +128,21 @@
          
          </div>
          
-         
-         
-         
-      
-        <!-- <div class="section" id="section6">
-   
-        </div>-->
+        <div class="section" id="section6">
+        	<h1>My Menu List</h1>
+			<div class="mymenulist">
+			<b>1등</b> <b>김밥</b> <b>한식</b> <b>32회</b>
+			</div>
+			<div class="mymenulist">
+			<b>2등</b><b>초밥</b><b>일식</b> <b>24회</b>
+			</div>
+			<div class="mymenulist">
+			<b>3등</b><b>마라탕</b><b>중식</b><b>8회</b>
+			</div>
+   			<div class="mymenulistmore">
+   			<p>See More</p>
+   			</div>
+        </div>
+        
     </body>
 </html>
