@@ -129,6 +129,7 @@
          </div>
          
         <div class="section" id="section6">
+        <!-- example -->
         	<h1>My Menu List</h1>
 			<div class="mymenulist">
 			<b>1등</b> <b>김밥</b> <b>한식</b> <b>32회</b>
