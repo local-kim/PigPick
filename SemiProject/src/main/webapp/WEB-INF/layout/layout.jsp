@@ -7,20 +7,20 @@
 <html>
 <head>
 <meta charset="UTF8">
-<title>Insert title here</title>
- <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/style.css"  rel="stylesheet" type="text/css" />
+<title>PigPick</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="layout">
-		<div class="title">
-			<tiles:insertAttribute name="header"/>
-		</div>
-		<div class="main">
-			<tiles:insertAttribute name="main"/>
-		</div>
+		<div class="layout">
+				<div class="header">
+						<tiles:insertAttribute name="header"/>
+				</div>
+				<div class="content">
+						<tiles:insertAttribute name="content"/>
+				</div>
 		</div>
 </body>
 </html>
