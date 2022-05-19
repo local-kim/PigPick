@@ -22,15 +22,21 @@
          <img src="images/tape.png" alt="" class="tape">
          <div class="menu">
          	<form action="recommend" method="post">
-         	 <br> <br> <br> <br> <br> <br> <br> <br> <br>
-	         	<input type="checkbox" name="morning" value="morning" checked>아침
-		        <input type="checkbox" name="morning" value="morning" checked>점심
-		        <input type="checkbox" name="morning" value="morning" checked>저녁
-		        <input type="checkbox" name="morning" value="morning" checked>야식
-		        <input type="checkbox" name="morning" value="morning" checked>간식
-		        <button type="submit" >메뉴 추천</button>
+         	<div class="menu-choose">
+         	 <button class="menu_btn"><img src="images/testmenubtn.jpg" class="menu_img" id="menu1" title="한식"></button>
+         	
+         	 <button class="menu_btn"><img src="images/testmenubtn.jpg" class="menu_img" id="menu1" title="일식"></button>
+    
+         	 <button class="menu_btn"><img src="images/testmenubtn.jpg" class="menu_img" id="menu1" title="중식"></button>
+    
+         	 <button class="menu_btn"><img src="images/testmenubtn.jpg" class="menu_img" id="menu1" title="아시아"></button>
+	
+		       
+		       </div>
+		       <button type="submit" id="like">메뉴 추천</button>
+		       
          	</form>
-       
+       	 
         
          </div>
 

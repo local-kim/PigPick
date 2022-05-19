@@ -146,7 +146,7 @@
 		</select>
 		</div>
 		<button><img src="images/googleloginbtn.png"></button>
-		<button type="submit" class="btn btn-info" style="width:400px; background-color:#94d5fe; line-height:1.42857143; height:34px; ">회원가입</button>
+		<button type="submit" class="btn btn-info joinbtn" style="width:400px; background-color:#94d5fe; line-height:1.42857143; height:34px; ">회원가입</button>
 	</div>
 	</div>
 </body>

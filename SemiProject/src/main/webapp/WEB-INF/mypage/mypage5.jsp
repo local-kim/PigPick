@@ -13,6 +13,6 @@
 </head>
 <body>
 	<h1>내 정보 수정</h1>
-	<button type="submit" onclick="location.href='/review/update'">저장</button>
+	<button type="submit" onclick="location.href='/mypage/update'">저장</button>
 </body>
 </html>
