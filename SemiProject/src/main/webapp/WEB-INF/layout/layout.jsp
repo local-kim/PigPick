@@ -15,10 +15,10 @@
 </head>
 <body>
 <div class="layout">
-		<div class="title">
+		<div class="header">
 			<tiles:insertAttribute name="header"/>
 		</div>
-		<div class="main">
+		<div class="home">
 			<tiles:insertAttribute name="main"/>
 		</div>
 		</div>
