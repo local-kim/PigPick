@@ -7,6 +7,11 @@ spring:
 #mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bitcamp?serverTimezone=Asia/Seoul
-    username: angel
-    password: 1234
+    url: jdbc:mysql://mysql.cmxjuag3fpgj.ap-northeast-2.rds.amazonaws.com:3306/PigPick?serverTimezone=Asia/Seoul
+    username: admin
+    password: bit12345
+# mybatis
+mybatis:
+  type-aliases-package: data.mapper,data.dto
+  mapper-locations:
+  - /mapper/**/*.xml
