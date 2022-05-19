@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MenuController {
 
+	@GetMapping("/recommend1")
+	public String recommend1() {
+		return "/menu/menu1";
+	}
 	@PostMapping("/recommend")
 	public String recommend() {
 		return "/menu/menu2";

@@ -25,8 +25,8 @@
 		<ul>
 			<!-- navigation -->
 			<!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
-			<li><a href="#section1"><b class="nav02">HOME</b></a></li>
-			<li><a href="#section2"><b class="nav03">MENU</b></a></li>
+			<li><a href="/"><b class="nav02">HOME</b></a></li>
+			<li><a href="/recommend1"><b class="nav03">MENU</b></a></li>
 			<li><a href="/review"><b class="nav04">BOARD</b></a></li>
 			<li><a href="#section4"><b class="nav05">MY PAGE</b></a></li>
 			<li><a href="#section6"><b class="nav06">MY MENU LIST</b></a></li>

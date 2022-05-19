@@ -137,9 +137,10 @@ div.logo {
 }
 
 #section2 {
+	clear:both;
     width: 100%;
     height: 1090px;
-    top: -116px;
+  	top: -40px;
     /*background:url(images/page_02.jpg);*/
     background-color: #ebdbd0;
     position: relative;

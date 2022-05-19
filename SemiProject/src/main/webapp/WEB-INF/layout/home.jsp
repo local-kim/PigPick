@@ -14,10 +14,10 @@
 </head>
 <body>
 	<div class="section" id="section1">
-    <a href="#section2"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
+    <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
  
-	<div class="section" id="section2">
+	<!-- <div class="section" id="section2">
 	
 		<img src="images/menu_pick.png" alt=""
 		 class="menupicktag">
@@ -33,7 +33,7 @@
 
 
 		<div class="round"></div>
-	</div>
+	</div> -->
  
 	<div class="section" id="section3">
 		<div id="con3"><a href="det_pt.html" target="_blank"><img class="hoverimg" src="images/det.png"></a></div>
