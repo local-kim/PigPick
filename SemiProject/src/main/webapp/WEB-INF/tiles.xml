@@ -5,10 +5,19 @@
 <tiles-definitions>
 	<definition name="layout" template="/WEB-INF/layout/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+<<<<<<< HEAD
 		<put-attribute name="main" value="/WEB-INF/layout/main.jsp" />
+=======
+		<put-attribute name="content" value="/WEB-INF/layout/home.jsp" />
+>>>>>>> branch 'master' of https://github.com/local-kim/SemiProject.git
 	</definition>
 	
+<<<<<<< HEAD
 	<definition name="/*/*" extends="layout1"><!-- =</{1}/{2} -->
 		<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp" />
+=======
+	<definition name="/*/*" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/{1}/{2}.jsp" />
+>>>>>>> branch 'master' of https://github.com/local-kim/SemiProject.git
 	</definition>
 </tiles-definitions>
