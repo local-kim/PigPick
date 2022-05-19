@@ -23,6 +23,7 @@
 	
 	<div id="gnb">
 		<ul>
+			<!-- navigation -->
 			<!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
 			<li><a href="#section1"><b class="nav02">HOME</b></a></li>
 			<li><a href="#section2"><b class="nav03">MENU</b></a></li>
