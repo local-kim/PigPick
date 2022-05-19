@@ -120,6 +120,29 @@
 						<p>See More</p>
 				</div>
 		</div>
-        
+        <div class="section" id="section7">
+         <!-- 회원가입 -->
+       	<p>이름</p>
+       	<input type="text" name="name" style="width:130px;" class="form-control" required="required" placeholder="이름을 입력해주세요.">
+       	<p>아이디</p>
+       	<input type="text" name="id" id="id" style="width:130px;" required="required">
+        <p>비밀번호</p>
+        <input type="password" name="pass" id="pass1" style="width:130px;" required="required" placeholder="비밀번호">
+        <p>비밀번호 확인</p>
+        <input type="password" id="pass2" style="width:130px;" required="required" placeholder="한번더 입력">
+        <p>전화번호</p>
+        <input type="text" name="hp" style="width:180px;" class="form-control" required="required">
+        <p>이메일</p>
+        <input type="text" name="email1" style="width:100px;" required="required">
+				<b>@</b>
+				<input type="text" name="email2" id="email2" style="width:130px;"required="required">
+				<select id="email3">
+					<option value="-">직접입력</option>
+					<option value="naver.com">네이버</option>
+					<option value="nate.com">네이트</option>
+					<option value="google.com">구글</option>
+				</select>
+				<button type="submit" class="btn btn-info" style="width:150px;">회원가입</button>
+        </div>
 </body>
 </html>

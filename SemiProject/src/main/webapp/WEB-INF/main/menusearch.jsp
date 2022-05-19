@@ -12,6 +12,23 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-ㅎㅇ
+ <div class="section" id="section2">
+         
+     
+         <img src="images/menu_pick.png" alt=""
+         class="menupicktag">
+         
+         <img src="images/tape.png" alt="" class="tape">
+         <div class="menu">
+       <input type="checkbox" name="morning" value="morning" checked>아침
+        <input type="checkbox" name="morning" value="morning" checked>점심
+        <input type="checkbox" name="morning" value="morning" checked>저녁
+        <input type="checkbox" name="morning" value="morning" checked>야식
+        <input type="checkbox" name="morning" value="morning" checked>간식
+         </div>
+
+         
+         <div class="round"></div>
+         </div>
 </body>
 </html>
