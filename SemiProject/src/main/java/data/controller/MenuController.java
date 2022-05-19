@@ -11,6 +11,7 @@ public class MenuController {
 	public String recommend1() {
 		return "/menu/menu1";
 	}
+	
 	@PostMapping("/recommend")
 	public String recommend() {
 		return "/menu/menu2";
