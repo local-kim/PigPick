@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan({"project.home.study"})
+@ComponentScan({"project.home.study", "data.*"})
 public class SemiProjectApplication {
 
 	public static void main(String[] args) {

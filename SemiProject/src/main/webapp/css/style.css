@@ -260,13 +260,40 @@ div.mymenulistmore{
 	cursor:pointer;
 }
 
+/*member join*/
 #section7{
-	width: 100%;
+	width:100%;
     height: 1107px;
     position: relative;
     border:1px solid #2d35af;
 
 }
+.joinform{
+	background-color:#ffffff;
+	position:relative;
+	top:18%;
+	left:35%;
+	width:600px;
+	height:700px;
+}
+.joinform p{
+	position:relative;
+	left:16%;
+	top:15%;
+	
+	
+}
+.jogin-control,button{
+	position:relative;
+	left:16%;
+	padding:0;
+	top:15%;
+	margin:10px 0 5px 0;
+}
+
+
+
+
 
 /*#con1{ width:550px; height:699px; position:absolute; top:98px; left:410px;}
 #con2{ width:550px; height:699px; position:absolute; top:98px; left:1176px;}*/

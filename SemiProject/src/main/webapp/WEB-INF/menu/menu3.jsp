@@ -5,15 +5,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF8">
 <title>Insert title here</title>
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<br><br><br><br><br><br>
-	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
-	<button type="button" onclick="location.href='/review/content'">내용보기</button>
+ <div class="section" id="section2">
+         
+     
+         <img src="images/menu_pick.png" alt=""
+         class="menupicktag">
+         
+         <img src="images/tape.png" alt="" class="tape">
+        <h1>식당리스트</h1>
+
+         
+         <div class="round"></div>
+         </div>
 </body>
 </html>

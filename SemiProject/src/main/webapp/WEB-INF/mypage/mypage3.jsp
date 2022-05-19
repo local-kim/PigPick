@@ -12,8 +12,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<br><br><br><br><br><br>
-	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
-	<button type="button" onclick="location.href='/review/content'">내용보기</button>
+	<h1>리뷰 모아보기</h1>
 </body>
 </html>

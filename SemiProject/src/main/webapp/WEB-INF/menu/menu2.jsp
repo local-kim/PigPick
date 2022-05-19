@@ -19,14 +19,8 @@
          class="menupicktag">
          
          <img src="images/tape.png" alt="" class="tape">
-         <div class="menu">
-       <input type="checkbox" name="morning" value="morning" checked>아침
-        <input type="checkbox" name="morning" value="morning" checked>점심
-        <input type="checkbox" name="morning" value="morning" checked>저녁
-        <input type="checkbox" name="morning" value="morning" checked>야식
-        <input type="checkbox" name="morning" value="morning" checked>간식
-         </div>
-
+         <button type="submit" onclick="location.href='/recommend/list'">좋아요</button>
+		<button type="button" onclick="">다시</button>
          
          <div class="round"></div>
          </div>

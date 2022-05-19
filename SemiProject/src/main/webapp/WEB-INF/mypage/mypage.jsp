@@ -12,5 +12,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+	<br><br><br><br><br><br><br>
+	<button type="button" onclick="location.href='/mypage/rank'">순위</button>
+	<button type="button" onclick="location.href='/mypage/review'">리뷰</button>
+	<button type="button" onclick="location.href='/mypage/info'">정보</button>
 </body>
 </html>
