@@ -13,7 +13,7 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<br><br><br><br><br><br>
+
 	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
 	<button type="button" onclick="location.href='/review/content'">내용보기</button>
 </body>
