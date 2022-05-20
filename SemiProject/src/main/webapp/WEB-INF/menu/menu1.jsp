@@ -49,7 +49,7 @@
 		      </div>
 		      
 		      <div class="menu_choose3">
-		      <button class="menu_btn3"><img src="images/nospicy.jpg" class="menu_img3" id="menu3" title="순한맛"></button>
+		    
 		      <button class="menu_btn3"><img src="images/spicy.jpg" class="menu_img3" id="menu3" title="매운맛"></button>
 		      
 		      </div>

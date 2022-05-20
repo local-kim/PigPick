@@ -201,7 +201,7 @@ li > a:only-child:after { content:''; }
 	margin-left:10px;
 	left:10%;
 	position:relative;
-
+	
 }
 #section2 .menu_btn2{
 	width:110px;
@@ -221,20 +221,20 @@ li > a:only-child:after { content:''; }
 }
 
 #section2 .menu_img{
-	width:130px;
-	height:130px;
+	width:128px;
+	height:128px;
 	position:inherit;
 	right:4%;
 }
 #section2 .menu_img2{
-	width:130px;
-	height:130px;
+	width:108px;
+	height:108px;
 	position:inherit;
 	right:4%;
 }
 #section2 .menu_img3{
-	width:100px;
-	height:100px;
+	width:98px;
+	height:98px;
 	position:inherit;
 	right:4%;
 }
