@@ -148,30 +148,71 @@ div.logo {
     overflow: hidden;
     
 }
-#section2 .menu-choose{
+#section2 .menu_choose1{
 	clear:both;
 	margin:0;
-	top:50px;
+	top:100px;
 	margin:0;
 	position:relative;
 	width:880px;
 }
+#section2 .menu_choose2{
+	clear:both;
+	margin:0;
+	position:relative;
+	width:880px;
+	top:200px;
+}
+#section2 .menu_choose3{
+	clear:both;
+	margin:0;
+	position:relative;
+	width:880px;
+	top:300px;
+}
 #section2 .menu_btn{
-	width:160px;
-	height:160px;
-	margin-left:20px;
-	left:16%;
+	width:130px;
+	height:130px;
+	margin-left:10px;
+	left:10%;
+	position:relative;
+
+}
+#section2 .menu_btn2{
+	width:110px;
+	height:110px;
+	margin-left:10px;
+	left:10%;
+	position:relative;
+
+}
+#section2 .menu_btn3{
+	width:100px;
+	height:100px;
+	margin-left:10px;
+	left:10%;
 	position:relative;
 
 }
 
 #section2 .menu_img{
-	width:159px;
-	height:159px;
+	width:130px;
+	height:130px;
 	position:inherit;
 	right:4%;
 }
-
+#section2 .menu_img2{
+	width:130px;
+	height:130px;
+	position:inherit;
+	right:4%;
+}
+#section2 .menu_img3{
+	width:100px;
+	height:100px;
+	position:inherit;
+	right:4%;
+}
 #like{
 	clear:both;
 	position:relative;
