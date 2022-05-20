@@ -32,40 +32,12 @@ body {
 
 }
 
-.single-page-nav ul {
-    list-style: none;
-    margin: 0 auto;
-
-    /*		background:#666; */
-}
-
-
-.single-page-nav li {
-    /*section영역을 꾸며 줍니다.*/
-    float: left;
-    margin: 0 auto;
-
-}
-
-.single-page-nav li a {
-    color: #e96b39;
-    font-size: 1.3em;
-    text-decoration: none;
-}
-
-#gnb {
-    width: auto;
-    height: auto;
-    position: relative;
-    left: 30%; /*초기값50% 변동예정*/
-    top: 35%;
-}
-
 div.logo {
     width: inherit;
     height: auto;
 }
 
+/*logo*/
 .nav01 {
     width: auto;
     height: 60px;
@@ -74,42 +46,95 @@ div.logo {
     float: left;
 }
 
-/*logo*/
-.nav02 {
+
+/*navigation*/
+#gnb {
+    width: auto;
+    height: auto;
+    position: relative;
+    left: 40%; /*초기값50% 변동예정*/
+    top: 40%;
+    margin: 0 auto;
+}	
+
+ .single-page-nav #gnb ul {
+    list-style: none;
+    margin: 0;
+    padding:0;
+    position: absolute;
+}
+
+.single-page-nav #gnb ul li {
+    /* section영역을 꾸며 줍니다. */
+    display:inline-block;
+	line-height:30px;
+	text-align:left;
+    font-size:30px;
+	color: #e96b39;
+	width:200px;
+	font-weight:bold;
+}
+.single-page-nav #gnb ul ul li {
+    /* section영역을 꾸며 줍니다. */
+    display:inline-block;
+	line-height:30px;
+	text-align:left;
+    font-size:30px;
+	color: #e96b39;
+	width:250px;
+	font-weight:bold;
+	margin-left:5px;
+}
+.single-page-nav li a {
+    color: #e96b39;
+     font-size:30px;
+    text-decoration: none;
+    line-height:30px;
+    display:block;
+}
+
+.single-page-nav ul ul a:hover {
+  color:#ffc72c;
+  width:250px;
+    
+}
+.single-page-nav ul ul{
+		display: none;
+	position: absolute; 
+	margin-top:80px;
+}
+
+.single-page-nav ul li:hover > ul{
+	display:inherit;
+	background-color:rgba(34, 58, 94, 0.64);
+	width:auto;
+	height:inherit;
+}
+.single-page-nav ul ul li{
+	float:none;
+	line-height:20px;
+	display:list-item;
+	position: relative;
+	margin-top:10px;
+}
+li > a:only-child:after { content:''; }
+/*
+.single-page-nav li {
+    color: #e96b39;
+    font-size: 20px; 
+    text-decoration: none;
+}
+
+
+
+.topnav {
     width: 105px;
     height: 18px;
-    margin-right: 85px;
+    margin-right: 150px;
 }
+.subnav{display:none;}
 
-.nav03 {
-    width: 52px;
-    height: 18px;
-    margin-right: 82px;
-}
-
-.nav04 {
-    width: 141px;
-    height: 18px;
-    margin-right: 69px;
-}
-
-.nav05 {
-    width: 74px;
-    height: 18px;
-    margin-right: 64px;
-}
-
-.nav06 {
-    width: 123px;
-    height: 18px;
-    margin-right: 64px;
-}
-
-.nav07 {
-    width: 123px;
-    height: 18px;   
-}
-
+ */
 
 .section {
     width: 100%;

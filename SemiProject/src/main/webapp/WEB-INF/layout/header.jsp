@@ -13,6 +13,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 
+<script>
+/* $(function(){
+	$(".subnav").hide();
+	
+	$(".topnav").click(function(){
+		$(".topnav > .subnav").slideDown();
+	});
+});  */
+</script>
 </head>
 
 <body>
@@ -26,12 +35,20 @@
 		<ul>
 			<!-- navigation -->
 			<!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
-			<li><a href="/"><b class="nav02">HOME</b></a></li>
-			<li><a href="/recommend1"><b class="nav03">MENU</b></a></li>
-			<li><a href="/review"><b class="nav04">BOARD</b></a></li>
-			<li><a href="/mypage"><b class="nav05">MY PAGE</b></a></li>
-			<li><a href="/mypage/rank"><b class="nav06">MY MENU LIST</b></a></li>
-			<li><a href="#section7"><b class="nav07">MEMBER JOIN</b></a></li>
+			<li class="topnav"><a href="/"><b>HOME</b></a></li>
+			<li class="topnav"><a href="#"><b>MENU</b></a>
+				<ul>
+					<li class="subnav"><a href="/recommend1"><b>MENU1</b></a></li>
+				</ul>
+			</li>
+			<li class="topnav"><a href="/review"><b>BOARD</b></a></li>
+			<li class="topnav"><a href="#"><b>MY PAGE</b></a>
+				<ul>
+					<li class="subnav"><a href="/mypage"><b>MY PAGE</b></a></li>
+					<li class="subnav"><a href="/mypage/rank"><b>MY MENU LIST</b></a></li>
+				</ul>
+			</li>
+			<li class="topnav"><a href="#section7"><b>JOIN</b></a></li>
 		</ul>
 	  </div>
 	</div>
