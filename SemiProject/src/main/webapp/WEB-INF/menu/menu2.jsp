@@ -12,20 +12,30 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
+
+
+</script>
 <body>
 	<div class="section" id="section2">
 		<br><br><br><br><br><br><br><br>
-		<h1>추천된 메뉴 나오는 곳</h1>
+		
+	
 		<h1>${list}</h1>
      
 		<img src="images/menu_pick.png" alt=""
          class="menupicktag">
          
 		<img src="images/tape.png" alt="" class="tape">
-		<button type="submit" onclick="location.href='/recommend/list'">좋아요</button>
-		<button type="button" onclick="">다시</button>
+		<img src="images/dish.png" alt="" class="dish">
+
+		 
+		
+		
          
 		<div class="round"></div>
 	</div>
+	<button type="button" class="likeit" onclick="location.href='/recommend/list'">좋아요</button>
+		
+	<button type="button" class="return" onclick="">다시</button>
 </body>
 </html>

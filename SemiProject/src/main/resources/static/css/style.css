@@ -289,6 +289,39 @@ div.round{
     opacity: 0.9;
     transform: rotate(2deg);
 }
+.dish{
+    
+    position: relative;
+    width:50%;
+    bottom: 100px;
+    left:5%;
+    opacity: 0.9;
+    transform: rotate(2deg);
+}
+.likeit{
+    z-index: 1;
+    position: absolute;
+    width:70px;
+    height: 40px;
+    bottom: 10px;
+    left: 750px;
+    border: 0;
+    border-radius:5px 5px 5px 5px;
+    color: white;
+    background-color: orange;
+}
+.return{
+	z-index: 1;
+    position: absolute;
+    width:70px;
+    height: 40px;
+    bottom: 10px;
+    left: 850px;
+    border: 0;
+    border-radius:5px 5px 5px 5px;
+    color: white;
+    background-color: orange;
+}
 /*메뉴 고르는 css 끝*/
 #section3 {
     width: 100%;
