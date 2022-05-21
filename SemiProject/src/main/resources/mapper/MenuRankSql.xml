@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.MenuRankMapperInter">
+	<select id="getMenuRank" parameterType="int" resultType="menu_rank">
+		select member_num, member.name as member_name, menu_num, menu.name as menu_name, count from menu_rank, member, menu 
+		where member_num = #{member_num} 
+		and menu_rank.member_num = member.num 
+		and menu_rank.menu_num = menu.num
+	</select>
+</mapper>
