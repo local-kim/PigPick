@@ -25,7 +25,7 @@ public class MenuController {
 	}
 	
 	// 추천 메뉴 결과 페이지
-	@GetMapping("/recommend")	// 추후 recommend/list로 수정
+	@GetMapping("/recommend")	// 추후 recommend/result로 수정
 	public String recommend(
 			@RequestParam int category,
 			@RequestParam int type,
@@ -40,7 +40,12 @@ public class MenuController {
 	
 	// 식당 리스트 페이지
 	@GetMapping("/recommend/list")
-	public String list() {
+	public String list(
+			@RequestParam String menuName,
+			Model model
+			) {
+		model.addAttribute("menuName", menuName);
+		
 		return "/menu/menu3";
 	}
 }
