@@ -104,7 +104,7 @@
 
 	</div>
 	<div class="section" id="section7">
-	<div class="joinform">
+	<div class="joinform" style="left: 20%;">
 		<!-- 회원가입 -->
 		<p>이름</p>
 		<input type="text" name="name" style="width:400px;" class="form-control jogin-control" required="required" placeholder="이름을 입력해주세요.">
@@ -128,7 +128,9 @@
 			<option value="google.com">구글</option>
 		</select>
 		</div>
+		<br><br><br><br>
 		<button><img src="images/googleloginbtn.png"></button>
+		<br><br><br><br>
 		<button type="submit" class="btn btn-info joinbtn" style="width:400px; background-color:#94d5fe; line-height:1.42857143; height:34px; ">회원가입</button>
 	</div>
 	</div>
