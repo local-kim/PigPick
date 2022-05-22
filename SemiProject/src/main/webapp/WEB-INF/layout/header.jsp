@@ -27,7 +27,7 @@
 <body>
 	<div class="single-page-nav">
 	<div id="logo"><a href="/">
-	    <img class="nav01" src="../images/main.jpg" alt="logo">
+	    <img class="nav01" src="../images/logo_pigpick.jpg" alt="logo">
 	</a>
 	</div>
 	
