@@ -1,15 +1,19 @@
-package data.service;
+package data.mapper;
 
 import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Mapper;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
 import data.dto.ReviewDto;
 
-public interface MyPageServiceInter {
+@Mapper
+public interface MyPageMapperInter {
 
 	public List<MenuRankDto> getMenuRank(int member_num);
 	public List<ReviewDto> getReviewList(int member_num);
 	public MemberDto getMemberInfo(int member_num);
-	public void updateMemberInfo(int member_num, String tel, String address);
+	public void updateMemberInfo(Map<String, String> map);
 }

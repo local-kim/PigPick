@@ -13,7 +13,9 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<br><br><br><br><br>
 	<h1>내 정보</h1>
+	<h3>${info}</h3>
 	<button type="button" onclick="location.href='/mypage/editinfo'">수정</button>
 </body>
 </html>
