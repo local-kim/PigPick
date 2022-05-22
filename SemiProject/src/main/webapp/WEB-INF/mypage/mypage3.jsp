@@ -13,6 +13,8 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<br><br><br><br><br>
 	<h1>리뷰 모아보기</h1>
+	<h3>${list}</h3>
 </body>
 </html>

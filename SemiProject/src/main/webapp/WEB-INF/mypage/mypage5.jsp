@@ -13,7 +13,9 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<br><br><br><br><br>
 	<h1>내 정보 수정</h1>
+	<h3>${info}</h3>
 	<button type="submit" onclick="location.href='/mypage/update'">저장</button>
 </body>
 </html>
