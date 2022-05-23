@@ -25,11 +25,11 @@ public class MenuController {
 	}
 	
 	// 추천 메뉴 결과 페이지
-	@GetMapping("/recommend")	// 추후 recommend/result로 수정
+	@PostMapping("/recommend")	// 추후 recommend/result로 수정
 	public String recommend(
 			@RequestParam int category,
 			@RequestParam int type,
-			@RequestParam int spicy,
+			@RequestParam(defaultValue = "0") int spicy,
 			Model model
 			) {
 		List<MenuDto> recommendList = service.getRecommendList(category, type, spicy);
