@@ -15,7 +15,7 @@
 <body>
 	<br><br><br><br><br><br><br>
 
-		<table style="width: 1000px;border:1px solid black; background-image:url('images/mypage1.png');
+		<%-- <table style="width: 1000px;border:1px solid black; background-image:url('images/mypage1.png');
 		z-index:111;">
 		<tr>
 			<td>
@@ -23,7 +23,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td style="height: 90px;">
 			<button type="button" class="btn_rank"  id="btn_mypage1" onclick="location.href='/mypage/rank'">
 			<img src="images/mymenulist.png" class="mymenulist" id="mymenulist" title="순위"></button>
 			</td>
@@ -41,9 +41,20 @@
 			</td>
 		</tr>
 		
-		</table>
+		</table> --%>
+
+		<img src="images/mypage1.png" class="mypage_img" id="mypage_img" title="마이페이지배경">
 		
-	
+			<button type="button" class="btn_rank" id="mypagebtn" onclick="location.href='/mypage/rank'">
+				<img src="images/mymenulist.png" class="rank" id="mypage_myimg" title="rank"></button>
+			<br><br><br>
+			<button type="button" class="btn_review" id="mypagebtn" onclick="location.href='/mypage/review'">
+				<img src="images/myreview.png" class="review" id="mypage_myimg" title="review"></button>
+			<br><br><br>
+			<button type="button" class="btn_profile" id="mypagebtn" onclick="location.href='/mypage/info'">
+				<img src="images/myprofile.png" class="profile" id="mypage_myimg" title="myprofile"></button>
+		
+
 	
 	
 </body>
