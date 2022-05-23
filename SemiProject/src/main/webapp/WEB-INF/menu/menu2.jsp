@@ -13,8 +13,6 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-
-</script>
 <body>
 	<div class="section" id="section2">
 		<br><br><br><br><br><br><br><br>
