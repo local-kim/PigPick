@@ -335,6 +335,56 @@ div.round{
     background-color: transparent;
   
 }
+/* 마이 페이지 */
+
+.mypage_img{
+	width: 1500px;
+	position: relative;
+	left: 15%;
+	
+}
+#mypage_myimg{
+	width: auto;
+	height: 90px;
+}
+#mypagebtn{
+	background-color: transparent;
+	border: 0;
+	height:auto;
+	position: relative;
+	display: block;
+	bottom:700px;
+	left: 30%;
+}
+.rank{
+	
+}
+.review{
+
+	
+}
+.profile{
+	
+	
+}
+.btn_rank{
+	width:618px;
+
+	
+}
+.btn_review{
+	width:524px;
+	
+	
+	
+}
+.btn_profile{
+	width:491px;
+	
+	
+}
+
+	
 /*메뉴 고르는 css 끝*/
 #section3 {
     width: 100%;
