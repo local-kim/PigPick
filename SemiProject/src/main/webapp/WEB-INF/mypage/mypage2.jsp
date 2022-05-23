@@ -20,6 +20,27 @@
 		<h1>My Menu List</h1>
 		<br><br>
 		<h3>${list}</h3>
+		<table class="table table-bordered mytable" style="width: 1100px;">
+			<tr style="background-color:#ffc;">
+				<th class="text-center" style="width: 50px">No.</th>
+				<th class="text-center" style="width: 500px">메뉴</th>
+				<th class="text-center" style="width: 70x">분류</th>
+				<th class="text-center" style="width: 70x">횟수</th>
+			
+			</tr>
+			<c:forEach var="dto" items="${list}" varStatus="i">
+				<tr>
+					<td>${i.count}</td>
+					
+					<!-- 메뉴이름 -->
+					<td>${dto.menu_name}</td>
+					<!-- 분류 -->
+					<td>카테고리</td>
+					<!-- 횟수 -->
+					<td>${dto.count}</td>	
+				</tr>
+			</c:forEach>	
+		</table>
 	
 		<!-- <div class="mymenulist">
 			<b>1등</b> <b>김밥</b> <b>한식</b> <b>32회</b>

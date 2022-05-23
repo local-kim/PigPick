@@ -14,7 +14,39 @@
 </head>
 <body>
 	<br><br><br><br><br>
-	<h1>리뷰 모아보기</h1>
+	<h1 class="mypage3_title">리뷰 모아보기</h1>
 	<h3>${list}</h3>
+		<div>
+		<br><br>
+		
+		<table class="table table-bordered mytable" style="width: 1100px;">
+			<tr style="background-color:#ffc;">
+				<th class="text-center" style="width: 50px">No.</th>
+				<th class="text-center" style="width: 100px">식당</th>
+				<th class="text-center" style="width: 500px">내용</th>
+				<th class="text-center" style="width: 70x">★★★★★</th>
+				<th class="text-center" style="width: 200px">
+				<span class="glyphicon glyphicon-calendar" style="color: green;"></span></th>
+			
+			</tr>
+			<c:forEach var="dto" items="${list}" varStatus="i">
+				<tr>
+					<td>${i.count}</td>
+					
+					<!-- 식당이름 -->
+					<td>${dto.place_id}</td>
+					<!-- 후기내용 -->
+					<td>${dto.content}</td>
+					<!-- 별점 -->
+					<td>${dto.stars}</td>
+					<!-- 작성날짜 -->
+					<td><fmt:formatDate value="${dto.created_at}"
+							pattern="yyyy-MM-dd"/></td>
+					
+				</tr>
+			</c:forEach>	
+		</table>
+		</div>	
+	</div>
 </body>
 </html>

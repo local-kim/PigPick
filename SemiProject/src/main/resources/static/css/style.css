@@ -382,7 +382,20 @@ div.round{
 	
 	
 }
-
+.mytable{
+	position: absolute;
+	left: 190px;
+}
+.mypage3_title{
+	position:relative;
+	left:30%;
+	top:6%;
+	font-size:4.8em;
+	font-weight:bold;
+	color:white;
+	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
+	
+}
 	
 /*메뉴 고르는 css 끝*/
 #section3 {
@@ -428,6 +441,7 @@ div.loginform{
 	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
 	
 }
+
 div.mymenulist{
 	position :relative;
 	top:10%;
