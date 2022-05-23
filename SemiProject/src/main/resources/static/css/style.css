@@ -341,6 +341,7 @@ div.round{
 	width: 1500px;
 	position: relative;
 	left: 15%;
+	z-index: 10;
 	
 }
 #mypage_myimg{
@@ -353,8 +354,9 @@ div.round{
 	height:auto;
 	position: relative;
 	display: block;
-	bottom:700px;
-	left: 30%;
+	bottom:650px;
+	left: 32%;
+	z-index: 11;
 }
 .rank{
 	
