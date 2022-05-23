@@ -22,8 +22,8 @@
 		<table class="table table-bordered mytable" style="width: 1100px;">
 			<tr style="background-color:#ffc;">
 				<th class="text-center" style="width: 50px">No.</th>
-				<th class="text-center" style="width: 100px">식당</th>
-				<th class="text-center" style="width: 500px">내용</th>
+				<th class="text-center" style="width: 100px">Place</th>
+				<th class="text-center" style="width: 500px">contents</th>
 				<th class="text-center" style="width: 70x">★★★★★</th>
 				<th class="text-center" style="width: 200px">
 				<span class="glyphicon glyphicon-calendar" style="color: green;"></span></th>

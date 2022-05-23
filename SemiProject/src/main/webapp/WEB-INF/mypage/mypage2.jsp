@@ -23,9 +23,9 @@
 		<table class="table table-bordered mytable" style="width: 1100px;">
 			<tr style="background-color:#ffc;">
 				<th class="text-center" style="width: 50px">No.</th>
-				<th class="text-center" style="width: 500px">메뉴</th>
-				<th class="text-center" style="width: 70x">분류</th>
-				<th class="text-center" style="width: 70x">횟수</th>
+				<th class="text-center" style="width: 500px">Menu</th>
+				<th class="text-center" style="width: 70x">Category</th>
+				<th class="text-center" style="width: 70x">Count</th>
 			
 			</tr>
 			<c:forEach var="dto" items="${list}" varStatus="i">
