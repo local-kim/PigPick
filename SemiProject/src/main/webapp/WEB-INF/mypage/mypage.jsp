@@ -14,8 +14,50 @@
 </head>
 <body>
 	<br><br><br><br><br><br><br>
-	<button type="button" onclick="location.href='/mypage/rank'">순위</button>
-	<button type="button" onclick="location.href='/mypage/review'">리뷰</button>
-	<button type="button" onclick="location.href='/mypage/info'">정보</button>
+
+		<%-- <table style="width: 1000px;border:1px solid black; background-image:url('images/mypage1.png');
+		z-index:111;">
+		<tr>
+			<td>
+			<h3><b style="background: #ffc;">${name}</b>님의 기록</h3>
+			</td>
+		</tr>
+		<tr>
+			<td style="height: 90px;">
+			<button type="button" class="btn_rank"  id="btn_mypage1" onclick="location.href='/mypage/rank'">
+			<img src="images/mymenulist.png" class="mymenulist" id="mymenulist" title="순위"></button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button type="button" class="btn_review" id="btn_mypage1" onclick="location.href='/mypage/review'">
+			<img src="images/myreview.png" class="myreview" id="myreview" title="리뷰"></button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button type="button" class="btn_mypage" id="btn_mypage1" onclick="location.href='/mypage/info'">
+			<img src="images/myprofile.png" class="mypage_img" id="mypage" title="내정보"></button>
+			</td>
+		</tr>
+		
+		</table> --%>
+		
+
+		<img src="images/mypage1.png" class="mypage_img" id="mypage_img" title="마이페이지배경">
+			<h1 style="position:absolute; top:400px; left:950px; z-index:20;">
+			<b style="background: #ffc;">${name}</b>'s page</h1>
+			<button type="button" class="btn_rank" id="mypagebtn" onclick="location.href='/mypage/rank'">
+				<img src="images/mymenulist.png" class="rank" id="mypage_myimg" title="rank"></button>
+			<br><br><br>
+			<button type="button" class="btn_review" id="mypagebtn" onclick="location.href='/mypage/review'">
+				<img src="images/myreview.png" class="review" id="mypage_myimg" title="review"></button>
+			<br><br><br>
+			<button type="button" class="btn_profile" id="mypagebtn" onclick="location.href='/mypage/info'">
+				<img src="images/myprofile.png" class="profile" id="mypage_myimg" title="myprofile"></button>
+		
+
+	
+	
 </body>
 </html>
