@@ -30,6 +30,40 @@
 	  outline: 5px solid orange;
 	}
 </style>
+<script>
+$(function(){
+	
+	$(document).ready(function() {
+	    // 로딩되기 시작할때
+		$("input:radio[name='type']").attr("disabled",true);
+		 $(".menu_choose2").css("display","none"); 
+		$("input:checkbox[name='spicy']").attr("disabled",true);
+		 $("#menu3").css("display","none");
+
+	});
+	
+	$("input[name='category']").change(function(){
+		var category = $("input[name='category']:checked").val();
+		var type = $("input[name='type']:checked").val();
+		
+		if(category != null){
+			$("input:radio[name='type']").attr("disabled",false);
+			$(".menu_choose2").css("display","block");
+		}
+	});
+	$("input[name='type']").change(function(){
+		var type = $("input[name='type']:checked").val();
+		var spicy = $("input[name='spicy']:checked").val();
+		
+		if(type != null & type != 6)
+		{
+		$("input:checkbox[name='spicy']").attr("disabled",false);
+		$("#menu3").css("display","block");
+		}
+	});
+	
+})
+</script>
 </head>
 <body>
 	<div class="section" id="section2">
