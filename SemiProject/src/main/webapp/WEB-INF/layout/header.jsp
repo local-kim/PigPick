@@ -65,7 +65,7 @@
 					<li class="subnav"><a href="/mypage/rank"><b>MY MENU LIST</b></a></li>
 				</ul>
 			</li>
-			<li class="topnav"><a href="#section7"><b>JOIN</b></a></li>
+			<li class="topnav"><a href="/join"><b>JOIN</b></a></li>
 		</ul>
 	  </div>
 	</div>
