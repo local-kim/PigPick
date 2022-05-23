@@ -17,24 +17,6 @@
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
  
-	<!-- <div class="section" id="section2">
-	
-		<img src="images/menu_pick.png" alt=""
-		 class="menupicktag">
-		 
-		<img src="images/tape.png" alt="" class="tape">
-		<div class="menu">
-			<input type="checkbox" name="morning" value="morning" checked>아침
-			<input type="checkbox" name="morning" value="morning" checked>점심
-			<input type="checkbox" name="morning" value="morning" checked>저녁
-			<input type="checkbox" name="morning" value="morning" checked>야식
-			<input type="checkbox" name="morning" value="morning" checked>간식
-		</div>
-
-
-		<div class="round"></div>
-	</div> -->
- 
 	<div class="section" id="section3">
 		<div id="con3"><a href="det_pt.html" target="_blank"><img class="hoverimg" src="images/det.png"></a></div>
 		<div id="con4"><a href="fran_pt.html" target="_blank"><img class="hoverimg" src="images/fran.png"></a></div>
@@ -44,7 +26,7 @@
  
     
 	<div class="section" id="section4">
-<!--
+	<!--
 	<div id="con6"><a href="over_pt.html" target="_blank"><img class="hoverimg" src="images/over.png"></a></div>
 	<div id="con7"><a href="poka_pt.html" target="_blank"><img class="hoverimg" src="images/poka.png"></a></div>
 	<div id="con8"><a href="osaka_pt.html" target="_blank"><img class="hoverimg" src="images/osaka.png"></a></div>-->

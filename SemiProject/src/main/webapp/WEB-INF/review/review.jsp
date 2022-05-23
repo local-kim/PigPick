@@ -16,5 +16,7 @@
 
 	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
 	<button type="button" onclick="location.href='/review/content'">내용보기</button>
+
+
 </body>
 </html>

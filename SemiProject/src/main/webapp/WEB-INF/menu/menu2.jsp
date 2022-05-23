@@ -11,14 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-<script>
-$(function(){
-$(".reset").click(function(){
-	
-});
-})
 
-</script>
 </head>
 <body>
 	<div class="section" id="section2">
