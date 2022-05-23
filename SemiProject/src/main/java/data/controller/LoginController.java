@@ -45,6 +45,7 @@ public class LoginController {
 		}
 	}
 	
+	// 로그아웃 (ajax)
 	@GetMapping("/logout")
 	@ResponseBody
 	public void logout(
