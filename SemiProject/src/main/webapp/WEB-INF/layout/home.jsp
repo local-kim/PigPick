@@ -103,9 +103,9 @@
 
 
 	</div>
-	<div class="section" id="section7">
+	<!-- <div class="section" id="section7">
 	<div class="joinform" style="left: 20%;">
-		<!-- 회원가입 -->
+		회원가입
 		<p>이름</p>
 		<input type="text" name="name" style="width:400px;" class="form-control jogin-control" required="required" placeholder="이름을 입력해주세요.">
 		<p>아이디</p>
@@ -133,6 +133,6 @@
 		<br><br><br><br>
 		<button type="submit" class="btn btn-info joinbtn" style="width:400px; background-color:#94d5fe; line-height:1.42857143; height:34px; ">회원가입</button>
 	</div>
-	</div>
+	</div> -->
 </body>
 </html>

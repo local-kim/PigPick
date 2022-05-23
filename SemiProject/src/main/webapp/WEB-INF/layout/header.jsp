@@ -12,6 +12,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<style>
+	div.login{
+		position: absolute;
+		right: 50px;
+		top: 100px;
+	}
+</style>
 
 <script>
 /* $(function(){
@@ -21,6 +28,16 @@
 		$(".topnav > .subnav").slideDown();
 	});
 });  */
+	function logout(){
+		$.ajax({
+			type: "get",
+			dataType: "text",
+			url: "${root}/logout",	// ../login/logout 도 가능
+			success: function(){
+				location.reload();
+			}
+		});
+	}
 </script>
 </head>
 
@@ -51,6 +68,20 @@
 			<li class="topnav"><a href="#section7"><b>JOIN</b></a></li>
 		</ul>
 	  </div>
+	</div>
+	
+	<div class="login" style="z-index:9999999999999999">
+		<c:set var="root" value="<%=request.getContextPath()%>"/>
+		
+		<c:if test="${sessionScope.isLoggedIn == null}">
+			<button type="button" class="btn btn-info" style="width:100px" onclick="location.href='${root}/login'">LOG IN</button>
+		</c:if>
+		
+		<c:if test="${sessionScope.isLoggedIn != null}">
+			<span>${sessionScope.member_name}(${sessionScope.member_id})님</span>
+			&nbsp;
+			<button type="button" class="btn btn-danger" style="width:100px" onclick="logout()">LOG OUT</button>
+		</c:if>
 	</div>
 </body>
 </html>

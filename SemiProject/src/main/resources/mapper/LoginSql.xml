@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.LoginMapperInter">
+	<select id="login" parameterType="Map" resultType="int">
+		SELECT count(*) FROM member WHERE id = #{id} AND password = #{password}
+	</select>
+	<select id="getLoginName" parameterType="String" resultType="String">
+		SELECT name FROM member WHERE id = #{id}
+	</select>
+</mapper>
