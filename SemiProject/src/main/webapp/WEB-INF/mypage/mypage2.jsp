@@ -20,6 +20,7 @@
 		<h1>My Menu List</h1>
 		<br><br>
 		<h3>${list}</h3>
+	
 		<!-- <div class="mymenulist">
 			<b>1등</b> <b>김밥</b> <b>한식</b> <b>32회</b>
 		</div>
