@@ -12,20 +12,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<style>
-	div.login{
-		position: absolute;
-		right: 50px;
-		top: 100px;
-	}
-</style>
-
 <script>
 /* $(function(){
-	$(".subnav").hide();
+	$("li#mypage").css("display","none");
 	
-	$(".topnav").click(function(){
-		$(".topnav > .subnav").slideDown();
+	
+	$("")
+	
+	 $(".topnav").click(function(){
+		$(".topnav > .subnav").slideDown(); 
 	});
 });  */
 	function logout(){
@@ -59,13 +54,13 @@
 				</ul>
 			</li>
 			<li class="topnav"><a href="/review"><b>BOARD</b></a></li>
-			<li class="topnav"><a href="#"><b>MY PAGE</b></a>
+			<li class="topnav" id="mypage"><a href="#"><b>MY PAGE</b></a>
 				<ul>
 					<li class="subnav"><a href="/mypage"><b>MY PAGE</b></a></li>
 					<li class="subnav"><a href="/mypage/rank"><b>MY MENU LIST</b></a></li>
 				</ul>
 			</li>
-			<li class="topnav"><a href="/join"><b>JOIN</b></a></li>
+			<li class="topnav" id="join"><a href="/join"><b>JOIN</b></a></li>
 		</ul>
 	  </div>
 	</div>
@@ -75,12 +70,20 @@
 		
 		<c:if test="${sessionScope.isLoggedIn == null}">
 			<button type="button" class="btn btn-info" style="width:100px" onclick="location.href='${root}/login'">LOG IN</button>
+		<script>
+		
+		$("li#mypage").css("display","none");
+		</script>
 		</c:if>
 		
 		<c:if test="${sessionScope.isLoggedIn != null}">
 			<span>${sessionScope.member_name}(${sessionScope.member_id})님</span>
 			&nbsp;
 			<button type="button" class="btn btn-danger" style="width:100px" onclick="logout()">LOG OUT</button>
+			<script>
+			$("li#mypage").css("display","inline-block");
+			$("li#join").css("display","none");
+			</script>
 		</c:if>
 	</div>
 </body>

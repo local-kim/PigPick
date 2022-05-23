@@ -26,7 +26,7 @@
 				<tr>
 					<th>아이디</th>
 					<td>
-						<input type="text" name="id" class="form-control" required autofocus placeholder="아이디">
+						<input type="text" name="id" class="form-control" required autofocus placeholder="아이디" value="${loginid}">
 						<!-- <label><input type="checkbox" name="chkid">&nbsp;아이디 저장</label> -->
 					</td>
 				</tr>
