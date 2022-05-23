@@ -11,7 +11,6 @@ import data.dto.ReviewDto;
 
 @Mapper
 public interface MyPageMapperInter {
-
 	public List<MenuRankDto> getMenuRank(int member_num);
 	public List<ReviewDto> getReviewList(int member_num);
 	public MemberDto getMemberInfo(int member_num);

@@ -17,24 +17,6 @@
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
  
-	<!-- <div class="section" id="section2">
-	
-		<img src="images/menu_pick.png" alt=""
-		 class="menupicktag">
-		 
-		<img src="images/tape.png" alt="" class="tape">
-		<div class="menu">
-			<input type="checkbox" name="morning" value="morning" checked>아침
-			<input type="checkbox" name="morning" value="morning" checked>점심
-			<input type="checkbox" name="morning" value="morning" checked>저녁
-			<input type="checkbox" name="morning" value="morning" checked>야식
-			<input type="checkbox" name="morning" value="morning" checked>간식
-		</div>
-
-
-		<div class="round"></div>
-	</div> -->
- 
 	<div class="section" id="section3">
 		<div id="con3"><a href="det_pt.html" target="_blank"><img class="hoverimg" src="images/det.png"></a></div>
 		<div id="con4"><a href="fran_pt.html" target="_blank"><img class="hoverimg" src="images/fran.png"></a></div>
@@ -44,7 +26,7 @@
  
     
 	<div class="section" id="section4">
-<!--
+	<!--
 	<div id="con6"><a href="over_pt.html" target="_blank"><img class="hoverimg" src="images/over.png"></a></div>
 	<div id="con7"><a href="poka_pt.html" target="_blank"><img class="hoverimg" src="images/poka.png"></a></div>
 	<div id="con8"><a href="osaka_pt.html" target="_blank"><img class="hoverimg" src="images/osaka.png"></a></div>-->
@@ -103,9 +85,9 @@
 
 
 	</div>
-	<div class="section" id="section7">
+	<!-- <div class="section" id="section7">
 	<div class="joinform" style="left: 20%;">
-		<!-- 회원가입 -->
+		회원가입
 		<p>이름</p>
 		<input type="text" name="name" style="width:400px;" class="form-control jogin-control" required="required" placeholder="이름을 입력해주세요.">
 		<p>아이디</p>
@@ -133,6 +115,6 @@
 		<br><br><br><br>
 		<button type="submit" class="btn btn-info joinbtn" style="width:400px; background-color:#94d5fe; line-height:1.42857143; height:34px; ">회원가입</button>
 	</div>
-	</div>
+	</div> -->
 </body>
 </html>
