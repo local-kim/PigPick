@@ -408,6 +408,26 @@ div.round{
 	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
 	
 }
+.mypage4_title{
+	position:relative;
+	left:30%;
+	top:6%;
+	font-size:4.8em;
+	font-weight:bold;
+	color:white;
+	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
+	
+}
+.mypage5_title{
+	position:relative;
+	left:30%;
+	top:6%;
+	font-size:4.8em;
+	font-weight:bold;
+	color:white;
+	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
+	
+}
 	
 /*메뉴 고르는 css 끝*/
 #section3 {
