@@ -20,7 +20,11 @@ public class MyPageController {
 	MyPageService service;
 
 	@GetMapping("/mypage")
-	public String mypage() {
+	public String mypage(
+			Model model
+			) {
+		model.addAttribute("name", "홍길동");
+		
 		return "/mypage/mypage";
 	}
 	
