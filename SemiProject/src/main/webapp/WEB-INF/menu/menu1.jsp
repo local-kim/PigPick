@@ -32,7 +32,7 @@
 </style>
 <script>
 $(function(){
-	
+	//soon display:none; background-color: rgba(0,0,0,0.6);
 	$(document).ready(function() {
 	    // 로딩되기 시작할때
 		$("input:radio[name='type']").attr("disabled",true);
