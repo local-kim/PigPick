@@ -332,6 +332,59 @@ div.round{
     background-color: transparent;
   
 }
+/* 마이 페이지 */
+.mypage_img{
+	width: 60%;
+	position: relative;
+	left: 15%;
+}
+.btn_rank{
+	width:800px;
+	height:auto;
+	position: relative;
+	bottom: 600px;
+	
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+}
+.btn_review{
+	width:800px;
+	height:auto;
+	position: relative;
+	bottom: 500px;
+
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+}
+.btn_mypage{
+	width:800px;
+	position: relative;
+	bottom: 400px;
+
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+}
+#mymenulist{
+	width: auto;
+	height: 90px;
+	left: 0;
+	
+}
+#myreview{
+	width: auto;
+	height: 90px;
+}
+#myprofile{
+	width: auto;
+	height: 90px;
+	
+}
 /*메뉴 고르는 css 끝*/
 #section3 {
     width: 100%;
