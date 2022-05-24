@@ -11,8 +11,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="706109636994-9ilc2rbf75k3418op5ho9shk10n4bon8.apps.googleusercontent.com">
+  <script>
+    function checkLoginStatus(){
+      var loginBtn = document.querySelector('#loginBtn');
+      var nameTxt = document.querySelector('#name');
+      if(gauth.isSignedIn.get()){
+        console.log('logined');
+        loginBtn.value = 'Logout';
+        var profile = gauth.currentUser.get().getBasicProfile();
+        nameTxt.innerHTML = 'Welcome <strong>'+profile.getName()+'</strong> ';
+      } else {
+        console.log('logouted');
+        loginBtn.value = 'Login';
+        nameTxt.innerHTML = '';
+      }
+    }
+    function init(){
+      console.log('init');
+      gapi.load('auth2', function() {
+        console.log('auth2');
+        window.gauth = gapi.auth2.init({
+          client_id:'1069961247398-d5cpi17r74jaad01cf93gbilfnaf3mf4.apps.googleusercontent.com'
+        })
+        gauth.then(function(){
+          console.log('googleAuth success');
+          checkLoginStatus();
+        }, function(){
+          console.log('googleAuth fail');
+        });
+      });
+    }
+    
+    function onSignIn(googleUser) {
+  	  var profile = googleUser.getBasicProfile();
+  	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  	  console.log('Name: ' + profile.getName());
+  	  console.log('Image URL: ' + profile.getImageUrl());
+  	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  	}
+  </script>
 </head>
 <body>
+	<span id="name"></span><input type="button" id="loginBtn" value="checking..." onclick="
+    if(this.value === 'Login'){
+      gauth.signIn({
+        scope:'https://www.googleapis.com/auth/calendar'
+      }).then(function(){
+        console.log('gauth.signIn()');
+        checkLoginStatus();
+      });
+    } else {
+      gauth.signOut().then(function(){
+        console.log('gauth.signOut()');
+        checkLoginStatus();
+      });
+    }
+  " style="z-index:99999999; position:absolute; top:50%">
+  
+  <div class="g-signin2" data-onsuccess="onSignIn" style="z-index:99999999999999999;position:absolute;top:30%"></div>
+
+	<!-- <a href="#" onclick="signOut();">Sign out</a>
+	<script>
+	  function signOut() {
+	    var auth2 = gapi.auth2.getAuthInstance();
+	    auth2.signOut().then(function () {
+	      console.log('User signed out.');
+	    });
+	  }
+	</script> -->
+
+
 	<div class="section" id="section1">
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
