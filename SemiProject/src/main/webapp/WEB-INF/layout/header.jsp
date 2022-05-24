@@ -93,15 +93,5 @@
 			</script>
 		</c:if>
 	</div>
-	
-	<a href="#" onclick="signOut();" style="z-index:99999999999999999999; width:100px; height:100px; left:500px;top:500px">Sign out</a>
-	<script>
-	  function signOut() {
-	    var auth2 = gapi.auth2.getAuthInstance();
-	    auth2.signOut().then(function () {
-	      console.log('User signed out.');
-	    });
-	  }
-	</script>
 </body>
 </html>

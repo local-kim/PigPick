@@ -9,17 +9,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="706109636994-9ilc2rbf75k3418op5ho9shk10n4bon8.apps.googleusercontent.com">
-<script type="text/javascript">
-	/* function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName());
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	} */
-</script>
 </head>
 <body>
 	<br><br><br><br><br><br><br>
@@ -60,7 +49,9 @@
 		</form>
 	</div>
 	
-	<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+	<!-- 네이버 로그인 자리 -->
+	
+	<!-- 카카오 로그인 자리 -->
 	
 </body>
 </html>
