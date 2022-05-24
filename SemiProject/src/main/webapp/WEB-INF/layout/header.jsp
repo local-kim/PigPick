@@ -69,7 +69,10 @@
 		<c:set var="root" value="<%=request.getContextPath()%>"/>
 		
 		<c:if test="${sessionScope.isLoggedIn == null}">
-			<button type="button" class="btn btn-info" style="width:100px" onclick="location.href='${root}/login'">LOG IN</button>
+			<button type="button" class="btn btn-info btnlogin" style="background-color: transparent;
+			border:0; width:100px" onclick="location.href='${root}/login'">
+			<img src="../images/key.png" class="login_icon" title="login"
+				 style="width: 100px;border: 0;"></button>
 		<script>
 		
 		$("li#mypage").css("display","none");
@@ -79,7 +82,10 @@
 		<c:if test="${sessionScope.isLoggedIn != null}">
 			<span>${sessionScope.member_name}(${sessionScope.member_id})님</span>
 			&nbsp;
-			<button type="button" class="btn btn-danger" style="width:100px" onclick="logout()">LOG OUT</button>
+			<button type="button" class="btn btn-danger btnlogout" style="background-color: transparent;
+			border:0; width:100px" onclick="logout()">
+			<img src="../images/bye.png" class="logout_icon" title="logout"
+				 style="width: 100px;"></button>
 			<script>
 			$("li#mypage").css("display","inline-block");
 			$("li#join").css("display","none");

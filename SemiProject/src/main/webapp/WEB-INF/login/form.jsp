@@ -19,7 +19,8 @@
 </head>
 <body>
 	<br><br><br><br><br><br><br>
-	<h1>로그인</h1>
+	<img src="../images/login.png" class="login_img" title="login"
+				 style="width: 300px;">
 	<div class="loginform">
 		<form action="process" method="post" class="form-inline">
 			<table class="table" style="width: 450px">
@@ -37,9 +38,18 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center">
-					<button id="GgCustomLogin">google</button><!-- onclick="javascript:void(0)" -->
-					<button type="submit" class="btn btn-info">로그인</button>
+					<td align="center">
+					<button id="GgCustomLogin" style="background-color: transparent;
+					border:0;width: 40px;">
+					&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/google-symbol.png" class="google" title="google"
+				 	style="background-color: transparent;
+					border:0;width: 40px;"></button><!-- onclick="javascript:void(0)" -->
+					</td>
+					<td align="center">
+					<button type="submit" class="btn btn-info" style="float:left; background-color: transparent;
+					border:0;width: 100px;">
+					&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/log-in.png" class="log-in-btn" title="login"
+				 	style="width: 100px;"></button>
 					</td>
 				</tr>
 			</table>
