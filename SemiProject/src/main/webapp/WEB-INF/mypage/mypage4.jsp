@@ -17,23 +17,26 @@
 
 </style>
 <body>
-	<br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br>
 	<h1 class="mypage4_title" style="position:relative; left:70px;">My profile</h1>
 	<%-- <h3>${info}</h3> --%>
 
 	<div>
 		<br><br>
 		
-		<table class="container" style="width: 1100px;">
-			<tr>
+		<table class="container" style="width:550px; height:255.5px;">
+			 <tr>
+			<c:if test="">
+		
+			</c:if>
 				<th class="text-center" style="height: 100px;">
 				<img src="../images/user.png" class="user_img" title="내사진"
 				 style="width: 50px;"></th>
 				<td>${info.photo}</td>
 				
 			</tr>
+			
 			<tr>
-				
 				<th class="text-center" style="width: 100px;">Name(ID)</th>
 				<td>
 				${info.name}(${info.id})
