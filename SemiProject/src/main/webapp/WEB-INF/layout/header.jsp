@@ -50,7 +50,7 @@
 			<li class="topnav"><a href="/"><b>HOME</b></a></li>
 			<li class="topnav"><a href="#"><b>MENU</b></a>
 				<ul>
-					<li class="subnav"><a href="/recommend1"><b>MENU1</b></a></li>
+					<li class="subnav"><a href="/recommend"><b>MENU1</b></a></li>
 				</ul>
 			</li>
 			<li class="topnav"><a href="/review"><b>BOARD</b></a></li>

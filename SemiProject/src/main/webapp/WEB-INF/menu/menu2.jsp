@@ -20,11 +20,11 @@
 		<h1 style="opacity:0;">${list}</h1>
 	
      
-		<img src="images/menu_pick.png" alt=""
+		<img src="../images/menu_pick.png" alt=""
          class="menupicktag">
          
-		<img src="images/tape.png" alt="" class="tape">
-		<img src="images/dish.png" alt="" class="dish">
+		<img src="../images/tape.png" alt="" class="tape">
+		<img src="../images/dish.png" alt="" class="dish">
 	
          
 		<div class="round"></div>
@@ -55,10 +55,10 @@
 		  window.location.href = "/recommend/list?menuName="+ rValue;
 	 }
 	</script>
-	<img src="images/kpop.png" class="menu_img4" id="menu2" title="좋아요"></button>
+	<img src="../images/kpop.png" class="menu_img4" id="menu2" title="좋아요"></button>
 		
 	<button type="button" class="reset" onclick="window.location.reload()">
-	<img src="images/reset.png" class="menu_img4" id="menu2" title="다시찾기">
+	<img src="../images/reset.png" class="menu_img4" id="menu2" title="다시찾기">
 	</button>
 </body>
 </html>

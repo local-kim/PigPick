@@ -73,7 +73,7 @@ $(function(){
 		<img src="images/tape.png" alt="" class="tape">
 		
 		<div class="menu">
-			<form action="recommend" method="post">
+			<form action="recommend/list" method="post">
 				<div class="menu_choose1">
 					<label>
 						<input type="radio" name="category" value="0">
