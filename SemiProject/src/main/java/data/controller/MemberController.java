@@ -47,15 +47,15 @@ public class MemberController {
 			
 			// 파일 저장
 			try {
-				//upload.transferTo(new File(uploadPath + File.separator + fileName));
-				System.out.println(uploadPath + File.separator + fileName);
+				upload.transferTo(new File(uploadPath + File.separator + fileName));
+//				System.out.println(uploadPath + File.separator + fileName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
-		// service.insertMember(member);
-		System.out.println(member);
+		service.insertMember(member);
+//		System.out.println(member);
 		
 		return "redirect:/";
 	}

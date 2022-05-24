@@ -2,6 +2,8 @@ package data.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,22 +21,19 @@ public class MyPageController {
 	MyPageService service;
 
 	@GetMapping("/mypage")
-	public String mypage(
-			Model model
-			) {
-		model.addAttribute("name", "홍길동");
-		
+	public String mypage() {
 		return "/mypage/mypage";
 	}
 	
 	@GetMapping("/mypage/rank")
 	public String mypage2(
-			Model model
+			Model model,
+			HttpSession session
 			) {
 		// 로그인한 사용자 num이 1이라고 가정
-		int member_num = 1;
+		String member_id = (String)session.getAttribute("member_id");
 		
-		List<MenuRankDto> list = service.getMenuRank(member_num);
+		List<MenuRankDto> list = service.getMenuRank(member_id);
 		model.addAttribute("list", list);
 		
 		return "/mypage/mypage2";

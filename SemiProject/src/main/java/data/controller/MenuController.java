@@ -19,13 +19,13 @@ public class MenuController {
 	private MenuService service;
 	
 	// 카테고리 선택 페이지
-	@GetMapping("/recommend1")
+	@GetMapping("/recommend")
 	public String recommend1() {	// 추후 recommend로 수정
 		return "/menu/menu1";
 	}
 	
 	// 추천 메뉴 결과 페이지
-	@PostMapping("/recommend")	// 추후 recommend/result로 수정
+	@PostMapping("/recommend/list")	// 추후 recommend/result로 수정
 	public String recommend(
 			@RequestParam int category,
 			@RequestParam int type,
