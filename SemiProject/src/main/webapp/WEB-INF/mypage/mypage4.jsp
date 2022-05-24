@@ -17,44 +17,59 @@
 
 </style>
 <body>
-	<br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br>
 	<h1 class="mypage4_title" style="position:relative; left:70px;">My profile</h1>
 	<%-- <h3>${info}</h3> --%>
 
 	<div>
 		<br><br>
 		
-		<table class="container" style="width: 1100px;">
+		<table class="container" style="width:700px; height:255.5px;">
+			 <tr>
+			 <td rowspan="2" style=" width:200px; height:300px; background-color: transparent;">
+			 <c:if test="${info.photo!='null' }">
+			  <img src="${info.photo}">
+			 </c:if>
+			 <img src="../images/user.png" class="user_img" title="내사진"
+		     style="width: 100px;">
+			
+			 </td>
+			 <!-- <th class="text-center" style="height: 100px;">Name</th> -->
+			 <td style="width: 400px;">
+				${info.name}
 			<tr>
+			 </td>
+			 <!-- <th class="text-center" style="height: 100px;">ID</th> -->
+			 <td style="width: 400px;">
+				${info.id}
+			</td>
+			</tr>
+			<%-- <c:if test="">
+		
+			</c:if>
 				<th class="text-center" style="height: 100px;">
 				<img src="../images/user.png" class="user_img" title="내사진"
 				 style="width: 50px;"></th>
-				<td>${info.photo}</td>
+				<td>${info.photo}</td> --%>
 				
 			</tr>
+			
+			
 			<tr>
-				
-				<th class="text-center" style="width: 100px;">Name(ID)</th>
-				<td>
-				${info.name}(${info.id})
-				</td>
-				
-			</tr>
-			<tr>
-				<th class="text-center" style="width: 100px;">Tel</th>
-				<td>
+				<th class="text-center">Tel</th>
+				<td colspan="3">
 				${info.tel}
 				</td>
 			</tr>
 			<tr>
-				<th class="text-center" style="width: 100px;">E-Mail</th>
-				<td>
+				<th class="text-center">E-Mail</th>
+				<td colspan="3">
 				${info.email}
 				</td>
 			</tr>
 			<tr>
-				<th class="text-center" style="width: 100px;">Address</th>
-				<td>
+				<th class="text-center" style="height: 200px;">Address</th>
+				<td colspan="3">
 				${info.address}
 				</td>
 			</tr>
