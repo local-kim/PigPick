@@ -46,7 +46,7 @@
 
 		<img src="images/mypage1.png" class="mypage_img" id="mypage_img" title="마이페이지배경">
 			<h1 style="position:absolute; top:400px; left:950px; z-index:20;">
-			<b style="background: #ffc;">${sessionScope.member_name}</b>'s page</h1>
+			<b style="background: #ffc;">${sessionScope.loginName}</b>'s page</h1>
 			<button type="button" class="btn_rank" id="mypagebtn" onclick="location.href='/mypage/rank'">
 				<img src="images/mymenulist.png" class="rank" id="mypage_myimg" title="rank"></button>
 			<br><br><br>

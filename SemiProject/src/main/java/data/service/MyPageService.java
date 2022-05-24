@@ -19,8 +19,8 @@ public class MyPageService implements MyPageServiceInter {
 	MyPageMapperInter mapper;
 
 	@Override
-	public List<MenuRankDto> getMenuRank(String member_id) {
-		return mapper.getMenuRank(member_id);
+	public List<MenuRankDto> getMenuRank(int member_num) {
+		return mapper.getMenuRank(member_num);
 	}
 	
 	@Override

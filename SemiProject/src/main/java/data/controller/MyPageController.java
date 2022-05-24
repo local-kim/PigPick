@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
@@ -30,10 +31,9 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		// 로그인한 사용자 num이 1이라고 가정
-		String member_id = (String)session.getAttribute("member_id");
+		int member_num = (int)session.getAttribute("loginNum");
 		
-		List<MenuRankDto> list = service.getMenuRank(member_id);
+		List<MenuRankDto> list = service.getMenuRank(member_num);
 		model.addAttribute("list", list);
 		
 		return "/mypage/mypage2";
@@ -41,10 +41,10 @@ public class MyPageController {
 	
 	@GetMapping("/mypage/review")
 	public String mypage3(
-			Model model
+			Model model,
+			HttpSession session
 			) {
-		// 로그인한 사용자 num이 1이라고 가정
-		int member_num = 1;
+		int member_num = (int)session.getAttribute("loginNum");
 		
 		List<ReviewDto> list = service.getReviewList(member_num);
 		model.addAttribute("list", list);
@@ -54,10 +54,10 @@ public class MyPageController {
 	
 	@GetMapping("/mypage/info")
 	public String mypage4(
-			Model model
+			Model model,
+			HttpSession session
 			) {
-		// 로그인한 사용자 num이 1이라고 가정
-		int member_num = 1;
+		int member_num = (int)session.getAttribute("loginNum");
 		
 		MemberDto info = service.getMemberInfo(member_num);
 		model.addAttribute("info", info);
@@ -67,10 +67,10 @@ public class MyPageController {
 	
 	@GetMapping("/mypage/editinfo")
 	public String mypage5(
-			Model model
+			Model model,
+			HttpSession session
 			) {
-		// 로그인한 사용자 num이 1이라고 가정
-		int member_num = 1;
+		int member_num = (int)session.getAttribute("loginNum");
 		
 		MemberDto info = service.getMemberInfo(member_num);
 		model.addAttribute("info", info);
@@ -80,12 +80,11 @@ public class MyPageController {
 	
 	@GetMapping("/mypage/update")
 	public String mypage6(
-			
+			@ModelAttribute MemberDto member,
+			HttpSession session
 			) {
-		// 수정된 정보가 넘어오면 mapper 이용해 디비에 업데이트
-		// 로그인한 사용자 num이 1이라고 가정
-		int member_num = 1;
-		String tel = "";
+		int member_num = (int)session.getAttribute("loginNum");
+		String tel = "";		// 변경할 값(나중에 프론트에서 받아옴)
 		String address = "";
 		
 		// 지금은 전화번호, 주소만 수정 가능하게 -> member dto를 넘겨도 괜찮을듯
