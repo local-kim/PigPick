@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+
+</style>
 <body>
 	<br><br><br><br><br>
 	<h1 class="mypage4_title">My profile</h1>
