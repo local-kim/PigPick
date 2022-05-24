@@ -100,11 +100,11 @@
 			<input type="text" name="day" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
 			일&nbsp;
 			<p>전화번호</p>
-			<input type="text" id="phone" name="tel"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+			<input type="text" id="phone" name="tel1"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
 			&nbsp;-&nbsp;
-			<input type="text" id="phone" name="tel"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+			<input type="text" id="phone" name="tel2"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
 			&nbsp;-&nbsp;
-			<input type="text" id="phone" name="tel"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+			<input type="text" id="phone" name="tel3"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
 			<p>이메일</p>
 			<div class="jogin-control">
 			<input type="text" name="email1" style="width:120px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>

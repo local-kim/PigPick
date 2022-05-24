@@ -33,9 +33,29 @@ public class MemberController {
 	@PostMapping("/insert")
 	public String insert(
 			@ModelAttribute MemberDto member,
+			@RequestParam String tel1,
+			@RequestParam String tel2,
+			@RequestParam String tel3,
+			@RequestParam String year,
+			@RequestParam String month,
+			@RequestParam String day,
+			@RequestParam String email1,
+			@RequestParam String email2,
 			@RequestParam MultipartFile upload,
 			HttpServletRequest request
 			) {
+		// 전화번호
+		String tel = tel1 + "-" + tel2 + "-" + tel3;
+		member.setTel(tel);
+		
+		// 생년월일
+		String birthday = year + month + day;
+		member.setBirthday(birthday);
+		
+		// 이메일
+		String email = email1 + "@" + email2;
+		member.setEmail(email);
+		
 		if(!upload.isEmpty()) {
 			// 사진 처리
 			String uploadPath = request.getServletContext().getRealPath("/profile_img");
@@ -48,14 +68,12 @@ public class MemberController {
 			// 파일 저장
 			try {
 				upload.transferTo(new File(uploadPath + File.separator + fileName));
-//				System.out.println(uploadPath + File.separator + fileName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
 		service.insertMember(member);
-//		System.out.println(member);
 		
 		return "redirect:/";
 	}
