@@ -16,7 +16,7 @@
 <body>
 	<br><br><br><br><br>
 	<h1 class="mypage5_title"">My Profile Edit</h1>
-	<h3>${info}</h3>
+	<%-- <h3>${info}</h3> --%>
 
 	<form action="update" method="post" enctype="multipart/form-data">
 	<!-- hidden 2개 -->
@@ -75,12 +75,13 @@
 			
 				
 		</table>
+		</form>
 		<br>
 		<div>
 			<button type="submit" class="btnedit" style="position:absolute; left: 50%;"
 				 onclick="location.href='/mypage/update'">SAVE</button>
 		</div>	
-	</div>
+
 		
 </body>
 </html>

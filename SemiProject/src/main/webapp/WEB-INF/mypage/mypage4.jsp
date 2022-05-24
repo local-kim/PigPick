@@ -17,9 +17,9 @@
 
 </style>
 <body>
-	<br><br><br><br><br>
-	<h1 class="mypage4_title">My profile</h1>
-	<h3>${info}</h3>
+	<br><br><br><br><br><br><br><br><br><br>
+	<h1 class="mypage4_title" style="position:relative; left:70px;">My profile</h1>
+	<%-- <h3>${info}</h3> --%>
 
 	<div>
 		<br><br>
@@ -67,6 +67,5 @@
 				<button type="button" class=btnedit onclick="history.back()">Before</button>
 			</div>
 		</div>	
-	</div>
 </body>
 </html>

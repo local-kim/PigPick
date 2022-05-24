@@ -48,12 +48,12 @@
 			<!-- navigation -->
 			<!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
 			<li class="topnav"><a href="/"><b>HOME</b></a></li>
-			<li class="topnav"><a href="#"><b>MENU</b></a>
+			<li class="topnav" style="margin-left:-15px;"><a href="#"><b>PIG PICK</b></a>
 				<ul>
-					<li class="subnav"><a href="/recommend"><b>MENU1</b></a></li>
+					<li class="subnav"><a href="/recommend"><b>PICK MENU</b></a></li>
 				</ul>
 			</li>
-			<li class="topnav"><a href="/review"><b>BOARD</b></a></li>
+			<li class="topnav"><a href="/review"><b>&nbsp;BOARD</b></a></li>
 			<li class="topnav" id="mypage"><a href="#"><b>MY PAGE</b></a>
 				<ul>
 					<li class="subnav"><a href="/mypage"><b>MY PAGE</b></a></li>
