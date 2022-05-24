@@ -16,7 +16,15 @@
 
 	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
 	<button type="button" onclick="location.href='/review/content'">내용보기</button>
-
+	<table>
+	<tr>
+		<td>장소명</td>
+		<td>제목</td>
+		<td>별점</td>
+		<td>작성자</td>
+		<td>작성일</td>
+	</tr>
+	</table>
 
 </body>
 </html>
