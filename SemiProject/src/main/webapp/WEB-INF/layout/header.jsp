@@ -68,7 +68,7 @@
 	<div class="login" style="z-index:9999999999999999">
 		<c:set var="root" value="<%=request.getContextPath()%>"/>
 		
-		<c:if test="${sessionScope.isLoggedIn == null}">
+		<c:if test="${sessionScope.loggedIn == null}">
 			<button type="button" class="btn btn-info" style="width:100px" onclick="location.href='${root}/login'">LOG IN</button>
 		<script>
 		
@@ -76,8 +76,8 @@
 		</script>
 		</c:if>
 		
-		<c:if test="${sessionScope.isLoggedIn != null}">
-			<span>${sessionScope.member_name}(${sessionScope.member_id})님</span>
+		<c:if test="${sessionScope.loggedIn != null}">
+			<span>${sessionScope.loginName}(${sessionScope.loginId})님</span>
 			&nbsp;
 			<button type="button" class="btn btn-danger" style="width:100px" onclick="logout()">LOG OUT</button>
 			<script>

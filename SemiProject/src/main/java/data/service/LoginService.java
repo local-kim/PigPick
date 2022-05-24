@@ -1,6 +1,7 @@
 package data.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,9 @@ public class LoginService implements LoginServiceInter {
 	}
 	
 	@Override
-	public String getLoginName(String id) {
+	public List<Map<String, Object>> getLoginInfo(String id) {
 		
-		return mapper.getLoginName(id);
+		return mapper.getLoginInfo(id);
 	}
 
 }

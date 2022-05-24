@@ -1,5 +1,8 @@
 package data.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +34,13 @@ public class LoginController {
 			HttpSession session
 			) {
 		if(service.login(id, password)) {
-			System.out.println("로그인 성공");
+			List<Map<String, Object>> map = service.getLoginInfo(id);
 			
 			session.setMaxInactiveInterval(60 * 60 * 24);	// 24h
-			session.setAttribute("member_id", id);
-			session.setAttribute("member_name", service.getLoginName(id));
-			session.setAttribute("isLoggedIn", true);
+			session.setAttribute("loginId", id);
+			session.setAttribute("loginNum", map.get(0).get("num"));
+			session.setAttribute("loginName", map.get(0).get("name"));
+			session.setAttribute("loggedIn", true);
 			return "redirect:/";
 		}
 		else {
@@ -51,6 +55,6 @@ public class LoginController {
 	public void logout(
 			HttpSession session
 			) {
-		session.removeAttribute("isLoggedIn");
+		session.removeAttribute("loggedIn");
 	}
 }

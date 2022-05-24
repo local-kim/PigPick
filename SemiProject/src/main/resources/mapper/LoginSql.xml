@@ -4,7 +4,7 @@
 	<select id="login" parameterType="Map" resultType="int">
 		SELECT count(*) FROM member WHERE id = #{id} AND password = #{password}
 	</select>
-	<select id="getLoginName" parameterType="String" resultType="String">
-		SELECT name FROM member WHERE id = #{id}
+	<select id="getLoginInfo" parameterType="String" resultType="Map">
+		SELECT num, name FROM member WHERE id = #{id}
 	</select>
 </mapper>
