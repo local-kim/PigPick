@@ -458,9 +458,13 @@ div.loginform{
 }
 .btnlogin{
 	clear:both;
+	background-color:transparent;
+	border:0;
+	width:100px;
 }
-.btnlogin::active, .btnlogin:focus{
- 	border: none !important; box-shadow: none !important;
+.btnlogin:active{
+ /* 	border: none !important; box-shadow: none !important; */
+
  }
 
 

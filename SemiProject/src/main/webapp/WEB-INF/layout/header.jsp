@@ -58,6 +58,8 @@
 				<ul>
 					<li class="subnav"><a href="/mypage"><b>MY PAGE</b></a></li>
 					<li class="subnav"><a href="/mypage/rank"><b>MY MENU LIST</b></a></li>
+					<li class="subnav"><a href="/mypage/review"><b>MY REVIEW</b></a></li>
+					<li class="subnav"><a href="/mypage/info"><b>MY PROFILE</b></a></li>
 				</ul>
 			</li>
 			<li class="topnav" id="join"><a href="/join"><b>JOIN</b></a></li>
@@ -69,8 +71,7 @@
 		<c:set var="root" value="<%=request.getContextPath()%>"/>
 		
 		<c:if test="${sessionScope.isLoggedIn == null}">
-			<button type="button" class="btn btn-info btnlogin" style="background-color: transparent;
-			border:0; width:100px" onclick="location.href='${root}/login'">
+			<button type="button" class="btnlogin" onclick="location.href='${root}/login'">
 			<img src="../images/key.png" class="login_icon" title="login"
 				 style="width: 100px;border: 0;"></button>
 		<script>
@@ -82,7 +83,7 @@
 		<c:if test="${sessionScope.isLoggedIn != null}">
 			<span>${sessionScope.member_name}(${sessionScope.member_id})님</span>
 			&nbsp;
-			<button type="button" class="btn btn-danger btnlogout" style="background-color: transparent;
+			<button type="button" class="btnlogout" style="background-color: transparent;
 			border:0; width:100px" onclick="logout()">
 			<img src="../images/bye.png" class="logout_icon" title="logout"
 				 style="width: 100px;"></button>
