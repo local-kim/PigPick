@@ -42,6 +42,7 @@ $(function(){
 		 $("#menu3").css("display","none");
 		 $("#like").css("display","none"); 
 
+
 	});
 	
 	$("input[name='category']").change(function(){
@@ -56,14 +57,39 @@ $(function(){
 	$("input[name='type']").change(function(){
 		var type = $("input[name='type']:checked").val();
 		var spicy = $("input[name='spicy']:checked").val();
-		
-		if(type != null & type != 6)
-		{
-		$("input:checkbox[name='spicy']").attr("disabled",false);
 		$("#like").css("display","block");
-		$("#menu3").css("display","block");
 		
+		switch(type){
+		case "0":
+			$("input:checkbox[name='spicy']").attr("disabled",false);
+			$("#menu3").css("display","block");
+			break;
+		case "1":
+			$("input:checkbox[name='spicy']").attr("disabled",false);
+			$("#menu3").css("display","block");
+			break;
+		case "2":
+			$("input:checkbox[name='spicy']").attr("disabled",false);
+			$("#menu3").css("display","block");
+			break;
+		case "3":
+			$("input:checkbox[name='spicy']").attr("disabled",false);
+			$("#menu3").css("display","block");
+			break;
+		case "4":
+			$("input:checkbox[name='spicy']").attr("disabled",false);
+			$("#menu3").css("display","block");
+			break;
+		case "5":
+			$("input:checkbox[name='spicy']").attr("disabled",false);
+			$("#menu3").css("display","block");
+			break;
+		default:
+			$("input:checkbox[name='spicy']").attr("disabled",true);
+			$("#menu3").css("display","none");
+			break;
 		}
+
 	});
 	
 	

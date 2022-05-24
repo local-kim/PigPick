@@ -7,7 +7,6 @@ import lombok.Data;
 @Data
 @Alias("menu_rank")
 public class MenuRankDto {
-	private String rank;
 	private String member_num;
 	private String member_name;
 	private String menu_num;

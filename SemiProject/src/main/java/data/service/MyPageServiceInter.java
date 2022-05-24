@@ -7,8 +7,7 @@ import data.dto.MenuRankDto;
 import data.dto.ReviewDto;
 
 public interface MyPageServiceInter {
-
-	public List<MenuRankDto> getMenuRank(String member_id);
+	public List<MenuRankDto> getMenuRank(int member_num);
 	public List<ReviewDto> getReviewList(int member_num);
 	public MemberDto getMemberInfo(int member_num);
 	public void updateMemberInfo(int member_num, String tel, String address);

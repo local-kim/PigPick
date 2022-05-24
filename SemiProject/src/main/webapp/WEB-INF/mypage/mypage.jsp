@@ -46,10 +46,12 @@
 
 		<img src="images/mypage1.png" class="mypage_img" id="mypage_img" title="마이페이지배경">
 		
-			<h1 class="user">
 			
-			<b class="username">${sessionScope.member_name}</b></h1>
+			<h1 class="user" style="position:absolute; top:280px; left:680px; z-index:200;">
+			<b style="background: #ffc;">${sessionScope.loginName}</b></h1>
 			<img src="images/userspage.png" class="userspage" id="userspage" title="userspage">
+			
+			
 			
 			<button type="button" class="btn_rank" id="mypagebtn" onclick="location.href='/mypage/rank'">
 				<img src="images/mymenulist.png" class="rank" id="mypage_myimg" title="rank"></button>
