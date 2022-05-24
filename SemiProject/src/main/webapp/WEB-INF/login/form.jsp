@@ -46,7 +46,7 @@
 					border:0;width: 40px;"></button><!-- onclick="javascript:void(0)" -->
 					</td>
 					<td align="center">
-					<button type="submit" class="btn btn-info" style="float:left; background-color: transparent;
+					<button type="submit"  style="float:left; background-color: transparent;
 					border:0;width: 100px;">
 					&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/log-in.png" class="log-in-btn" title="login"
 				 	style="width: 100px;border: 0;"></button>

@@ -40,6 +40,7 @@ $(function(){
 		 $(".menu_choose2").css("display","none"); 
 		$("input:checkbox[name='spicy']").attr("disabled",true);
 		 $("#menu3").css("display","none");
+		 $("#like").css("display","none"); 
 
 	});
 	
@@ -59,9 +60,12 @@ $(function(){
 		if(type != null & type != 6)
 		{
 		$("input:checkbox[name='spicy']").attr("disabled",false);
+		$("#like").css("display","block");
 		$("#menu3").css("display","block");
+		
 		}
 	});
+	
 	
 })
 </script>
@@ -135,11 +139,12 @@ $(function(){
 				<div class="menu_choose3">
 					<label>
 						<input type="checkbox" name="spicy" value="1">
-						<img src="images/spicy.jpg" class="menu_img3" id="menu3">
+						<img src="images/spicy_01.jpg" class="menu_img3" id="menu3">
 					</label>
 				</div>
 				
-				<button type="submit" id="like">메뉴 추천</button>
+				<button type="submit" id="like" >
+				<img src="images/find-01.png" class="menu_img3" id="menu3"></button>
 			</form>
 		</div>
 

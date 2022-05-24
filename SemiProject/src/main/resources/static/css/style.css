@@ -263,11 +263,23 @@ li > a:only-child:after { content:''; }
 
 #like{
 	clear:both;
-	position:relative;
-	left:75%;
-	top:280px;
+	width:120px;
+	height:120px;
+	position:absolute;
+	left:80%;
+	top:600px;
 	margin:0;
+	background-color: transparent;
+	border: 0;
 	
+}
+#like:hover {
+    background-image: url(../images/find_shadow.png);
+    background-size: 110px;
+    background-repeat: no-repeat;
+    outline: none;
+
+
 }
 .menupicktag{
     width: 9%;
