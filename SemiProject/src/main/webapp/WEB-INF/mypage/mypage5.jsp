@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/table_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<br><br><br><br><br>
@@ -30,56 +31,54 @@
 	<div>
 		<br><br>
 		
-		<table class="table table-bordered mytable" style="width: 1100px;">
+		<table class="container" style="width: 1100px;">
 			<tr>
-				<th class="text-center" style="width: 100px; background-color:#ffc;">My Photo</th>
-				<td><input type="file" name="" class="form-control"></td>
+				<th class="text-center" style="width: 100px;">Photo</th>
+				<td><input type="file" name="" class="form-control"
+				style="height: 100px; background-color: transparent;"></td>
 				
 			</tr>
 			<tr>
 				
-				<th class="text-center" style="width: 100px; background-color:#ffc;">Name(ID)</th>
+				<th class="text-center" style="width: 100px;">Name(ID)</th>
 				<td>
 				<input type="text" name="" class="form-control"
-					required="required" 
+					required="required"  style="height: 50px; background-color: transparent;"
 					value="${info.name}(${info.id})">
 				</td>
 				
 			</tr>
 			<tr>
-				<th class="text-center" style="width: 100px; background-color:#ffc;">Tel</th>
+				<th class="text-center" style="width: 100px;">Tel</th>
 				<td>
 				<input type="text" name="" class="form-control"
-					required="required" 
+					required="required"  style="height: 50px; background-color: transparent;"
 					value="${info.tel}">
 				</td>
 			</tr>
 			<tr>
-				<th class="text-center" style="width: 100px; background-color:#ffc;">E-Mail</th>
+				<th class="text-center" style="width: 100px;">E-Mail</th>
 				<td>
 				<input type="text" name="" class="form-control"
-					required="required" 
+					required="required"  style="height: 50px; background-color: transparent;"
 					value="${info.email}">
 				</td>
 			</tr>
 			<tr>
-				<th class="text-center" style="width: 100px;background-color:#ffc;">Address</th>
+				<th class="text-center" style="width: 100px;">Address</th>
 				<td>
 				<input type="text" name="" class="form-control"
-					required="required" 
+					required="required" style="height: 80px; background-color: transparent;"
 					value="${info.address}">
 				</td>
 			</tr>
-			<tr>
-			<td  colspan="2" align="center">
-				<button type="submit" style="width: 100px;background-color: orange" 
-				 onclick="location.href='/mypage/update'">SAVE</button>
-				
-			</td>
-			</tr>
+			
 				
 		</table>
-		
+		<br>
+		<div>
+			<button type="submit" class="btnedit" style="position:absolute; left: 50%;"
+				 onclick="location.href='/mypage/update'">SAVE</button>
 		</div>	
 	</div>
 		

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/table_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<h1>순위</h1>
@@ -20,8 +21,8 @@
 		<h1>My Menu List</h1>
 		<br><br>
 		<h3>${list}</h3>
-		<table class="table table-bordered mytable" style="width: 1100px;">
-			<tr style="background-color:#ffc;">
+		<table class="container" style="width: 1100px;">
+			<tr>
 				<th class="text-center" style="width: 50px">No.</th>
 				<th class="text-center" style="width: 500px">Menu</th>
 				<th class="text-center" style="width: 70x">Category</th>

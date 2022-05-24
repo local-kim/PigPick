@@ -345,15 +345,15 @@ div.round{
 /* 마이 페이지 */
 
 .mypage_img{
-	width: 1500px;
+	width: 1000px;
 	position: relative;
-	left: 15%;
+	left: 20%;
 	z-index: 10;
 	
 }
 #mypage_myimg{
 	width: auto;
-	height: 90px;
+	height: 72px;
 }
 #mypagebtn{
 	background-color: transparent;
@@ -361,9 +361,34 @@ div.round{
 	height:auto;
 	position: relative;
 	display: block;
-	bottom:650px;
-	left: 32%;
+	bottom:450px;
+	left: 30%;
 	z-index: 11;
+}
+b.username{
+	font-size:0.8em;
+	font-weight:bold;
+	color:white;
+	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
+}
+h1.user{
+	position:absolute;
+	top:233px;
+	left:40%;
+	z-index:20;
+}
+.userspage{
+	position:absolute;
+	width:500px;
+	left: 29.6%;
+	top:270px;
+	z-index: 111;
+	
+}
+.username{
+	position: relative;
+	right: 87%;
+	top: 50px;
 }
 .rank{
 	
@@ -377,18 +402,18 @@ div.round{
 	
 }
 .btn_rank{
-	width:618px;
+	width:495px;
 
 	
 }
 .btn_review{
-	width:524px;
+	width:420px;
 	
 	
 	
 }
 .btn_profile{
-	width:491px;
+	width:393px;
 	
 	
 }
@@ -427,6 +452,15 @@ div.round{
 	color:white;
 	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
 	
+}
+.btnedit{
+	width: 150px;
+	height:50px;
+	font-size:25px;
+	background-color: orange;
+	color: white;
+	border: 1px solid ornage;
+	border-radius: 20px;
 }
 	
 /*메뉴 고르는 css 끝*/

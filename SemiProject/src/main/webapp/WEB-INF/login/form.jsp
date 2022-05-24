@@ -49,7 +49,7 @@
 					<button type="submit" class="btn btn-info" style="float:left; background-color: transparent;
 					border:0;width: 100px;">
 					&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/log-in.png" class="log-in-btn" title="login"
-				 	style="width: 100px;"></button>
+				 	style="width: 100px;border: 0;"></button>
 					</td>
 				</tr>
 			</table>
