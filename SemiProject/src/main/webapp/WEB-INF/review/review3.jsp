@@ -24,7 +24,7 @@ $(window).on("load resize ", function() {
 
 <section>
 	
-	<h1>나의 맛집 보기</h1>
+	<h2>My Place</h2>
 	<div class="tbl-header" style="width: 1200px;">
     <table>
       <thead>
