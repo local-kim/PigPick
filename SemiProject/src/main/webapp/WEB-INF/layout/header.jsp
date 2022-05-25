@@ -47,6 +47,7 @@
 		<ul>
 			<!-- navigation -->
 			<!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
+			<li class="topnav"><a href="/popup"><b>Pop_up</b></a></li>
 			<li class="topnav"><a href="/"><b>HOME</b></a></li>
 			<li class="topnav" style="margin-left:-15px;"><a href="#"><b>PIG PICK</b></a>
 				<ul>

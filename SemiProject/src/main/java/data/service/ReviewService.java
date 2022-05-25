@@ -44,10 +44,10 @@ public class ReviewService implements ReviewServiceInter {
 //		   int reg=dto.getReg();
 //		   int restep=dto.getRestep();
 //		   int relevel=dto.getRelevel();
-		   int num=dto.getNum();
+//		   int num=dto.getNum();
 		   
 		   //새글인 경우
-		   if(num==0)
+//		   if(num==0)
 		   {
 			   //새글인경우
 //			   reg=this.getMaxNum()+1;

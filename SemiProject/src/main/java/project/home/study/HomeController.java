@@ -11,4 +11,9 @@ public class HomeController {
 	{
 		return "/layout/home";
 	}
+	@GetMapping("/popup")
+	public String popup()
+	{
+		return "/more/popup";
+	}
 }
