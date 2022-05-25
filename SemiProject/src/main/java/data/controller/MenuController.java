@@ -2,6 +2,8 @@ package data.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +22,13 @@ public class MenuController {
 	
 	// 카테고리 선택 페이지
 	@GetMapping("/recommend")
-	public String recommend1() {	// 추후 recommend로 수정
+	public String recommend() {
 		return "/menu/menu1";
 	}
 	
 	// 추천 메뉴 결과 페이지
-	@PostMapping("/recommend/result")	// 추후 recommend/result로 수정
-	public String recommend(
+	@PostMapping("/recommend/result")
+	public String result(
 			@RequestParam int category,
 			@RequestParam int type,
 			@RequestParam(defaultValue = "0") int spicy,
@@ -34,6 +36,9 @@ public class MenuController {
 			) {
 		List<MenuDto> recommendList = service.getRecommendList(category, type, spicy);
 		model.addAttribute("list", recommendList);
+		model.addAttribute("category", category);
+		model.addAttribute("type", type);
+		model.addAttribute("spicy", spicy);
 		
 		return "/menu/menu2";
 	}
@@ -42,8 +47,23 @@ public class MenuController {
 	@GetMapping("/recommend/list")
 	public String list(
 			@RequestParam String menuName,
-			Model model
+			@RequestParam int menuNum,
+			@RequestParam int category,
+			Model model,
+			HttpSession session
 			) {
+		// 먹은 횟수 증가(로그인 중일때만)
+		if((boolean)session.getAttribute("loggedIn")) {
+			int memberNum = (int)session.getAttribute("loginNum");
+			
+			if(service.checkMenuRank(memberNum, menuNum) == 0) {	// 테이블에 없을 때
+				service.insertMenuCount(memberNum, menuNum);	// 새로운 데이터를 인서트
+			}
+			else {
+				service.increaseMenuCount(memberNum, menuNum);	// 존재하는 데이터를 업데이트
+			}
+		}
+		
 		model.addAttribute("menuName", menuName);
 		
 		return "/menu/menu3";

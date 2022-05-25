@@ -26,7 +26,6 @@ public class ReviewController {
 			) {
 		List<ReviewDto> list = service.getReviewList();
 		int totalCount = service.getTotalCount();
-		System.out.println(totalCount);
 		
 		model.addAttribute("list", list);
 		model.addAttribute("totalCount", totalCount);

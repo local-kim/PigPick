@@ -2,6 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="data.mapper.MenuMapperInter">
 	<select id="getRecommendList" parameterType="Map" resultType="menu">
-		select * from menu where category=#{category} and type=#{type} and spicy=#{spicy};
+		SELECT * FROM menu 
+		WHERE category = #{category} AND type = #{type} AND spicy = #{spicy};
 	</select>
+	<select id="checkMenuRank" parameterType="Map" resultType="int">
+		SELECT count(*) FROM menu_rank 
+		WHERE member_num = #{member_num} AND menu_num = #{menu_num}
+	</select>
+	<insert id="insertMenuCount" parameterType="Map">
+		INSERT INTO menu_rank (member_num, menu_num) 
+		VALUES (#{member_num}, #{menu_num})
+	</insert>
+	<update id="increaseMenuCount" parameterType="Map">
+		UPDATE menu_rank SET count = count + 1 
+		WHERE member_num = #{member_num} AND menu_num = #{menu_num}
+	</update>
 </mapper>
