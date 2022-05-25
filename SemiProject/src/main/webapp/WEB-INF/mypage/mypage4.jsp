@@ -26,14 +26,14 @@
 		
 		<table class="container" style="width:700px; height:255.5px;">
 			 <tr>
-			 <td rowspan="2" style=" width:200px; height:300px; background-color: transparent;">
+			 <th rowspan="2" class="text-center" style=" width:200px; height:300px;">
 			 <c:if test="${info.photo!='null' }">
 			  <img src="${info.photo}">
 			 </c:if>
 			 <img src="../images/user.png" class="user_img" title="내사진"
 		     style="width: 100px;">
 			
-			 </td>
+			 </th>
 			 <!-- <th class="text-center" style="height: 100px;">Name</th> -->
 			 <td style="width: 400px;">
 				${info.name}

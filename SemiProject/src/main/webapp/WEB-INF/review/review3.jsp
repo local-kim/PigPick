@@ -13,7 +13,30 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<h1>글 내용</h1>
-	<button type="button" onclick="location.href='/review/edit'">수정</button>
+	<h1>글 내용확인 폼</h1>
+	
+	<table>
+		<tr>
+			<th>Name</th>
+			<td>${dto.member_name}</td>
+		</tr>
+		<tr>
+			<th>★★★★★</th>
+			<td>${dto.stars}</td>
+		</tr>
+		<tr>
+			<th>Date</th>
+			<td>${dto.created_at}</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			${dto.content}
+		    </td>
+		</tr>
+	
+	</table>
+	<button type="button" onclick="location.href='/review/edit'">Edit</button>
+	
+	
 </body>
 </html>

@@ -13,7 +13,26 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<h1>글 수정</h1>
+	<h1>글 수정폼</h1>
 	
+	<table>
+		<tr>
+			<th>place</th>
+			<td>${dto.place_id}</td>
+		</tr>
+		<tr>
+			<th>★★★★★</th>
+			<td>${dto.stars}</td>
+		</tr>
+		<tr>
+			<th>후기</th>
+			<td>${dto.content}</td>
+		</tr>
+	</table>
+	<br>
+		<div>
+			<button type="submit" class="btnreview_update" style="position:absolute; left: 50%;"
+				 onclick="location.href='/review/update'">Update</button>
+		</div>	
 </body>
 </html>
