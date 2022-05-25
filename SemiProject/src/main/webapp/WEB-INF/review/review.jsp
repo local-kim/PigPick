@@ -13,10 +13,10 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+	<br><br><br><br><br><br>
 	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
 	<button type="button" onclick="location.href='/review/content'">내용보기</button>
-	<table>
+	<table class="table table-bordered">
 	<tr>
 		<td>번호</td>
 		<td>장소명</td>
@@ -56,8 +56,8 @@
 					</td>--%>
 					
 					<td>${dto.content}</td>
-					<td>${dto.name}</td>
 					<td>${dto.stars}</td>
+					<td>${dto.member_name}</td>
 					<td><fmt:formatDate value="${dto.created_at}" pattern="yyyy-MM-dd" /></td>
 				</tr>
 				</c:forEach>
