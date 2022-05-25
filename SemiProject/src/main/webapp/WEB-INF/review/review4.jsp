@@ -13,7 +13,7 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<br><br><br><br>
 	<h1>글 수정</h1>
-	
 </body>
 </html>

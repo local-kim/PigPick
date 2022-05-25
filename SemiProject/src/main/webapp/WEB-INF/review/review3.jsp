@@ -13,7 +13,11 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<br><br><br><br><br>
 	<h1>글 내용</h1>
+	<br><br>
 	<button type="button" onclick="location.href='/review/edit'">수정</button>
+		<button type="button">글 삭제</button>
+
 </body>
 </html>
