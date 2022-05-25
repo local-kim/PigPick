@@ -10,33 +10,51 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css"  rel="stylesheet" type="text/css" />
+	<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
 </head>
+<script type="text/javascript">
+$(window).on("load resize ", function() {
+	  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+	  $('.tbl-header').css({'padding-right':scrollWidth});
+	}).resize();
+</script>
 <body>
-	<br><br><br><br><br><br><br>
-	<h1>글 내용확인 폼</h1>
+
+
+<section>
 	
-	<table>
+	<h1>나의 맛집 보기</h1>
+	<div class="tbl-header" style="width: 1200px;">
+    <table>
+      <thead>
 		<tr>
-			<th>Name</th>
-			<td>${review.member_num}</td>
-		</tr>
-		<tr>
+			<th>No.</th>
+			<th>내용</th>
 			<th>★★★★★</th>
-			<td>${review.stars}</td>
-		</tr>
-		<tr>
 			<th>Date</th>
-			<td>${review.created_at}</td>
 		</tr>
-		<tr>
-			<td colspan="2">
-			${review.content}
-		    </td>
-		</tr>
-	
+	  </thead>
 	</table>
-	<button type="button" onclick="location.href='/review/edit'">Edit</button>
+	</div>
+	<div class="tbl-content" style="width: 1200px;">
+    <table>
+     <tbody>
+        <tr>
+			
+			<td>${review.member_num}</td>
+			<td>${review.content}</td>
+			<td>${review.stars}</td>
+			<td>${review.created_at}</td>
+			
+		</tr>
+	</tbody>
+	</table>
+  </div>
+  <button type="button" class="btn_review_edit" onclick="location.href='/review/edit'">수정</button>
+  <button type="button" class="btn_review_delete" onclick="location.href='/review/delete'">삭제</button>
+	
+</section>
 	
 </body>
 </html>
