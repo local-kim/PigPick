@@ -13,21 +13,21 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+	<br><br><br><br><br><br><br>
 	<h1>글 수정폼</h1>
 	
 	<table>
 		<tr>
 			<th>place</th>
-			<td>${dto.place_id}</td>
+			<td>${review.place_id}</td>
 		</tr>
 		<tr>
 			<th>★★★★★</th>
-			<td>${dto.stars}</td>
+			<td>${review.stars}</td>
 		</tr>
 		<tr>
 			<th>후기</th>
-			<td>${dto.content}</td>
+			<td>${review.content}</td>
 		</tr>
 	</table>
 	<br>

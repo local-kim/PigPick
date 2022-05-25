@@ -94,7 +94,14 @@ public class ReviewController {
 	}
 	
 	@GetMapping("/edit")
-	public String edit() {
+	public String edit(
+			@RequestParam int num,
+			Model model
+			) {
+		ReviewDto review = service.getReview(num);
+		
+		model.addAttribute("review", review);
+		
 		return "/review/review4";
 	}
 	
@@ -103,23 +110,10 @@ public class ReviewController {
 		@RequestParam int num,
 		@RequestParam int currentPage,
 		HttpServletRequest request
-		)
-	{
+		) {
 		service.deleteReview(num);
-	 return "redirect:list?currentPage="+currentPage;
-		
+		return "redirect:list?currentPage="+currentPage;
 	}
-	
-//	@GetMapping("/insert")
-//	public String insert(
-//			@ModelAttribute ReviewDto dto,
-//			@RequestParam String currentPage,
-//			HttpSession session,
-//			HttpServletRequest request
-//			) {
-//		
-//		service.insertReview(dto);
-//		return "redirect:list?currentPage="+currentPage;
-	}
+}
 	
 
