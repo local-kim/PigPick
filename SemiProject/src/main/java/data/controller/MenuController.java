@@ -25,7 +25,7 @@ public class MenuController {
 	}
 	
 	// 추천 메뉴 결과 페이지
-	@PostMapping("/recommend/list")	// 추후 recommend/result로 수정
+	@PostMapping("/recommend/result")	// 추후 recommend/result로 수정
 	public String recommend(
 			@RequestParam int category,
 			@RequestParam int type,

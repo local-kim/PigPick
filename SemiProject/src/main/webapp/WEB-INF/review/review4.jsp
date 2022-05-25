@@ -13,6 +13,7 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
 	<h1>글 수정폼</h1>
 	
 	<table>
@@ -34,5 +35,6 @@
 			<button type="submit" class="btnreview_update" style="position:absolute; left: 50%;"
 				 onclick="location.href='/review/update'">Update</button>
 		</div>	
+
 </body>
 </html>

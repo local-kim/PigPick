@@ -13,6 +13,7 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
 	<h1>글 내용확인 폼</h1>
 	
 	<table>
@@ -36,7 +37,6 @@
 	
 	</table>
 	<button type="button" onclick="location.href='/review/edit'">Edit</button>
-	
 	
 </body>
 </html>
