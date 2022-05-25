@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @Alias("review")
 public class ReviewDto {
-	private int num;
+	private String num;
 	private String member_num;
 	private String place_id;
 	private String stars;

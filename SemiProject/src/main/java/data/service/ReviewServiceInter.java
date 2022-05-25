@@ -8,7 +8,7 @@ public interface ReviewServiceInter {
     public void updateReStep(int reg,int restep);
 	public int getTotalCount();
 	public List<ReviewDto> getList(int start, int perpage);
-	public ReviewDto getData(int num);
+	public ReviewDto getReview(int reviewNum);
 	public void insertReview(ReviewDto dto);
 	public void updateReview(ReviewDto dto);
 	public void deleteReview(int num);

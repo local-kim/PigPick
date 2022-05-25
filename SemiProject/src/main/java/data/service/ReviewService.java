@@ -34,9 +34,8 @@ public class ReviewService implements ReviewServiceInter {
 	}
 
 	@Override
-	public ReviewDto getData(int num) {
-		// TODO Auto-generated method stub
-		return mapper.getData(num);
+	public ReviewDto getReview(int reviewNum) {
+		return mapper.getReview(reviewNum);
 	}
 
 	@Override

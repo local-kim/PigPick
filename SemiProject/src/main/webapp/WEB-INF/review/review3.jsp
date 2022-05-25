@@ -13,25 +13,25 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+	<br><br><br><br><br><br><br>
 	<h1>글 내용확인 폼</h1>
 	
 	<table>
 		<tr>
 			<th>Name</th>
-			<td>${dto.member_name}</td>
+			<td>${review.member_num}</td>
 		</tr>
 		<tr>
 			<th>★★★★★</th>
-			<td>${dto.stars}</td>
+			<td>${review.stars}</td>
 		</tr>
 		<tr>
 			<th>Date</th>
-			<td>${dto.created_at}</td>
+			<td>${review.created_at}</td>
 		</tr>
 		<tr>
 			<td colspan="2">
-			${dto.content}
+			${review.content}
 		    </td>
 		</tr>
 	

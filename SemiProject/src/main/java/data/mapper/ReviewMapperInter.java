@@ -13,7 +13,7 @@ public interface ReviewMapperInter {
 	public void updateReStep(int reg,int restep);
 	public int getTotalCount();
 	public List<ReviewDto> getList(Map<String, Integer> map);
-	public ReviewDto getData(int num);
+	public ReviewDto getReview(int review_num);
 	public void insertReview(ReviewDto dto);
 	public void updateReview(ReviewDto dto);
 	public void deleteReview(int num);
