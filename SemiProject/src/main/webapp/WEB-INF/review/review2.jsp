@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-	<br><br><br><br><br><br><br>리뷰쓰기폼
+	
 
 	<c:if test="${sessionScope.loggedIn==null }">
 	<script type="text/javascript">
@@ -22,13 +23,24 @@
 		location.href='../login';
 	</script>
 	</c:if>
-<form action="insert" method="post" enctype="multipart/form-data">
 
 	
-	<table class="table table-bordered reviewform" style="width: 800px;">
-		
+ 
+	<section>
+	<div class="tbl-header" style="width: 800px;">
+		<table>
+			<tr>
+				<td style="text-align: center;width: 800px;">리뷰 쓰기</td>
+			</tr>
+		</table>
+	</div>
+	<div class="tbl-content" style="width: 800px;">
+	
+	<form action="insert" method="post" enctype="multipart/form-data">
+    <table>
+     
 		<tr>
-			<th class="text-center" style="width: 100px; background-color: #ffc">나의 맛집</th>
+			<th class="text-center">나의 맛집</th>
 			<td>
 				<input type="text" name="subject" class="form-control"
 					required="required" autofocus="autofocus"
@@ -36,9 +48,9 @@
 			</td>
 		</tr>
 		<tr>
-  			<th style="width:300px; background-color:#ddd">★★★★★</th>
+  			<th>★★★★★</th>
 				<td>
-  				<select name="stars" style="width: 500px; height: 50px;">
+  				<select name="stars" style="width: 500px; height: 50px; color: black;">
 		  			<option value="">별점을 선택하세요</option>
 		  			<option value="01">☆☆☆☆★</option>
 		  			<option value="02">☆☆☆★★</option>
@@ -51,7 +63,7 @@
    
    		</tr>
 		<tr>
-			<th class="text-center" style="width: 100px; background-color: #ffc">리뷰 사진</th>
+			<th class="text-center">리뷰 사진</th>
 			<td>
 				<input type="file" name="upload" class="form-control"
 				    multiple="multiple">
@@ -59,19 +71,23 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<textarea style="width: 100%; height: 300px;" name="content"
+				<textarea style="height: 300px;" name="content"
 				class="form-control" required="required"
 				placeholder="리뷰를 작성해주세요"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<button type="submit" onclick="location.href='/review/insert'"
-				style="width: 100px;background-color: orange">저장</button>
+				<button type="submit" class="btn_review_save" onclick="location.href='/review/insert'"
+				>Save</button>
 			
 			</td>
 		</tr>
+		
+		
 	</table>
 </form>
+</div>
+</section>
 </body>
 </html>
