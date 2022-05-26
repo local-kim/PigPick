@@ -16,6 +16,20 @@
 <style>
 
 </style>
+<script type="text/javascript">
+$(function(){
+	if(${info.photo==null}){
+		$("#user_img").attr("src","../images/user.png");
+	}else{
+	$("#user_img").attr("src","../profile_img/${info.photo}");
+		
+	}
+	
+	$("#myphoto").change(function(){
+		   readURL(this); 
+		});
+});
+</script>
 <body>
 	<br><br><br><br><br><br>
 	<h1 class="mypage4_title" style="position:relative; left:70px;">My profile</h1>
@@ -24,14 +38,12 @@
 	<div>
 		<br><br>
 		
-		<table class="container" style="width:700px; height:255.5px;">
+		<table class="container" style="width:1000px;">
 			 <tr>
-			 <th rowspan="2" class="text-center" style=" width:200px; height:300px;">
-			 <c:if test="${info.photo!='null' }">
-			  <img src="${info.photo}">
-			 </c:if>
-			 <img src="../images/user.png" class="user_img" title="내사진"
-		     style="width: 100px;">
+			 <th rowspan="2" class="text-center" style=" width:200px; height:400px;">
+			 
+			 <img src="" class="user_img" id="user_img" title="내사진"
+		      style="width:200px;height: 200px;object-fit: cover;border: 5px solid orange;">
 			
 			 </th>
 			 <!-- <th class="text-center" style="height: 100px;">Name</th> -->

@@ -20,10 +20,10 @@
 		<!-- example -->
 		<h1>My Menu List</h1>
 		<br><br>
-		<%-- <h3>${list}</h3> --%>
-		<table class="container" style="width: 1100px;">
+		<h3>${list}</h3>
+		<table class="container" >
 			<tr>
-				<th class="text-center" style="width: 50px">No.</th>
+				<th class="text-center" style="width: 100px;">No.</th>
 				<th class="text-center" style="width: 500px">Menu</th>
 				<th class="text-center" style="width: 70x">Category</th>
 				<th class="text-center" style="width: 70x">Count</th>
