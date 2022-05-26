@@ -6,16 +6,18 @@ html {
 }
 .sign_up{
 	width: 150px;
-	margin-left: 25%;
+	
 }
 .joinform{
-	width: 500px;
+	width: 1000px;
+
+	margin:0 auto;
 }
 .joinbtn{
-	width:100px;
+	width:150px;
 	background-color:orange;
 	line-height:1.42857143;
-	height:34px;
+	height:150px;
 	border:0;
 	margin-left: 15%;
 	
@@ -24,3 +26,25 @@ html {
 	background-color: transparent;
 	border: 0;
 }
+.tbljoin th{
+	height: 20px;
+	width: 120px;
+	padding: 10px;
+	background-color: #2a28b5;
+	color: orange;
+	
+}
+.tbljoin tr{
+	padding: 10px;
+}
+.tbljoin td{
+	padding: 10px;
+	background-color: #ddd;
+	
+}
+
+.tbljoin {
+	height: 500px;
+	
+}
+
