@@ -15,6 +15,11 @@
 		from review, member, place 
 		where review.member_num = member.num and review.place_id = place.id and review.num = #{review_num}
 	</select>
+	<select id="getReviewByPlace" parameterType="int" resultType="review">
+		select review.num, member.name as member_name, stars, content, created_at 
+		from review, member 
+		where review.member_num = member.num and place_id = #{place_id}
+	</select>
 	<select id="checkPlace" parameterType="String" resultType="int">
 		select count(*) from place where id = #{place_id}
 	</select>

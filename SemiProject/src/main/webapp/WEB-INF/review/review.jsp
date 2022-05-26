@@ -7,11 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
 </head>
 <script type="text/javascript">
 $(window).on("load resize ", function() {
@@ -62,7 +62,7 @@ $(window).on("load resize ", function() {
 						<c:set var="no" value="${no-1}"/>
 						
 						<!-- 음식점명 -->
-						<td><a href="/review/content?num=${dto.num}">${dto.place_name}</a></td>
+						<td><a href="/review/place?id=${dto.place_id}">${dto.place_name}</a></td>
 						
 						<%-- <!-- 제목 -->
 						<td class="title">
@@ -77,7 +77,7 @@ $(window).on("load resize ", function() {
 							</c:if>
 						</td>--%>
 						
-						<td>${dto.content}</td>
+						<td><a href="/review/content?num=${dto.num}">${dto.content}</a></td>
 						<td>${dto.stars}</td>
 						<td>${dto.member_name}</td>
 						<td><fmt:formatDate value="${dto.created_at}" pattern="yyyy-MM-dd" /></td>

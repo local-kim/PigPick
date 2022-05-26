@@ -61,6 +61,18 @@ public class ReviewController {
 		return "/review/review3";
 	}
 	
+	@GetMapping("/place")
+	public String place(
+			@RequestParam int id,
+			Model model
+			) {
+		List<ReviewDto> list = service.getReviewByPlace(id);
+		
+		model.addAttribute("list", list);
+		
+		return "/review/place";
+	}
+	
 	@PostMapping("/insert")
 	public String insert(
 			@ModelAttribute InsertReviewDto review,

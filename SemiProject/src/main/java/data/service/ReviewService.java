@@ -25,6 +25,11 @@ public class ReviewService implements ReviewServiceInter {
 	public ReviewDto getReview(int reviewNum) {
 		return mapper.getReview(reviewNum);
 	}
+	
+	@Override
+	public List<ReviewDto> getReviewByPlace(int place_id) {
+		return mapper.getReviewByPlace(place_id);
+	}
 
 	@Override
 	public void insertReview(InsertReviewDto dto) {
