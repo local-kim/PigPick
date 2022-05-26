@@ -20,7 +20,7 @@
 		<!-- example -->
 		<h1>My Menu List</h1>
 		<br><br>
-		<h3>${list}</h3>
+		<%-- <h3>${list}</h3> --%>
 		<table class="container" style="width: 1100px;">
 			<tr>
 				<th class="text-center" style="width: 50px">No.</th>
@@ -36,7 +36,7 @@
 					<!-- 메뉴이름 -->
 					<td>${dto.menu_name}</td>
 					<!-- 분류 -->
-					<td>카테고리</td>
+					<td>${dto.category}</td>
 					<!-- 횟수 -->
 					<td>${dto.count}</td>	
 				</tr>
