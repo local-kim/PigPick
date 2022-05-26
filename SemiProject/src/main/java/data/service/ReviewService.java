@@ -3,6 +3,7 @@ package data.service;
 import java.util.List;
 
 import data.dto.InsertReviewDto;
+import data.dto.PlaceDto;
 import data.dto.ReviewDto;
 import data.mapper.ReviewMapperInter;
 
@@ -28,10 +29,20 @@ public class ReviewService implements ReviewServiceInter {
 	@Override
 	public void insertReview(InsertReviewDto dto) {
 		mapper.insertReview(dto);
-	}    
+	}
+	
+	@Override
+	public int checkPlace(String place_id) {
+		return mapper.checkPlace(place_id);
+	}
+	
+	@Override
+	public void insertPlace(PlaceDto place) {
+		mapper.insertPlace(place);
+	}
 		
 	@Override
-	public void updateReview(ReviewDto dto) {
+	public void updateReview(InsertReviewDto dto) {
 		mapper.updateReview(dto);
 	}
 

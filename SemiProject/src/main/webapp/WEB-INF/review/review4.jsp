@@ -31,32 +31,39 @@
 		</table>
 		</div>
 	<div class="tbl-content" style="width: 900px;">
- 		<table>
+		<form action="update" method="get">
+			<table>
     	 <tbody>
         	<tr>
-				<td><input type="text" name="" class="form-control" style="color: black;"
-					required="required"  
-					value="${review.place_id}"></td>
-				<td>
-				<select name="stars" style="color: black;">
-		  			<option value="${review.stars}">별점을 선택하세요</option>
-		  			<option value="01">☆☆☆☆★</option>
-		  			<option value="02">☆☆☆★★</option>
-		  			<option value="03">☆☆★★★</option>
-		  			<option value="04">☆★★★★</option>
-		  			<option value="05">★★★★★</option>
-  					</select>
-  				</td>
-				<td>
-					<input type="text" name="" class="form-control" style="color: black;"
-					required="required" value="${review.content}">
-				</td>
-			</tr>
-		</tbody>
+        		<input type="hidden" name="num" value="${review.num}">
+						<td>
+							<!-- <input type="text" name="" class="form-control" style="color: black;"
+							required="required"  
+							value="${review.place_name}"> -->
+							<span>${review.place_name}</span>
+						</td>
+						<td>
+							<select name="stars" style="color: black;">
+					  			<option>별점을 선택하세요</option>
+					  			<option value="01">☆☆☆☆★</option>
+					  			<option value="02">☆☆☆★★</option>
+					  			<option value="03">☆☆★★★</option>
+					  			<option value="04">☆★★★★</option>
+					  			<option value="05">★★★★★</option>
+		  				</select>
+		  			</td>
+						<td>
+							<input type="text" name="content" class="form-control" style="color: black;"
+							required value="${review.content}">
+						</td>
+					</tr>
+			</tbody>
 	   </table>
-  	</div>
-	<button type="submit" class="btnreview_update" 
-		onclick="location.href='/review/update'">Update</button>
+	   
+	   <button type="submit" class="btnreview_update" 
+	   onclick="location.href='/review/update?num=${review.num}'">Update</button>
+		</form>
+  </div>
 </section>
 </body>
 </html>

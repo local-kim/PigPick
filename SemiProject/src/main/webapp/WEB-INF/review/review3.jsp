@@ -29,7 +29,8 @@ $(window).on("load resize ", function() {
     <table>
       <thead>
 		<tr>
-			<th>No.</th>
+			<th>식당</th>
+			<th>작성자</th>
 			<th>내용</th>
 			<th>★★★★★</th>
 			<th>Date</th>
@@ -40,19 +41,20 @@ $(window).on("load resize ", function() {
 	<div class="tbl-content" style="width: 1200px;">
     <table>
      <tbody>
-        <tr>
+     	<tr>
 			
-			<td>${review.member_num}</td>
-			<td>${review.content}</td>
-			<td>${review.stars}</td>
-			<td>${review.created_at}</td>
+				<td>${review.place_name}</td>
+				<td>${review.member_name}</td>
+				<td>${review.content}</td>
+				<td>${review.stars}</td>
+				<td>${review.created_at}</td>
 			
 		</tr>
 	</tbody>
 	</table>
   </div>
-  <button type="button" class="btn_review_edit" onclick="location.href='/review/edit'">수정</button>
-  <button type="button" class="btn_review_delete" onclick="location.href='/review/delete'">삭제</button>
+  <button type="button" class="btn_review_edit" onclick="location.href='/review/edit?num=${review.num}'">수정</button>
+  <button type="button" class="btn_review_delete" onclick="location.href='/review/delete?num=${review.num}'">삭제</button>
 	
 </section>
 	

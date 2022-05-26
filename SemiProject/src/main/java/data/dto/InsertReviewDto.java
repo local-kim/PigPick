@@ -14,5 +14,6 @@ public class InsertReviewDto {
 	private String place_id;
 	private String stars;
 	private String content;
+	private String photos;
 	private Timestamp created_at;
 }

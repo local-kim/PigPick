@@ -53,15 +53,16 @@ $(window).on("load resize ", function() {
     <table>
      <tbody>
         
-				
+				<c:set var="no" value="${totalCount}"/>
 				<c:if test="${totalCount>0}"> <!-- 글이 있을때 -->
 					<c:forEach var="dto" items="${list}">
 					<tr>
+						<input type="hidden" value="${dto.num}">
 						<td>${no}</td>
 						<c:set var="no" value="${no-1}"/>
 						
 						<!-- 음식점명 -->
-						<td>${dto.place_id}</td>
+						<td><a href="/review/content?num=${dto.num}">${dto.place_name}</a></td>
 						
 						<%-- <!-- 제목 -->
 						<td class="title">
