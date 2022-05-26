@@ -577,7 +577,6 @@ div.mymenulistmore{
     position: relative;
     border:0px solid #2d35af;
     top: 100px;
-    left: 100px;
  
 
 }
@@ -586,8 +585,8 @@ div.mymenulistmore{
 	position:relative;
 	top:18%;
 	width:600px;
-	height:700px;
-	left: 30%;
+	height:800px;
+	
 }
 #section7.joinform p{
 	position:relative;

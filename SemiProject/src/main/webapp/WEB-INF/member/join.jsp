@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="css/style.css"  rel="stylesheet" type="text/css" />
 	<link href="css/join_style.css"  rel="stylesheet" type="text/css" />
+	
 <script>
 	$(function(){
 		
@@ -79,15 +80,18 @@
 </head>
 <body>
 	<div class="section" id="section7">
-		<form action="insert" method="post" enctype="multipart/form-data" class="joinform" style="left: 20%;" onsubmit="return check()">
-		<img src="../images/signup.png" class="sign_up" id="sign_up" title="sign_up">
+		<form action="insert" method="post" style="bakckground-color:#ff0000; position:absolute; top:30%; left:30%;" enctype="multipart/form-data" class="joinform"  onsubmit="return check()">
+		
 			<!-- 회원가입 -->
-			<table style="width: 1000px;border:1px solid black;">
+			<table class="tbljoin" style="width: 1100px;">
 				<tr>
 					<th>프로필사진</th>
-					<td colspan="3">
+					<td>
 						<img src="../images/user.png" alt="미리보기" id="preview" style="max-width:100px;"><br><br>
 						<input type="file" name="upload" id="photo" style="width:300px;float: left" class="form-control jogin-control" accept="image/*">
+						
+					</td>
+					<td colspan="2">
 						
 					</td>
 					
@@ -153,11 +157,16 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4">
-						<button type="submit" id="join" class="btn btn-info joinbtn">Join Us</button>
+					<td colspan="4" style="background-color: transparent;">
+						<button type="submit" id="join" class="btn btn-info joinbtn">
+							<img src="../images/signup.png" class="sign_up" id="sign_up" title="sign_up">
+						</button>
 					</td>
 				</tr>
 			</table>
+				</form>
+	</div>
+		
 		
 			<script>
 			function readURL(input)
@@ -178,13 +187,7 @@
 			   readURL(this); 
 			});
 			</script>
-			
-			<br><br><br><br>
-		
-			<br><br><br><br>
-			
-		</form>
-	</div>
+
 	
 </body>
 </html>
