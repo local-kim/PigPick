@@ -13,6 +13,10 @@
 	<select id="getReview" parameterType="int" resultType="review">
 		select * from review where num = #{review_num}
 	</select>
+	<insert id="insertReview" parameterType="insert_review">
+		insert into review (member_num, place_id, stars, content) 
+		values (#{member_num}, #{place_id}, #{stars}, #{content})
+	</insert>
 	<update id="updateReview" parameterType="review">
 		
 	</update>

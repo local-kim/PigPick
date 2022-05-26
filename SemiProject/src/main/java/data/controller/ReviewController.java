@@ -2,14 +2,18 @@ package data.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import data.dto.InsertReviewDto;
 import data.dto.ReviewDto;
 import data.service.ReviewService;
 
@@ -48,6 +52,16 @@ public class ReviewController {
 		model.addAttribute("review", review);
 		
 		return "/review/review3";
+	}
+	
+	@PostMapping("/insert")
+	public void insert(
+			@ModelAttribute InsertReviewDto review,
+			HttpSession session
+			) {
+		String member_num = (String)session.getAttribute("loginNum");
+		review.setMember_num(member_num);
+		service.insertReview(review);
 	}
 	
 	@GetMapping("/edit")

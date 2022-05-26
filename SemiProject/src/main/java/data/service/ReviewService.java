@@ -2,6 +2,7 @@ package data.service;
 
 import java.util.List;
 
+import data.dto.InsertReviewDto;
 import data.dto.ReviewDto;
 import data.mapper.ReviewMapperInter;
 
@@ -25,7 +26,7 @@ public class ReviewService implements ReviewServiceInter {
 	}
 
 	@Override
-	public void insertReview(ReviewDto dto) {
+	public void insertReview(InsertReviewDto dto) {
 		mapper.insertReview(dto);
 	}    
 		
