@@ -59,7 +59,7 @@ public class ReviewController {
 			@ModelAttribute InsertReviewDto review,
 			HttpSession session
 			) {
-		String member_num = (String)session.getAttribute("loginNum");
+		String member_num = Integer.toString((int)session.getAttribute("loginNum"));
 		review.setMember_num(member_num);
 		service.insertReview(review);
 	}
