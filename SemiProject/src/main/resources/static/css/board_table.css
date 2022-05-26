@@ -31,7 +31,7 @@ h1{
   background-color: rgba(255,255,255,0.3);
  }
 .tbl-content{
-  height:300px;
+  height:600px;
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
@@ -90,11 +90,12 @@ td{
 }
 .btn_board_write{
 	position:relative;
-	left: 40%;
-	top: 100px;
+	left: 77%;
+	bottom:20px;
 	background-color: orange;
 	color:white;
 	border:0;
+	width: 100px;
 }
 
 /* demo styles */
