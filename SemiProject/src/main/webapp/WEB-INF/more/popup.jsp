@@ -15,7 +15,7 @@
 <<<<<<< HEAD
 <style>
 .INTRODUCE{
-	border:5px solid orange;
+	border:10px solid #DC4522;
 	background: white;
 	border-radius: 90px;
 	position:absolute;
@@ -32,12 +32,12 @@
 <body>
 <br>
 <div class="INTRODUCE">
-<img src="images/logo_pigpick.jpg" id="logo_img">
+<img src="images/logo_pigpick.jpg" id="logo_img" width="520" height="150">
 <br><br>
-<input type="button" value="PIGPICK이란?"  style=" margin:auto;
-        display:block;  background-color:orange; padding:20px; color: #0a0a23; font-size : 40px;
+<input type="button" value="PIGPICK이란?"  style=" margin:auto; 
+        display:block;  background-color:#E87100; padding:20px; color: white; font-size : 40px;
 	font-family : GmarketSansTTFMedium;  border:none;
-    border-radius:10px;" onclick="location.href='/popup/picintro'"></input>
+    border-radius:10px;" onclick="location.href='/popup/picintro'"></input><br>
 
 
 
@@ -57,14 +57,9 @@
 	
 	
 	<input type="button" value="PIGPICK 이용방법" style=" margin:auto;
-        display:block;  background-color:orange; color: #0a0a23; padding:20px; border:none;
+        display:block;  background-color:#E87100; color: white; padding:20px; border:none;
     border-radius:10px; font-size : 40px;
 	font-family : GmarketSansTTFMedium;" onclick="location.href='/popup/intro'"></input>
-	
-    
-   
-    
-    
 }
 	<br>
 
