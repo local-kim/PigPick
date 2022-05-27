@@ -10,5 +10,5 @@ public interface MyPageServiceInter {
 	public List<MenuRankDto> getMenuRank(int member_num);
 	public List<ReviewDto> getReviewList(int member_num);
 	public MemberDto getMemberInfo(int member_num);
-	public void updateMemberInfo(int member_num, String tel, String address);
+	public void updateMemberInfo(MemberDto member);
 }
