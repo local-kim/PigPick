@@ -17,14 +17,12 @@
 
 </style>
 <body>
-
+<br><br>
+<%-- <h3>${list}</h3> --%>
+	<div class="section" id="section6">
 	
-	<%-- <h3>${list}</h3> --%>
-	<br><br>
-		<<div class="section" id="section6">
 		<h1>My Review</h1>
 		<br><br><br>
-		
 		<table class="container">
 			<tr>
 				<th class="text-center">No.</th>

@@ -11,11 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 	
 </head>
 <body>
 
-	<br><br><br><br><br><br><br>리뷰쓰기
+<section>
+	
+	<div class="section" id="section6">
+	<br><br>
+
+	<h1>Write</h1>
+	
+	<br><br><br>
+
 
 	<c:if test="${sessionScope.loggedIn==null }">
 	<script type="text/javascript">
@@ -24,25 +33,7 @@
 	</script>
 	</c:if>
 
-	<div>
-	  <div class="map_wrap">
-			<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-		
-			<div id="menu_wrap" class="bg_white">
-				<div class="option">
-					<div>
-						<div>
-			        상호명 : <input type="text" value="" id="keyword" size="15">
-			        <button type="button" onclick="searchPlaces()">검색하기</button>
-		    		</div>
-					</div>
-				</div>
-				<hr>
-				<ul id="placesList"></ul>
-				<div id="pagination"></div>
-			</div>
-		</div>
-	</div>
+	
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=462602bfbf3fad68a3a7744b60ee4c02&libraries=services,clusterer,drawing"></script>
 	<script>
@@ -310,9 +301,34 @@
 	</script>
 	
 	<form action="insert" method="post" enctype="multipart/form-data">
-		<table class="table table-bordered reviewform" style="width: 800px;">
+		<table class="container" style="width: 1000px;">
 			<tr>
-				<th class="text-center" style="width: 100px; background-color: #ffc">나의 맛집</th>
+				<th class="text-center">식당 찾기</th>
+				<td>
+			
+	  			<div class="map_wrap">
+					<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;">
+				</div>
+					<div id="menu_wrap" class="bg_white">
+						<div class="option">
+							<div>
+								<div>
+			       				<input type="text" value="" id="keyword" size="20">
+			       				<button type="button" onclick="searchPlaces()">검색하기</button>
+		    					</div>
+							</div>
+						</div>
+				
+				<ul id="placesList"></ul>
+				<div id="pagination"></div>
+			</div>
+		</div>
+	
+	</td>
+			</tr>
+			
+			<tr>
+				<th class="text-center" >나의 맛집</th>
 				<td>
 					<input type="text" value="" id="place_name" name="place_name">
 					<input type="hidden" value="" id="place_id" name="place_id">
@@ -324,9 +340,9 @@
 				</td>
 			</tr>
 			<tr>
-  			<th style="width:300px; background-color:#ddd">★★★★★</th>
+  			<th class="text-center" >★★★★★</th>
 				<td>
-  				<select name="stars" style="width: 500px; height: 50px;">
+  				<select name="stars">
 			  			<option value="">별점을 선택하세요</option>
 			  			<option value="01">☆☆☆☆★</option>
 			  			<option value="02">☆☆☆★★</option>
@@ -337,7 +353,7 @@
 				</td>
    		</tr>
 			<tr>
-				<th class="text-center" style="width: 100px; background-color: #ffc">리뷰 사진</th>
+				<th class="text-center">리뷰 사진</th>
 				<td>
 					<input type="file" name="upload" class="form-control"
 					    multiple="multiple">
@@ -372,5 +388,7 @@
 			  });
 		});
 	</script>
+	</div>
+	</section>
 </body>
 </html>

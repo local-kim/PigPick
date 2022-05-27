@@ -14,13 +14,12 @@
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<
-	
+<br><br>
+<%-- <h3>${list}</h3> --%>
 	<div class="section" id="section6">
 		<!-- example -->
 		<h1>My Menu List</h1>
-		<br><br>
-		<h3>${list}</h3>
+		<br><br><br>
 		<table class="container" >
 			<tr>
 				<th class="text-center" style="width: 100px;">No.</th>

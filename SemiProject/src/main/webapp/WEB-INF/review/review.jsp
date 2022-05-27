@@ -21,17 +21,15 @@ $(window).on("load resize ", function() {
 </script>
 <body>
 	
-	<button type="button" onclick="location.href='/review/new'">글쓰기</button>
-	<button type="button" onclick="location.href='/review/content'">내용보기</button>
 	<section>
 	
 	<div class="section" id="section6">
 	<br><br><br><br>
 	
 	<h1>Review</h1>
-	<br><br><br><br>
-
-    <table class="container">
+	<br><br><br>
+	<button type="button" class="btn_write" onclick="location.href='/review/new'">Write</button>
+    <table class="container">z
 	
 	
 
@@ -90,10 +88,8 @@ $(window).on("load resize ", function() {
 					</c:if>
 					</tbody>
 		</table>
-  </div>
-  
-  <div class="paging">
-			<ul class="pagination pagination-sm">
+		<div class="paging">
+			<ul class="pagination">
 			<!-- 이전 -->
 			<c:if test="${startPage > 1}">
 				<li><a href="review?currentPage=${startPage - 1}">&lt;</a></li>
@@ -114,8 +110,11 @@ $(window).on("load resize ", function() {
 			</c:if>
 		</ul>
 	</div>
+  </div>
   
-	<button type="button" class="btn_board_write" onclick="location.href='/review/new'">Write</button>
+  
+  
+	
 	</section>
 </body>
 </html>

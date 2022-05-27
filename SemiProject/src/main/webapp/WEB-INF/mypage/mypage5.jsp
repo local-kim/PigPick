@@ -45,11 +45,12 @@ function readURL(input)
 
 </script>
 <body>
-<br><br>
-<div class="section" id="section6">
-	<br><br><br><br><br>
-	<h1>My Profile Edit</h1>
-	<%-- <h3>${info}</h3> --%>
+
+<%-- <h3>${info}</h3> --%>
+	<div class="section" id="section6">
+	<br>
+		<h1>My Profile Edit</h1>
+		<br><br><br>
 
 	<form action="update" method="post" enctype="multipart/form-data">
 	<!-- hidden 2개 -->
@@ -90,7 +91,7 @@ function readURL(input)
 				
 				<th class="text-center" style="width: 100px;">Name</th>
 				<td>
-				<input type="text" name="" class="form-control"
+				<input type="text" name="name" class="form-control"
 					required="required"  style="margin:3px auto; width:800px;height: 50px;border:0;font-size:20px;"
 					value="${info.name}">
 				</td>
@@ -98,7 +99,7 @@ function readURL(input)
 			<tr>
 				<th class="text-center" style="width: 100px;">Tel</th>
 				<td>
-				<input type="text" name="" class="form-control"
+				<input type="text" name="tel" class="form-control"
 					required="required"  style="margin:3px auto; width:800px;height: 50px; font-size:20px;"
 					value="${info.tel}">
 				</td>
@@ -106,7 +107,7 @@ function readURL(input)
 			<tr>
 				<th class="text-center" style="width: 100px;">E-Mail</th>
 				<td>
-				<input type="text" name="" class="form-control"
+				<input type="text" name="email" class="form-control"
 					required="required"  style="margin:3px auto; width:800px; height: 50px; font-size:20px;"
 					value="${info.email}">
 				</td>
@@ -114,7 +115,7 @@ function readURL(input)
 			<tr>
 				<th class="text-center" style="width: 100px;">Address</th>
 				<td>
-				<input type="text" name="" class="form-control"
+				<input type="text" name="address" class="form-control"
 					required="required" style=" margin:3px auto; width:800px; height: 100px; font-size:20px;"
 					value="${info.address}">
 				</td>

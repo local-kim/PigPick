@@ -31,15 +31,11 @@ $(function(){
 });
 </script>
 <body>
-	<br><br>
+<%-- <h3>${info}</h3> --%>
 	<div class="section" id="section6">
-	<h1>My profile</h1>
-	<br><br>
-	<%-- <h3>${info}</h3> --%>
-
-	<div>
-		<br><br>
-		
+	<br><br><br>
+		<h1>My profile</h1>
+		<br><br><br>
 		<table class="container" style="width:1000px;">
 			 <tr>
 			 <th rowspan="2" class="text-center" style=" width:200px; height:200px;">
@@ -91,9 +87,9 @@ $(function(){
 		</table>
 
 			<div style="position: absolute; left: 45%;">
-				<button type="button" class=btnedit onclick="location.href='/mypage/editinfo'">Edit</button>
+				<button type="button" class=btn_edit onclick="location.href='/mypage/editinfo'">Edit</button>
 				&nbsp;&nbsp;
-				<button type="button" class=btnedit onclick="history.back()">Before</button>
+				<button type="button" class=btn_before onclick="history.back()">Before</button>
 			</div>
 		</div>
 		</div>
