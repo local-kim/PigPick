@@ -71,7 +71,7 @@ public class ReviewController {
 			String photos = "";
 			
 			for(MultipartFile f : upload) {
-				String uploadPath = request.getServletContext().getRealPath("/profile_img");
+				String uploadPath = request.getServletContext().getRealPath("/review_img");
 				String fileName = FileUtil.changeFileName(f.getOriginalFilename());
 				photos += fileName + ",";
 				
