@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -40,37 +39,35 @@ public class MemberController {
 	@PostMapping("/insert")
 	public String insert(
 			@ModelAttribute MemberDto member,
-			@RequestParam(required = false) String tel1,
-			@RequestParam(required = false) String tel2,
-			@RequestParam(required = false) String tel3,
-			@RequestParam(required = false) String year,
-			@RequestParam(required = false) String month,
-			@RequestParam(required = false) String day,
-			@RequestParam(required = false) String email1,
-			@RequestParam(required = false) String email2,
-			@RequestParam(required = false) MultipartFile upload,
-			@RequestParam(required = false) String kimg,
-			@RequestParam(required = false) int admin,
+			@RequestParam String tel1,
+			@RequestParam String tel2,
+			@RequestParam String tel3,
+			@RequestParam String month,
+			@RequestParam String day,
+			@RequestParam String email1,
+			@RequestParam String email2,
+			@RequestParam MultipartFile upload,
 			HttpServletRequest request
 			) {
-		
 		// 전화번호
 		String tel = tel1 + "-" + tel2 + "-" + tel3;
 		member.setTel(tel);
 		
-		// 생년월일
-		String birthday = year + month + day;
+		// 생일
+		String birthday = month + day;
 		member.setBirthday(birthday);
 		
 		// 이메일
 		String email = email1 + "@" + email2;
 		member.setEmail(email);
 		
+		// admin
+		member.setAdmin(0);
+		
 		if(!upload.isEmpty()) {
 			// 사진 처리
 			String uploadPath = request.getServletContext().getRealPath("/profile_img");
 			String fileName = FileUtil.changeFileName(upload.getOriginalFilename());
-			System.out.println(fileName);
 			
 			// 파일 경로 저장
 			member.setPhoto(fileName);
@@ -83,9 +80,8 @@ public class MemberController {
 			}
 		}
 		
-		
 		service.insertMember(member);
-		System.out.println(member);
+		
 		return "redirect:/";
 	}
 	
@@ -100,9 +96,9 @@ public class MemberController {
 			HttpSession session
 			) {
 		if(service.checkKakaoMember(kid) == 0) {
+			// DB에 없으면 저장
 			MemberDto member = new MemberDto();
 		
-			// DB에 없으면 저장
 			member.setBirthday(kb);
 			member.setEmail(kemail);
 			member.setPhoto(kp);
@@ -115,7 +111,6 @@ public class MemberController {
 		
 		List<Map<String, Object>> map = loginService.getLoginInfo(kid);
 		
-		System.out.println("kemail="+kemail);
 		session.setAttribute("loginName", knickname);
 		session.setAttribute("loginId", kemail);
 		session.setAttribute("loggedIn", true);
@@ -127,7 +122,6 @@ public class MemberController {
 	public Map<String, Integer> checkId(
 			@RequestParam String id
 			) {
-		System.out.println("checkId");
 		Map<String, Integer> map = new HashMap<>();
 		
 		map.put("count", service.checkId(id));

@@ -100,8 +100,8 @@ public class ReviewController {
 			@RequestParam String place_y,
 			@RequestParam String place_address_name,
 			@RequestParam ArrayList<MultipartFile> upload,
-			HttpSession session,
-			HttpServletRequest request
+			HttpServletRequest request,
+			HttpSession session
 			) {
 		String member_num = Integer.toString((int)session.getAttribute("loginNum"));
 		review.setMember_num(member_num);
@@ -184,16 +184,36 @@ public class ReviewController {
 		return "/review/review4";
 	}
 	
-	@GetMapping("/update")
+	@PostMapping("/update")
 	public String update(
-		@ModelAttribute InsertReviewDto review,
-		@RequestParam int num
-		) {
+			@ModelAttribute InsertReviewDto review,
+//			@RequestParam int num,
+//			@RequestParam ArrayList<MultipartFile> upload,
+			HttpServletRequest request
+			) {
+//		// 사진 처리(여러장)
+//		if(!upload.get(0).getOriginalFilename().equals("")) {
+//			String photos = "";
+//			
+//			for(MultipartFile f : upload) {
+//				String uploadPath = request.getServletContext().getRealPath("/review_img");
+//				String fileName = FileUtil.changeFileName(f.getOriginalFilename());
+//				photos += fileName + ",";
+//				
+//				try {
+//					f.transferTo(new File(uploadPath + File.separator + fileName));
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//			
+//			photos = photos.substring(0, photos.length() - 1);
+//			review.setPhotos(photos);
+//		}
 		System.out.println(review);
-		// 업데이트만 고치면 끝
 		service.updateReview(review);
 		
-		return "redirect:/review/content?num=" + num;
+		return "redirect:/review/content?num=" + review.getNum();
 	}
 	
 	@GetMapping("/delete")

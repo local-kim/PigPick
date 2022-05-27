@@ -18,7 +18,7 @@
   var kid; //카카오 내 id(토큰)
   var kemail; //카카오 내 email
   var knickname; //카카오 내 닉네임
-  var kp;//카카오 내 프로필이미지
+  var kp;	//카카오 내 프로필이미지
   var kb; //카카오 내생일
   
 //카카오로그인
