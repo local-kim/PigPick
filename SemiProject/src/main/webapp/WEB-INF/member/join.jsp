@@ -104,8 +104,6 @@
 					</td>
 					<th>생년월일</th>
 					<td>
-						<input type="text" name="year" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-						년&nbsp;
 						<input type="text" name="month" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
 						월&nbsp;
 						<input type="text" name="day" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
