@@ -16,5 +16,5 @@ public class MemberDto {
 	private String tel;
 	private String address;
 	private String birthday;
-	private String admin;
+	private int admin;
 }

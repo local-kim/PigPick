@@ -247,9 +247,9 @@
 		    var el = document.createElement('li'),
 		    		itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
 		                		'<div class="info">' +
-		                		'   <h5>' + places.place_name + '</h5>';
+		                		'   <h4><a href=' + places.place_url + " target='_blank'>" + places.place_name + '</a></h4>';
 		        
-		    itemStr += '    <span>place id : ' + places.id + '</span>';
+		    itemStr += '    <span>' + places.category_name + '</span>';
 		    itemStr += '    <span>거리 : ' + places.distance + 'm</span>';
 	
 		    if (places.road_address_name) {

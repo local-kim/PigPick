@@ -10,31 +10,50 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<br><br><br><br><br><br><br>
-	<h1>글 수정폼</h1>
-	
-	<table>
-		<tr>
-			<th>place</th>
-			<td>${review.place_id}</td>
-		</tr>
-		<tr>
-			<th>★★★★★</th>
-			<td>${review.stars}</td>
-		</tr>
-		<tr>
-			<th>후기</th>
-			<td>${review.content}</td>
-		</tr>
-	</table>
-	<br>
-		<div>
-			<button type="submit" class="btnreview_update" style="position:absolute; left: 50%;"
-				 onclick="location.href='/review/update'">Update</button>
-		</div>	
-
+<section>
+	<div class="section" id="section6">
+		<br><br>
+		<h1>리뷰 수정/삭제</h1>
+		<br><br><br><br><br><br>
+		<form action="update" method="post">
+			<button type="submit" class="btnreview_update">Update</button>
+      <input type="hidden" name="num" value="${review.num}">
+			<input type="hidden" name="place_id" value="${review.place_id}">	
+    	<table class="container">
+				<tr>
+					<th>식당</th>
+					<td>
+						<span>${review.place_name}</span>
+					</td>
+				</tr>
+				<tr>
+					<th>★★★★★</th>
+					<td>
+						<select name="stars" style="color: black;">
+				  			<option>별점을 선택하세요</option>
+				  			<option value="01">☆☆☆☆★</option>
+				  			<option value="02">☆☆☆★★</option>
+				  			<option value="03">☆☆★★★</option>
+				  			<option value="04">☆★★★★</option>
+				  			<option value="05">★★★★★</option>
+	  				</select>
+	  			</td>
+				</tr>
+				<tr>
+					<th>리뷰</th>
+					<td>
+						<textarea style="width: 100%; height: 300px;" name="content"
+						class="form-control"
+						>${review.content}</textarea>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</section>
 </body>
 </html>

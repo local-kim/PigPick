@@ -2,9 +2,11 @@ package data.controller;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import data.dto.MemberDto;
+import data.service.LoginService;
 import data.service.MemberService;
 import util.FileUtil;
 
@@ -24,6 +27,9 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService service;
+	
+	@Autowired
+	private LoginService loginService;
 
 	@GetMapping("/join")
 	public String join() {
@@ -36,7 +42,6 @@ public class MemberController {
 			@RequestParam String tel1,
 			@RequestParam String tel2,
 			@RequestParam String tel3,
-			@RequestParam String year,
 			@RequestParam String month,
 			@RequestParam String day,
 			@RequestParam String email1,
@@ -48,19 +53,21 @@ public class MemberController {
 		String tel = tel1 + "-" + tel2 + "-" + tel3;
 		member.setTel(tel);
 		
-		// 생년월일
-		String birthday = year + month + day;
+		// 생일
+		String birthday = month + day;
 		member.setBirthday(birthday);
 		
 		// 이메일
 		String email = email1 + "@" + email2;
 		member.setEmail(email);
 		
+		// admin
+		member.setAdmin(0);
+		
 		if(!upload.isEmpty()) {
 			// 사진 처리
 			String uploadPath = request.getServletContext().getRealPath("/profile_img");
 			String fileName = FileUtil.changeFileName(upload.getOriginalFilename());
-			System.out.println(fileName);
 			
 			// 파일 경로 저장
 			member.setPhoto(fileName);
@@ -78,12 +85,43 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/kakaoinsert")
+	@ResponseBody
+	public void kakaoinsert(
+			@RequestParam String kid,
+			@RequestParam String kemail,
+			@RequestParam String knickname,
+			@RequestParam(required = false) String kp,
+			@RequestParam String kb,
+			HttpSession session
+			) {
+		if(service.checkKakaoMember(kid) == 0) {
+			// DB에 없으면 저장
+			MemberDto member = new MemberDto();
+		
+			member.setBirthday(kb);
+			member.setEmail(kemail);
+			member.setPhoto(kp);
+			member.setId(kid);
+			member.setName(knickname);
+			member.setAdmin(1);
+			
+			service.insertMember(member);
+		}
+		
+		List<Map<String, Object>> map = loginService.getLoginInfo(kid);
+		
+		session.setAttribute("loginName", knickname);
+		session.setAttribute("loginId", kemail);
+		session.setAttribute("loggedIn", true);
+		session.setAttribute("loginNum", map.get(0).get("num"));
+	}
+	
 	@GetMapping("/checkId")
 	@ResponseBody
 	public Map<String, Integer> checkId(
 			@RequestParam String id
 			) {
-		System.out.println("checkId");
 		Map<String, Integer> map = new HashMap<>();
 		
 		map.put("count", service.checkId(id));

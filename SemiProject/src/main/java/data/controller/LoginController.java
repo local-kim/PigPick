@@ -22,10 +22,10 @@ public class LoginController {
 	
 	// 로그인 페이지
 	@GetMapping("/login")
-	public String login() {
-		return "/login/form";
+	public String test() {
+		return "/login/form2";
 	}
-	
+			
 	// 로그인 처리
 	@PostMapping("/process")
 	public String process(
@@ -45,7 +45,7 @@ public class LoginController {
 		}
 		else {
 			System.out.println("로그인 실패");
-			return "redirect:/login";
+			return "redirect:/test";
 		}
 	}
 	

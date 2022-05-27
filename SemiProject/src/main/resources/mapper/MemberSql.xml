@@ -2,10 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="data.mapper.MemberMapperInter">
 	<insert id="insertMember" parameterType="member">
-		INSERT INTO member (id, password, name, photo, email, tel, address, birthday) 
-		VALUES (#{id}, #{password}, #{name}, #{photo}, #{email}, #{tel}, #{address}, #{birthday})
+		INSERT INTO member (id, password, name, photo, email, tel, address, birthday, admin) 
+		VALUES (#{id}, #{password}, #{name}, #{photo}, #{email}, #{tel}, #{address}, #{birthday}, #{admin})
 	</insert>
 	<select id="checkId" parameterType="String" resultType="int">
 		SELECT count(*) FROM member WHERE id = #{id}
+	</select>
+	<select id="checkKakaoMember" parameterType="String" resultType="int">
+		select count(*) from member where id = #{id}
 	</select>
 </mapper>

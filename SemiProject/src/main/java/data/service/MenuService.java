@@ -25,5 +25,31 @@ public class MenuService implements MenuServiceInter {
 		
 		return mapper.getRecommendList(map);
 	}
+	
+	@Override
+	public int checkMenuRank(int memberNum, int menuNum) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("member_num", memberNum);
+		map.put("menu_num", menuNum);
+		
+		return mapper.checkMenuRank(map);
+	}
+	
+	@Override
+	public void insertMenuCount(int memberNum, int menuNum) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("member_num", memberNum);
+		map.put("menu_num", menuNum);
+		
+		mapper.insertMenuCount(map);
+	}
 
+	@Override
+	public void increaseMenuCount(int memberNum, int menuNum) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("member_num", memberNum);
+		map.put("menu_num", menuNum);
+		
+		mapper.increaseMenuCount(map);
+	}
 }

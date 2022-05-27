@@ -10,33 +10,64 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css"  rel="stylesheet" type="text/css" />
+	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
+<script type="text/javascript">
+$(window).on("load resize ", function() {
+	  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+	  $('.tbl-header').css({'padding-right':scrollWidth});
+	}).resize();
+</script>
 <body>
-	<br><br><br><br><br><br><br>
-	<h1>글 내용확인 폼</h1>
-	
-	<table>
+
+
+
+	<div class="section" id="section6">
+	<br><br>
+	<h1>리뷰 상세보기</h1>
+	<br><br>
+
+<button type="button" class="btn_review_edit" onclick="location.href='/review/edit?num=${review.num}'">Edit</button>
+<button type="button" class="btn_review_delete" onclick="location.href='/review/delete?num=${review.num}'">Delete</button>
+    <table class="container">
+   
 		<tr>
-			<th>Name</th>
-			<td>${review.member_num}</td>
+			<th>식당</th>
+			<td>${review.place_name}</td>
 		</tr>
+		<tr>
+			<th>작성자</th>
+			<td>${review.member_name}</td>
+		</tr>
+		
 		<tr>
 			<th>★★★★★</th>
 			<td>${review.stars}</td>
 		</tr>
-		<tr>
+		<tr>	
 			<th>Date</th>
 			<td>${review.created_at}</td>
 		</tr>
 		<tr>
-			<td colspan="2">
-			${review.content}
-		    </td>
+			<th colspan="2">내용</th>
+		
 		</tr>
+		<tr>
+			<td colspan="2" style="background-color: white; height: 300px;">${review.content}</td>
+		</tr>
+	 
+
+	
+	
+
+     	
 	
 	</table>
-	<button type="button" onclick="location.href='/review/edit'">Edit</button>
+  </div>
+ 
+	
+</section>
 	
 </body>
 </html>

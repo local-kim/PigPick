@@ -11,12 +11,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../css/table_style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
+<script type="text/javascript">
+$(function(){
+	if(${dto.photo==null}){
+		$("#user_img").attr("src","../images/user.png");
+	}else{
+	$("#user_img").attr("src",${dto.photo});
+		
+	}
+	
+	$("#myphoto").change(function(){
+		   readURL(this); 
+		});
+});
+
+function readURL(input)
+{
+   if (input.files && input.files[0])
+   {
+      var reader = new FileReader();
+      reader.onload = function (e)
+      {
+         $("#user_img").attr('src', e.target.result); 
+      }
+
+      reader.readAsDataURL(input.files[0]);
+   }
+}
+
+
+
+</script>
 <body>
-	<br><br><br><br><br>
-	<h1 class="mypage5_title"">My Profile Edit</h1>
-	<%-- <h3>${info}</h3> --%>
+
+<%-- <h3>${info}</h3> --%>
+	<div class="section" id="section6">
+	<br>
+		<h1>My Profile Edit</h1>
+		<br><br><br>
 
 	<form action="update" method="post" enctype="multipart/form-data">
 	<!-- hidden 2개 -->
@@ -29,46 +63,60 @@
 	<input type="hidden" name="num" value="${dto.address}">
 	
 	<div>
-		<br><br>
 		
-		<table class="container" style="width: 1100px;">
+		
+		<table class="container" style="width: 1200px;">
 			<tr>
-				<th class="text-center" style="width: 100px;">Photo</th>
-				<td><input type="file" name="" class="form-control"
-				style="height: 100px; background-color: transparent;"></td>
+				<th class="text-center" style="width: 200px;">Photo</th>
+				<td style="text-align: center;">
+					<img src="../profile_img/${info.photo}" style="width:200px;height: 200px;object-fit: cover;"><br><br><br>
+		     		<input type="file" style="width: 300px;height:50px; margin: 0 auto; border:0;font-size:20px;
+		     		background-color: transparent;"
+		     		name="" id="myphoto" class="form-control"
+					style="">
+				</td>
+				
+				
+			</tr>
+			
+			<tr>
+				<th class="text-center" style="width: 100px;">ID</th>
+				<td>
+				${info.id}
+				</td>
+				
 				
 			</tr>
 			<tr>
 				
-				<th class="text-center" style="width: 100px;">Name(ID)</th>
+				<th class="text-center" style="width: 100px;">Name</th>
 				<td>
-				<input type="text" name="" class="form-control"
-					required="required"  style="height: 50px; background-color: transparent;"
-					value="${info.name}(${info.id})">
+				<input type="text" name="name" class="form-control"
+					required="required"  style="margin:3px auto; width:800px;height: 50px;border:0;font-size:20px;"
+					value="${info.name}">
 				</td>
-				
 			</tr>
 			<tr>
 				<th class="text-center" style="width: 100px;">Tel</th>
 				<td>
-				<input type="text" name="" class="form-control"
-					required="required"  style="height: 50px; background-color: transparent;"
+				<input type="text" name="tel" class="form-control"
+					required="required"  style="margin:3px auto; width:800px;height: 50px; font-size:20px;"
 					value="${info.tel}">
 				</td>
 			</tr>
 			<tr>
 				<th class="text-center" style="width: 100px;">E-Mail</th>
 				<td>
-				<input type="text" name="" class="form-control"
-					required="required"  style="height: 50px; background-color: transparent;"
+				<input type="text" name="email" class="form-control"
+					required="required"  style="margin:3px auto; width:800px; height: 50px; font-size:20px;"
 					value="${info.email}">
 				</td>
 			</tr>
 			<tr>
 				<th class="text-center" style="width: 100px;">Address</th>
 				<td>
-				<input type="text" name="" class="form-control"
-					required="required" style="height: 80px; background-color: transparent;"
+				<input type="text" name="address" class="form-control"
+					required="required" style=" margin:3px auto; width:800px; height: 100px; font-size:20px;"
 					value="${info.address}">
 				</td>
 			</tr>
@@ -81,6 +129,7 @@
 			<button type="submit" class="btnedit" style="position:absolute; left: 50%;"
 				 onclick="location.href='/mypage/update'">SAVE</button>
 		</div>	
+	</div>
 
 		
 </body>

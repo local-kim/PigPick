@@ -1,7 +1,9 @@
 package data.controller;
 
+import java.io.File;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +11,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
 import data.dto.ReviewDto;
 import data.service.MyPageService;
+import util.FileUtil;
 
 @Controller
 public class MyPageController {
@@ -78,17 +84,35 @@ public class MyPageController {
 		return "/mypage/mypage5";
 	}
 	
-	@GetMapping("/mypage/update")
+	@PostMapping("/mypage/update")
 	public String mypage6(
 			@ModelAttribute MemberDto member,
+			@RequestParam MultipartFile upload,
+			HttpServletRequest request,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
-		String tel = "";		// 변경할 값(나중에 프론트에서 받아옴)
-		String address = "";
+		// 사진 처리
+		if(!upload.isEmpty()) {
+			// 사진 처리
+			String uploadPath = request.getServletContext().getRealPath("/profile_img");
+			String fileName = FileUtil.changeFileName(upload.getOriginalFilename());
+			
+			// 파일 경로 저장
+			member.setPhoto(fileName);
+			
+			// 파일 저장
+			try {
+				upload.transferTo(new File(uploadPath + File.separator + fileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
-		// 지금은 전화번호, 주소만 수정 가능하게 -> member dto를 넘겨도 괜찮을듯
-		service.updateMemberInfo(member_num, tel, address);
+		String member_num = (String)session.getAttribute("loginNum");
+		
+		member.setNum(member_num);
+		
+		service.updateMemberInfo(member);
 		
 		return "redirect:/mypage/info";
 	}
