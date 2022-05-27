@@ -14,6 +14,9 @@
 </head>
 <body>
 	<div class="section" id="section1">
+	<div  style="z-index:999999999; top:50%; position:absolute;">
+	
+	</div>
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
  

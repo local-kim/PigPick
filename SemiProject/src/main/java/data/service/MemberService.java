@@ -21,5 +21,10 @@ public class MemberService implements MemberServiceInter {
 	public int checkId(String id) {
 		return mapper.checkId(id);
 	}
+	
+	@Override
+	public int checkKakaoMember(String id) {
+		return mapper.checkKakaoMember(id);
+	}
 
 }
