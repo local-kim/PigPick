@@ -23,9 +23,7 @@
 		location.href='../login';
 	</script>
 	</c:if>
-<form action="insert" method="post" enctype="multipart/form-data">
 
-	<!-- Modal -->
 	<div>
 	  <div class="map_wrap">
 			<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
@@ -211,17 +209,19 @@
 		function getListItem(index, places) {
 
 	    var el = document.createElement('li'),
-	    		itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-	                		'<div class="info">' +
-	                		"<input type='hidden' value=" + places.id + " class='search_id'>" +
-	                		'   <h4 class="search_name">' + places.place_name + '</h4>';
-	        
-	    itemStr += "    <span class='search_category'>" + places.category_name + '</span><br>';
+	    		itemStr = "<span class='markerbg marker_" + (index+1) + "'></span>" +
+	                		"<div class='info'>" +
+	                		"	<input type='hidden' value=" + places.id + " class='search_id'>" +
+	                		"	<h4 class='search_place_name'>" + places.place_name + "</h4>" +
+	    							"	<span class='search_category_name'>" + places.category_name + "</span><br>" +
+	    							"	<input type='hidden' value=" + places.phone + " class='search_phone'>" +
+	    							"	<input type='hidden' value=" + places.x + " class='search_x'>" +
+	    							"	<input type='hidden' value=" + places.y + " class='search_y'>";
 
 	    if (places.road_address_name) {
-      	itemStr += '    <span>' + places.road_address_name + '</span>';
+      	itemStr += "    <span class='search_address_name'>" + places.road_address_name + "</span>";
 	    } else {
-	    	itemStr += '    <span>' + places.address_name + '</span>';
+	    	itemStr += "    <span class='search_address_name'>" + places.address_name + "</span>";
 	    }
 	                 
     		itemStr += '</div>';
@@ -309,59 +309,66 @@
 		}
 	</script>
 	
-	<table class="table table-bordered reviewform" style="width: 800px;">
-		<tr>
-			<th class="text-center" style="width: 100px; background-color: #ffc">나의 맛집</th>
-			<td>
-				<input type="hidden" value="" id="place_id" name="place_id">
-				<input type="text" value="" id="place_name" name="place_name">
-				<input type="hidden" value="" id="place_category" name="place_category">
-			</td>
-		</tr>
-		<tr>
+	<form action="insert" method="post" enctype="multipart/form-data">
+		<table class="table table-bordered reviewform" style="width: 800px;">
+			<tr>
+				<th class="text-center" style="width: 100px; background-color: #ffc">나의 맛집</th>
+				<td>
+					<input type="text" value="" id="place_name" name="place_name">
+					<input type="hidden" value="" id="place_id" name="place_id">
+					<input type="hidden" value="" id="place_category_name" name="place_category_name">
+					<input type="hidden" value="" id="place_phone" name="place_phone">
+					<input type="hidden" value="" id="place_x" name="place_x">
+					<input type="hidden" value="" id="place_y" name="place_y">
+					<input type="hidden" value="" id="place_address_name" name="place_address_name">
+				</td>
+			</tr>
+			<tr>
   			<th style="width:300px; background-color:#ddd">★★★★★</th>
 				<td>
   				<select name="stars" style="width: 500px; height: 50px;">
-		  			<option value="">별점을 선택하세요</option>
-		  			<option value="01">☆☆☆☆★</option>
-		  			<option value="02">☆☆☆★★</option>
-		  			<option value="03">☆☆★★★</option>
-		  			<option value="04">☆★★★★</option>
-		  			<option value="05">★★★★★</option>
-  			
+			  			<option value="">별점을 선택하세요</option>
+			  			<option value="01">☆☆☆☆★</option>
+			  			<option value="02">☆☆☆★★</option>
+			  			<option value="03">☆☆★★★</option>
+			  			<option value="04">☆★★★★</option>
+			  			<option value="05">★★★★★</option>
   				</select> 
-   				</td>
-   
+				</td>
    		</tr>
-		<tr>
-			<th class="text-center" style="width: 100px; background-color: #ffc">리뷰 사진</th>
-			<td>
-				<input type="file" name="upload" class="form-control"
-				    multiple="multiple">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<textarea style="width: 100%; height: 300px;" name="content"
-				class="form-control" required="required"
-				placeholder="리뷰를 작성해주세요"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center">
-				<button type="submit" onclick="location.href='/review/insert'"
-				style="width: 100px;background-color: orange">저장</button>
-			
-			</td>
-		</tr>
-	</table>
-</form>
-<script>
+			<tr>
+				<th class="text-center" style="width: 100px; background-color: #ffc">리뷰 사진</th>
+				<td>
+					<input type="file" name="upload" class="form-control"
+					    multiple="multiple">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<textarea style="width: 100%; height: 300px;" name="content"
+					class="form-control" required="required"
+					placeholder="리뷰를 작성해주세요"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button type="submit" onclick="location.href='/review/insert'"
+					style="width: 100px;background-color: orange">저장</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<script>
 		$(function(){
-			$(document).on("click", ".search_name", function () {
+			$(document).on("click", ".search_place_name", function () {
 			    $("#place_name").val($(this).text());
 			    $("#place_id").val($(this).siblings(".search_id").val());
-			    $("#place_category").val($(this).siblings(".search_category").text());
+			    $("#place_category_name").val($(this).siblings(".search_category_name").text());
+			    $("#place_phone").val($(this).siblings(".search_phone").val());
+			    $("#place_x").val($(this).siblings(".search_x").val());
+			    $("#place_y").val($(this).siblings(".search_y").val());
+			    $("#place_address_name").val($(this).siblings(".search_address_name").text());
 			  });
 		});
 	</script>

@@ -14,6 +14,7 @@ public class ReviewDto {
 	private String member_name;
 	private String place_id;
 	private String place_name;
+	private String category;
 	private String stars;
 	private String content;
 	private Timestamp created_at;

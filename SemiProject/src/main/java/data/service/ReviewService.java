@@ -30,6 +30,11 @@ public class ReviewService implements ReviewServiceInter {
 	public List<ReviewDto> getReviewByPlace(int place_id) {
 		return mapper.getReviewByPlace(place_id);
 	}
+	
+	@Override
+	public PlaceDto getPlace(int id) {
+		return mapper.getPlace(id);
+	}
 
 	@Override
 	public void insertReview(InsertReviewDto dto) {

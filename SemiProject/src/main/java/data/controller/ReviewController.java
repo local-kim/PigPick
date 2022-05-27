@@ -48,37 +48,17 @@ public class ReviewController {
 	public String write() {
 		return "/review/review2";
 	}
-
-	@GetMapping("/content")
-	public String content(
-			@RequestParam int num,
-			Model model
-			) {
-		ReviewDto review = service.getReview(num);
-		
-		model.addAttribute("review", review);
-		
-		return "/review/review3";
-	}
-	
-	@GetMapping("/place")
-	public String place(
-			@RequestParam int id,
-			Model model
-			) {
-		List<ReviewDto> list = service.getReviewByPlace(id);
-		
-		model.addAttribute("list", list);
-		
-		return "/review/place";
-	}
 	
 	@PostMapping("/insert")
 	public String insert(
 			@ModelAttribute InsertReviewDto review,
 			@RequestParam String place_id,
 			@RequestParam String place_name,
-			@RequestParam String place_category,
+			@RequestParam String place_category_name,
+			@RequestParam String place_phone,
+			@RequestParam String place_x,
+			@RequestParam String place_y,
+			@RequestParam String place_address_name,
 			@RequestParam ArrayList<MultipartFile> upload,
 			HttpSession session,
 			HttpServletRequest request
@@ -103,7 +83,6 @@ public class ReviewController {
 			}
 			
 			photos = photos.substring(0, photos.length() - 1);
-			System.out.println(photos);
 			review.setPhotos(photos);
 		}
 		
@@ -112,9 +91,11 @@ public class ReviewController {
 			PlaceDto place = new PlaceDto();
 			place.setId(place_id);
 			place.setName(place_name);
-			place.setCategory(place_category);
-			
-			System.out.println(place);
+			place.setCategory(place_category_name);
+			place.setPhone(place_phone);
+			place.setX(place_x);
+			place.setY(place_y);
+			place.setAddress(place_address_name);
 			
 			// place 테이블에 인서트
 			service.insertPlace(place);
@@ -123,6 +104,32 @@ public class ReviewController {
 		service.insertReview(review);
 		
 		return "redirect:/review";
+	}
+
+	@GetMapping("/content")
+	public String content(
+			@RequestParam int num,
+			Model model
+			) {
+		ReviewDto review = service.getReview(num);
+		
+		model.addAttribute("review", review);
+		
+		return "/review/review3";
+	}
+	
+	@GetMapping("/place")
+	public String place(
+			@RequestParam int id,
+			Model model
+			) {
+		List<ReviewDto> list = service.getReviewByPlace(id);
+		PlaceDto place = service.getPlace(id);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("place", place);
+		
+		return "/review/place";
 	}
 	
 	@GetMapping("/edit")
