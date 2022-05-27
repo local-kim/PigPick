@@ -1,6 +1,8 @@
 package data.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import data.dto.InsertReviewDto;
 import data.dto.PlaceDto;
@@ -17,8 +19,12 @@ public class ReviewService implements ReviewServiceInter {
 	private ReviewMapperInter mapper;
 
 	@Override
-	public List<ReviewDto> getReviewList() {
-		return mapper.getReviewList();
+	public List<ReviewDto> getReviewList(int startNum, int perPage) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("start", startNum);
+		map.put("perpage", perPage);
+		
+		return mapper.getReviewList(map);
 	}
 
 	@Override

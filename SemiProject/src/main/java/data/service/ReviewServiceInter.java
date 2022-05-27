@@ -8,7 +8,7 @@ import data.dto.ReviewDto;
 
 public interface ReviewServiceInter {
 	public int getTotalCount();
-	public List<ReviewDto> getReviewList();
+	public List<ReviewDto> getReviewList(int startNum, int perPage);
 	public ReviewDto getReview(int reviewNum);
 	public List<ReviewDto> getReviewByPlace(int place_id);
 	public PlaceDto getPlace(int id);
