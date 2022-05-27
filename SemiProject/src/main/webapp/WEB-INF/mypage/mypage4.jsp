@@ -31,8 +31,10 @@ $(function(){
 });
 </script>
 <body>
-	<br><br><br><br><br><br>
-	<h1 class="mypage4_title" style="position:relative; left:70px;">My profile</h1>
+	<br><br>
+	<div class="section" id="section6">
+	<h1>My profile</h1>
+	<br><br>
 	<%-- <h3>${info}</h3> --%>
 
 	<div>
@@ -40,10 +42,10 @@ $(function(){
 		
 		<table class="container" style="width:1000px;">
 			 <tr>
-			 <th rowspan="2" class="text-center" style=" width:200px; height:400px;">
+			 <th rowspan="2" class="text-center" style=" width:200px; height:200px;">
 			 
 			 <img src="" class="user_img" id="user_img" title="내사진"
-		      style="width:200px;height: 200px;object-fit: cover;border: 5px solid orange;">
+		      style="width:200px;height: 200px;object-fit: cover;border:0;">
 			
 			 </th>
 			 <!-- <th class="text-center" style="height: 100px;">Name</th> -->
@@ -87,12 +89,13 @@ $(function(){
 			</tr>
 				
 		</table>
-		<br><br><br>
+
 			<div style="position: absolute; left: 45%;">
 				<button type="button" class=btnedit onclick="location.href='/mypage/editinfo'">Edit</button>
 				&nbsp;&nbsp;
 				<button type="button" class=btnedit onclick="history.back()">Before</button>
 			</div>
-		</div>	
+		</div>
+		</div>
 </body>
 </html>

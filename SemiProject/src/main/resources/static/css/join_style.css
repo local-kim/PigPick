@@ -6,7 +6,7 @@ html {
 }
 .sign_up{
 	width: 150px;
-	
+	margin-left: 500px;
 }
 .joinform{
 	width: 1000px;
@@ -15,11 +15,11 @@ html {
 }
 .joinbtn{
 	width:150px;
-	background-color:orange;
+	background-color:transparent;
 	line-height:1.42857143;
 	height:150px;
 	border:0;
-	margin-left: 15%;
+	margin-left: 25%;
 	
 }
 #photo{
@@ -27,24 +27,35 @@ html {
 	border: 0;
 }
 .tbljoin th{
-	height: 20px;
+	height: 30px;
 	width: 120px;
 	padding: 10px;
-	background-color: #2a28b5;
-	color: orange;
+	background-color:transparent;
+	color: black;
 	
 }
 .tbljoin tr{
 	padding: 10px;
+	padding-left:10px;
+	padding-right:10px;
 }
 .tbljoin td{
 	padding: 10px;
-	background-color: #ddd;
+
+	background-color:  transparent;
+	
 	
 }
 
 .tbljoin {
 	height: 500px;
+	padding-bottom: 10px;
+
 	
 }
+#idcheck{
+	background-color:  #c6b6ea;
+	border: 1px solid black;
+}
+
 

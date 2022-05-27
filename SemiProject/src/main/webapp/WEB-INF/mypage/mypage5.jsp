@@ -45,8 +45,10 @@ function readURL(input)
 
 </script>
 <body>
+<br><br>
+<div class="section" id="section6">
 	<br><br><br><br><br>
-	<h1 class="mypage5_title"">My Profile Edit</h1>
+	<h1>My Profile Edit</h1>
 	<%-- <h3>${info}</h3> --%>
 
 	<form action="update" method="post" enctype="multipart/form-data">
@@ -126,6 +128,7 @@ function readURL(input)
 			<button type="submit" class="btnedit" style="position:absolute; left: 50%;"
 				 onclick="location.href='/mypage/update'">SAVE</button>
 		</div>	
+	</div>
 
 		
 </body>

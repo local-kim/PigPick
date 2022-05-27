@@ -14,7 +14,7 @@
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<h1>순위</h1>
+	<
 	
 	<div class="section" id="section6">
 		<!-- example -->
