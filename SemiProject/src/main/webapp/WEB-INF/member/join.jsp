@@ -80,7 +80,7 @@
 </head>
 <body>
 	<div class="section" id="section7">
-		<form action="insert" method="post" style="bakckground-color:#ff0000; position:absolute; top:30%; left:30%;" enctype="multipart/form-data" class="joinform"  onsubmit="return check()">
+		<form action="insert" method="post" style="bakckground-color:#ff0000; position:absolute; top:10%; left:10%;" enctype="multipart/form-data" class="joinform"  onsubmit="return check()">
 		
 			<!-- 회원가입 -->
 			<table class="tbljoin" style="width: 1100px;">
@@ -158,7 +158,7 @@
 				</tr>
 				<tr>
 					<td colspan="4" style="background-color: transparent;">
-						<button type="submit" id="join" class="btn btn-info joinbtn">
+						<button type="submit" id="join" class="joinbtn">
 							<img src="../images/signup.png" class="sign_up" id="sign_up" title="sign_up">
 						</button>
 					</td>

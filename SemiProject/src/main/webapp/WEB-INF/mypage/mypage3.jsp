@@ -17,11 +17,13 @@
 
 </style>
 <body>
-	<br><br><br><br><br><br><br><br>
-	<h1 class="mypage3_title" style="left:25px;">리뷰 모아보기</h1>
+
+	
 	<%-- <h3>${list}</h3> --%>
-		<div>
-		<br><br>
+	<br><br>
+		<<div class="section" id="section6">
+		<h1>My Review</h1>
+		<br><br><br>
 		
 		<table class="container">
 			<tr>

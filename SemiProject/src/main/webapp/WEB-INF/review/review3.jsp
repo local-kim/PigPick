@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css"  rel="stylesheet" type="text/css" />
-	<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
+	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <script type="text/javascript">
 $(window).on("load resize ", function() {
@@ -22,39 +22,50 @@ $(window).on("load resize ", function() {
 <body>
 
 
-<section>
-	
-	<h2>My Place</h2>
-	<div class="tbl-header" style="width: 1200px;">
-    <table>
-      <thead>
+
+	<div class="section" id="section6">
+	<br><br>
+	<h1>리뷰 상세보기</h1>
+	<br><br>
+
+<button type="button" class="btn_review_edit" onclick="location.href='/review/edit?num=${review.num}'">Edit</button>
+<button type="button" class="btn_review_delete" onclick="location.href='/review/delete?num=${review.num}'">Delete</button>
+    <table class="container">
+   
 		<tr>
 			<th>식당</th>
+			<td>${review.place_name}</td>
+		</tr>
+		<tr>
 			<th>작성자</th>
-			<th>내용</th>
+			<td>${review.member_name}</td>
+		</tr>
+		
+		<tr>
 			<th>★★★★★</th>
+			<td>${review.stars}</td>
+		</tr>
+		<tr>	
 			<th>Date</th>
+			<td>${review.created_at}</td>
 		</tr>
-	  </thead>
-	</table>
-	</div>
-	<div class="tbl-content" style="width: 1200px;">
-    <table>
-     <tbody>
-     	<tr>
-			
-				<td>${review.place_name}</td>
-				<td>${review.member_name}</td>
-				<td>${review.content}</td>
-				<td>${review.stars}</td>
-				<td>${review.created_at}</td>
-			
+		<tr>
+			<th colspan="2">내용</th>
+		
 		</tr>
-	</tbody>
+		<tr>
+			<td colspan="2" style="background-color: white; height: 300px;">${review.content}</td>
+		</tr>
+	 
+
+	
+	
+
+     	
+	
 	</table>
   </div>
-  <button type="button" class="btn_review_edit" onclick="location.href='/review/edit?num=${review.num}'">수정</button>
-  <button type="button" class="btn_review_delete" onclick="location.href='/review/delete?num=${review.num}'">삭제</button>
+ 
 	
 </section>
 	

@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<br><br><br><br><br><br><br>리뷰쓰기폼
+	<br><br><br><br><br><br><br>리뷰쓰기
 
 	<c:if test="${sessionScope.loggedIn==null }">
 	<script type="text/javascript">

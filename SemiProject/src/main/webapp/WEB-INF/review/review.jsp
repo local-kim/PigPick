@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
+<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <script type="text/javascript">
 $(window).on("load resize ", function() {
@@ -25,9 +25,16 @@ $(window).on("load resize ", function() {
 	<button type="button" onclick="location.href='/review/content'">내용보기</button>
 	<section>
 	
-	<h2>Review</h2>
-	<div class="tbl-header" style="width: 1200px;">
-    <table>
+	<div class="section" id="section6">
+	<br><br><br><br>
+	
+	<h1>Review</h1>
+	<br><br><br><br>
+
+    <table class="container">
+	
+	
+
       <thead>
 		<tr>
 			<th>번호</th>
@@ -46,11 +53,8 @@ $(window).on("load resize ", function() {
 				
 		</c:if>
 		 </thead>
-		</table>
-			
-		</div>
-		<div class="tbl-content" style="width: 1200px;">
-	    <table>
+		
+	
 	     <tbody>
 	        
 					<c:set var="no" value="${totalCount}"/>

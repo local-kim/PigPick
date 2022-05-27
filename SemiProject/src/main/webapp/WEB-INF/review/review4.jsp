@@ -11,38 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../css/board_table.css" rel="stylesheet" type="text/css" />
+	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <section>
-	
-	<h1>나의 리뷰 수정</h1>
-		<div class="tbl-header" style="width: 900px;">
-   		 <table>
-      		<thead>
+	<div class="section" id="section6">
+	<br><br>
+	<h1>리뷰 수정/삭제</h1>
+	<br><br><br><br><br><br>
+	 <button type="submit" class="btnreview_update" 
+	   onclick="location.href='/review/update?num=${review.num}'">Update</button>
+		<form action="update" method="get">
+    	<table class="container">
+   		 
+      		
 			<tr>
 				<th>식당</th>
-			
-				<th>★★★★★</th>
-			
-				<th>리뷰</th>
-			</tr>
-			</thead>
-		</table>
-		</div>
-	<div class="tbl-content" style="width: 900px;">
-		<form action="update" method="get">
-			<table>
-    	 <tbody>
-        	<tr>
-        		<input type="hidden" name="num" value="${review.num}">
-						<td>
+				<input type="hidden" name="num" value="${review.num}">
+				<td>
 							<!-- <input type="text" name="" class="form-control" style="color: black;"
 							required="required"  
 							value="${review.place_name}"> -->
 							<span>${review.place_name}</span>
-						</td>
-						<td>
+				</td>
+			<tr>
+			
+				<th>★★★★★</th>
+				<td>
 							<select name="stars" style="color: black;">
 					  			<option>별점을 선택하세요</option>
 					  			<option value="01">☆☆☆☆★</option>
@@ -52,18 +47,25 @@
 					  			<option value="05">★★★★★</option>
 		  				</select>
 		  			</td>
-						<td>
-							<input type="text" name="content" class="form-control" style="color: black;"
-							required value="${review.content}">
+			</tr>
+			<tr>
+				<th>리뷰</th>
+				<td>
+					
+					
+					<textarea style="width: 100%; height: 300px;" name="content"
+					class="form-control"
+					>${review.content}</textarea>
 						</td>
-					</tr>
-			</tbody>
+			</tr>
+	
+			
+    	
 	   </table>
-	   
-	   <button type="submit" class="btnreview_update" 
-	   onclick="location.href='/review/update?num=${review.num}'">Update</button>
 		</form>
-  </div>
+	   </div>
+	  
+
 </section>
 </body>
 </html>
