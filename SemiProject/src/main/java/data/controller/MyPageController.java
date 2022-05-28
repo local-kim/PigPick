@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,17 +23,18 @@ import data.service.MyPageService;
 import util.FileUtil;
 
 @Controller
+@RequestMapping("/mypage")
 public class MyPageController {
 	
 	@Autowired
 	MyPageService service;
 
-	@GetMapping("/mypage")
+	@GetMapping("")
 	public String mypage() {
 		return "/mypage/mypage";
 	}
 	
-	@GetMapping("/mypage/rank")
+	@GetMapping("/rank")
 	public String mypage2(
 			Model model,
 			HttpSession session
@@ -45,7 +47,7 @@ public class MyPageController {
 		return "/mypage/mypage2";
 	}
 	
-	@GetMapping("/mypage/review")
+	@GetMapping("/review")
 	public String mypage3(
 			Model model,
 			HttpSession session
@@ -58,7 +60,7 @@ public class MyPageController {
 		return "/mypage/mypage3";
 	}
 	
-	@GetMapping("/mypage/info")
+	@GetMapping("/info")
 	public String mypage4(
 			Model model,
 			HttpSession session
@@ -71,7 +73,7 @@ public class MyPageController {
 		return "/mypage/mypage4";
 	}
 	
-	@GetMapping("/mypage/editinfo")
+	@GetMapping("/editinfo")
 	public String mypage5(
 			Model model,
 			HttpSession session
@@ -84,7 +86,7 @@ public class MyPageController {
 		return "/mypage/mypage5";
 	}
 	
-	@PostMapping("/mypage/update")
+	@PostMapping("/update")
 	public String mypage6(
 			@ModelAttribute MemberDto member,
 			@RequestParam MultipartFile upload,
