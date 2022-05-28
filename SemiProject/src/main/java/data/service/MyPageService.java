@@ -9,6 +9,7 @@ import data.dto.MemberDto;
 import data.dto.MenuRankDto;
 import data.dto.ReviewDto;
 import data.mapper.MyPageMapperInter;
+import util.Util;
 
 @Service
 public class MyPageService implements MyPageServiceInter {
@@ -18,7 +19,10 @@ public class MyPageService implements MyPageServiceInter {
 
 	@Override
 	public List<MenuRankDto> getMenuRank(int member_num) {
-		return mapper.getMenuRank(member_num);
+		List<MenuRankDto> list = mapper.getMenuRank(member_num);
+		Util.convertCategory(list);
+		
+		return list;
 	}
 	
 	@Override
