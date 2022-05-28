@@ -16,14 +16,6 @@
 <br><br><br><br><br><br><br><br><br><br>
 <style type="text/css">
 
-
-
-  
-	
-	
-
-
-
 div.login_info{
 	border:3px solid white;
 	background: white;
@@ -247,7 +239,7 @@ div.box5{
 	<strong>Log In</strong>
 </button>
 
-<div class="box1" id="box1" style="display: none">
+<div class="box1" id="box1" > <!--  style="display: none">-->
 	<img src="../images/key.png" id="key" style="width:200px; height:200px;">
 	<strong>상단 오른쪽그림을 클릭해서<br>
 	<strong style="color: blue">로그인</strong>&ensp;해주세요</strong><br><br>
@@ -255,6 +247,7 @@ div.box5{
 	회원가입을 하지 않으셨다면 <br> <strong style="color: blue">&ensp;JOIN</strong> 을 눌러서 가입해 주세요</strong>
 </div>
 
+<!--  
 <script>
 $(document).ready(function () {
 	$("#login_info").click( function() {
@@ -265,7 +258,7 @@ $(document).ready(function () {
 			});
 		});
 	});
-</script>
+</script>-->
 
 	
 
