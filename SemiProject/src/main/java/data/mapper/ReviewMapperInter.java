@@ -16,6 +16,7 @@ public interface ReviewMapperInter {
 	public ReviewDto getReview(int review_num);
 	public List<ReviewDto> getReviewByPlace(int place_id);
 	public PlaceDto getPlace(int id);
+	public float getAverageStar(int id);
 	public void insertReview(InsertReviewDto dto);
 	public int checkPlace(String place_id);
 	public void insertPlace(PlaceDto place);

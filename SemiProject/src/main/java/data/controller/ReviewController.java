@@ -165,9 +165,11 @@ public class ReviewController {
 			) {
 		List<ReviewDto> list = service.getReviewByPlace(id);
 		PlaceDto place = service.getPlace(id);
+		float stars = service.getAverageStar(id);
 		
 		model.addAttribute("list", list);
 		model.addAttribute("place", place);
+		model.addAttribute("stars", stars);
 		
 		return "/review/place";
 	}

@@ -14,8 +14,8 @@
 <link href="../css/board_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<br><br><br><br><br><br><br><br><br><br>
-	<h1>${place.name}</h1>
+	<br><br><br><br><br><br>
+	<h1>${place.name} (${stars})</h1>
 	<h3>${place.category}</h3>
 	<h3>${place.phone}</h3>
 	<h3>${place.address}</h3>
@@ -42,9 +42,6 @@
 		
 		// 마커가 지도 위에 표시되도록 설정합니다
 		marker.setMap(map);
-		
-		// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-		// marker.setMap(null);
 	</script>
 	
 	<h4>${fn:length(list)}개의 후기가 있습니다.	</h4>
@@ -63,7 +60,6 @@
 				<td><fmt:formatDate value="${review.created_at}" pattern="yyyy-MM-dd HH:mm" /></td>
 			</tr>
 		</c:forEach>
-		
 	</table>
 </body>
 </html>

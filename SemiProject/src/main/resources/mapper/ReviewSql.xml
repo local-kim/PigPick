@@ -23,6 +23,9 @@
 	<select id="getPlace" parameterType="int" resultType="place">
 		select * from place where id = #{id}
 	</select>
+	<select id="getAverageStar" parameterType="int" resultType="float">
+		select round(avg(stars), 2) from review where place_id = #{id}
+	</select>
 	<select id="checkPlace" parameterType="String" resultType="int">
 		select count(*) from place where id = #{place_id}
 	</select>

@@ -41,6 +41,11 @@ public class ReviewService implements ReviewServiceInter {
 	public PlaceDto getPlace(int id) {
 		return mapper.getPlace(id);
 	}
+	
+	@Override
+	public float getAverageStar(int id) {
+		return mapper.getAverageStar(id);
+	}
 
 	@Override
 	public void insertReview(InsertReviewDto dto) {
