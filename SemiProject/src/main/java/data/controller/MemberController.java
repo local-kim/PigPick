@@ -1,6 +1,7 @@
 package data.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -75,7 +76,7 @@ public class MemberController {
 			// 파일 저장
 			try {
 				upload.transferTo(new File(uploadPath + File.separator + fileName));
-			} catch (Exception e) {
+			} catch (IllegalStateException | IOException e) {
 				e.printStackTrace();
 			}
 		}

@@ -1,6 +1,7 @@
 package data.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,29 +46,19 @@ public class ReviewController {
 		int endPage;		// 한 블럭에서 보여질 끝 페이지 번호
 		int no;	// 각 페이지 당 보여질 시작 번호
 		
-		// 총 글의 개수를 구한다
 		totalCount = service.getTotalCount();
 		
-		// 총 페이지 수를 구한다
-		totalPage = totalCount / perPage + (totalCount % perPage == 0 ? 0 : 1);	// 딱 떨어지지 않으면 한 페이지를 더함
-		// totalPage = (int)Math.ceil((double)totalCount / perPage);	// 무조건 올림
+		totalPage = totalCount / perPage + (totalCount % perPage == 0 ? 0 : 1);
 		
-		// 각 블럭의 시작 페이지 (한 블럭 당 5개일 경우 예시)
-		// 1, 6, 11,,, (currentPage가 1~5 일때는 1, 6~10일때는 6)
 		startPage =  (currentPage - 1) / perBlock * perBlock + 1;
-		// 5, 10, 15,,,
 		endPage = startPage + perBlock - 1;
 		
-		// 문제점 (마지막 블럭은 마지막 페이지까지만 나와야함)
 		if(endPage > totalPage) {
 			endPage = totalPage;
 		}
 		
-		// 각 페이지에서 보여질 글의 시작 번호(mysql은 0부터)
-		// 한 페이지 당 3개일 경우 1페이지: 0, 2페이지: 3, 3페이지: 6 ,,,
-		startNum = (currentPage - 1) * perPage;	// oracle은 +1 해줌
+		startNum = (currentPage - 1) * perPage;
 		
-		// 각 페이지 당 보여질 시작번호
 		no = totalCount - (currentPage - 1) * perPage;
 		
 		List<ReviewDto> list = service.getReviewList(startNum, perPage);
@@ -109,15 +100,16 @@ public class ReviewController {
 		// 사진 처리(여러장)
 		if(!upload.get(0).getOriginalFilename().equals("")) {
 			String photos = "";
+			String uploadPath = request.getServletContext().getRealPath("/review_img");
 			
 			for(MultipartFile f : upload) {
-				String uploadPath = request.getServletContext().getRealPath("/review_img");
 				String fileName = FileUtil.changeFileName(f.getOriginalFilename());
 				photos += fileName + ",";
+				File file = new File(uploadPath + File.separator + fileName);
 				
 				try {
-					f.transferTo(new File(uploadPath + File.separator + fileName));
-				} catch (Exception e) {
+					f.transferTo(file);
+				} catch (IllegalStateException | IOException e) {
 					e.printStackTrace();
 				}
 			}

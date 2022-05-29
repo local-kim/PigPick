@@ -29,8 +29,6 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;
 	
-//	private String[] category = {"한식", "일식", "중식", "양식", "아시아", "기타"};
-
 	@GetMapping("")
 	public String mypage() {
 		return "/mypage/mypage";
