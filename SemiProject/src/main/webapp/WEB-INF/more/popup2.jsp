@@ -25,7 +25,7 @@ div.popup_all_info {
 	
 	border-style: outset;
 	box-shadow: #99A3A4 1px 1px;
-	position: absolute; left: 26%;
+	position: absolute; left: 28%;
 	text-align: center;
 	padding: 100px;
 }
@@ -92,7 +92,7 @@ $(document).ready(function () {
 	</div>
 <br><br>
 	<div>
-		<p style="background-color: #98B5B7; border-radius: 50px;">Mypage</p></div>
+		<p style="background-color: #98B5B7; border-radius: 50px;">MyPage</p></div>
 		<br><br>
 		
 	
@@ -103,7 +103,7 @@ $(document).ready(function () {
 		
 		<strong style="color: #E62B00;">My Page Review&ensp;</strong><strong>에서는 
 		
-		<br><br>내가 남긴 리뷰를 모아볼 수 있어요</strong>
+		<br><br>내가 남긴 리뷰를 모아 볼 수 있어요</strong>
 		
 	</div>
 
@@ -121,11 +121,3 @@ $(document).ready(function () {
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
