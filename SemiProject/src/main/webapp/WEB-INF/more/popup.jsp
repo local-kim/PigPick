@@ -19,7 +19,7 @@
 	border-radius: 90px;
 	position:absolute;
 	top:130px;
-	left:570px;
+	left:600px;
 }
 #logo_img{
 	display:block;
