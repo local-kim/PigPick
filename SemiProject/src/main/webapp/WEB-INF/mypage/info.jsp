@@ -16,34 +16,45 @@
 <style>
 
 </style>
-<body>
-	<br><br><br><br><br><br>
-	<h1 class="mypage4_title" style="position:relative; left:70px;">My profile</h1>
-	<%-- <h3>${info}</h3> --%>
-
-	<div>
-		<br><br>
+<script type="text/javascript">
+$(function(){
+	if(${info.photo==null}){
+		$("#user_img").attr("src","../images/user.png");
+	}else{
+	$("#user_img").attr("src","../profile_img/${info.photo}");
 		
-		<table class="container" style="width:700px; height:255.5px;">
+	}
+	
+	$("#myphoto").change(function(){
+		   readURL(this); 
+		});
+});
+</script>
+<body>
+<%-- <h3>${info}</h3> --%>
+	<div class="section" id="section6">
+	<br><br><br>
+		<h1>My profile</h1>
+		<br><br><br>
+		<table class="container" style="width:1000px;">
 			 <tr>
-			 <th rowspan="2" class="text-center" style=" width:200px; height:300px;">
-			 <c:if test="${info.photo!='null' }">
-			  <img src="${info.photo}">
-			 </c:if>
-			 <img src="../images/user.png" class="user_img" title="내사진"
-		     style="width: 100px;">
+			 <th class="text-center" style=" width:200px; height:200px;">
+			 
+			 <img src="" class="user_img" id="user_img" title="내사진"
+		      style="width:200px;height: 200px;object-fit: cover;border:0;">
 			
 			 </th>
+		
 			 <!-- <th class="text-center" style="height: 100px;">Name</th> -->
-			 <td style="width: 400px;">
-				${info.name}
-			<tr>
-			 </td>
-			 <!-- <th class="text-center" style="height: 100px;">ID</th> -->
-			 <td style="width: 400px;">
-				${info.id}
-			</td>
-			</tr>
+			 	<th style="width: 400px;">
+			 		
+					Name&nbsp;&nbsp;<b style="color: black;">${info.name}</b>
+					<br><br>
+					<hr>
+	
+					ID&nbsp;&nbsp;<b style="color: black;">${info.id}</b>
+				</th>
+		
 			<%-- <c:if test="">
 		
 			</c:if>
@@ -75,12 +86,14 @@
 			</tr>
 				
 		</table>
-		<br><br><br>
+
 			<div style="position: absolute; left: 45%;">
-				<button type="button" class=btnedit onclick="location.href='/mypage/editinfo'">Edit</button>
+				<button type="button" class=btn_edit onclick="location.href='/mypage/edit'">Edit</button>
 				&nbsp;&nbsp;
-				<button type="button" class=btnedit onclick="history.back()">Before</button>
+				<button type="button" class=btn_before onclick="history.back()">Before</button>
+				<button type="button" onclick="location.href='/mypage/delete'">탈퇴</button>
 			</div>
-		</div>	
+		</div>
+		</div>
 </body>
 </html>

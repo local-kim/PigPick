@@ -21,5 +21,4 @@ public class MemberService implements MemberServiceInter {
 	public int checkId(String id) {
 		return mapper.checkId(id);
 	}
-
 }

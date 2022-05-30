@@ -1,6 +1,7 @@
 package data.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +37,6 @@ public class MemberController {
 			@RequestParam String tel1,
 			@RequestParam String tel2,
 			@RequestParam String tel3,
-			@RequestParam String year,
 			@RequestParam String month,
 			@RequestParam String day,
 			@RequestParam String email1,
@@ -48,19 +48,21 @@ public class MemberController {
 		String tel = tel1 + "-" + tel2 + "-" + tel3;
 		member.setTel(tel);
 		
-		// 생년월일
-		String birthday = year + month + day;
+		// 생일
+		String birthday = month + day;
 		member.setBirthday(birthday);
 		
 		// 이메일
 		String email = email1 + "@" + email2;
 		member.setEmail(email);
 		
+		// admin
+		member.setAdmin(0);
+		
 		if(!upload.isEmpty()) {
 			// 사진 처리
 			String uploadPath = request.getServletContext().getRealPath("/profile_img");
 			String fileName = FileUtil.changeFileName(upload.getOriginalFilename());
-			System.out.println(fileName);
 			
 			// 파일 경로 저장
 			member.setPhoto(fileName);
@@ -68,7 +70,7 @@ public class MemberController {
 			// 파일 저장
 			try {
 				upload.transferTo(new File(uploadPath + File.separator + fileName));
-			} catch (Exception e) {
+			} catch (IllegalStateException | IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -83,7 +85,6 @@ public class MemberController {
 	public Map<String, Integer> checkId(
 			@RequestParam String id
 			) {
-		System.out.println("checkId");
 		Map<String, Integer> map = new HashMap<>();
 		
 		map.put("count", service.checkId(id));

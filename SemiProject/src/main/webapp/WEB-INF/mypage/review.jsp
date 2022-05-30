@@ -17,12 +17,12 @@
 
 </style>
 <body>
-	<br><br><br><br><br><br><br><br>
-	<h1 class="mypage3_title" style="left:25px;">리뷰 모아보기</h1>
-	<h3>${list}</h3>
-		<div>
-		<br><br>
-		
+<br><br>
+<%-- <h3>${list}</h3> --%>
+	<div class="section" id="section6">
+	
+		<h1>My Review</h1>
+		<br><br><br>
 		<table class="container">
 			<tr>
 				<th class="text-center">No.</th>
@@ -38,7 +38,7 @@
 					<td>${i.count}</td>
 					
 					<!-- 식당이름 -->
-					<td>${dto.place_id}</td>
+					<td>${dto.place_name}</td>
 					<!-- 후기내용 -->
 					<td>${dto.content}</td>
 					<!-- 별점 -->

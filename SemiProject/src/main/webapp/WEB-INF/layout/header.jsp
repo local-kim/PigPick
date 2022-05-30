@@ -64,6 +64,7 @@
 				</ul>
 			</li>
 			<li class="topnav" id="join"><a href="/join"><b>JOIN</b></a></li>
+			<li class="topnav" id="admin"><a href="/admin"><b>ADMIN</b></a></li>
 		</ul>
 	  </div>
 	</div>

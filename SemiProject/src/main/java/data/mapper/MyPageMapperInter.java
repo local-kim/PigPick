@@ -1,7 +1,6 @@
 package data.mapper;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -14,5 +13,6 @@ public interface MyPageMapperInter {
 	public List<MenuRankDto> getMenuRank(int member_num);
 	public List<ReviewDto> getReviewList(int member_num);
 	public MemberDto getMemberInfo(int member_num);
-	public void updateMemberInfo(Map<String, String> map);
+	public void updateMember(MemberDto member);
+	public void deleteMember(int member_num);
 }

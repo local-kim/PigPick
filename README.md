@@ -1,3 +1,1 @@
-# SemiProject
-
-<i'm siyeun>
+# Pig Pick

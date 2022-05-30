@@ -11,8 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="css/style.css"  rel="stylesheet" type="text/css" />
-<script>
+	<link href="css/join_style.css"  rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="<c:url value='/resource/js/core.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/resource/js/sha256.min.js'/>"></script>
+	<script>
+
+
 	$(function(){
+	
 		
 		//비밀번호 체크
 		$("#pass2").keyup(function(){
@@ -59,6 +65,8 @@
 	});
 	
 	function check(){
+		/* var joinFormSubmitted = false; */
+		
 		if($("b.idok").text()!='ok'){
 		alert("아이디체크 버튼을 눌러서 중복확인해주세요");
 		return false;
@@ -72,55 +80,100 @@
 		}else{
 			return true;
 			alert("회원가입되셨습니다.");
-		}	
-	}
+		}
+		
+		
 </script>
 </head>
 <body>
 	<div class="section" id="section7">
-		<form action="insert" method="post" enctype="multipart/form-data" class="joinform" style="left: 20%;" onsubmit="return check()">
+		<form action="insert" method="post" style="bakckground-color:#ff0000; position:absolute; top:10%; left:10%;" enctype="multipart/form-data" class="joinform"  onsubmit="return check()">
+		
 			<!-- 회원가입 -->
-			<br>
-			<p>이름</p>
-			<input type="text" id="name" name="name" style="width:400px;" class="form-control jogin-control" required placeholder="이름을 입력해주세요.">
-			<p>아이디</p>
-			<input type="text" name="id" id="id" style="width:400px;" class="form-control jogin-control" required>
-			<button type="button" class="btn btn-sm btn-danger" id="idcheck">중복 체크</button>
-			&nbsp;
-			<b class="idok"></b>
-			<p>비밀번호</p>
-			<input type="password" name="password" id="pass1" style="width:400px;" class="form-control jogin-control pass" required placeholder="비밀번호">
-			<p>비밀번호 확인</p><b class="passok"></b>
-			<input type="password" id="pass2" style="width:400px;" required class="form-control jogin-control pass" placeholder="한 번 더 입력">
-			<p>생년월일</p>
-			<input type="text" name="year" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			년&nbsp;
-			<input type="text" name="month" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			월&nbsp;
-			<input type="text" name="day" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			일&nbsp;
-			<p>전화번호</p>
-			<input type="text" id="phone" name="tel1"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			&nbsp;-&nbsp;
-			<input type="text" id="phone" name="tel2"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			&nbsp;-&nbsp;
-			<input type="text" id="phone" name="tel3"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			<p>이메일</p>
-			<div class="jogin-control">
-			<input type="text" name="email1" style="width:120px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			<b>@</b>
-			<input type="text" name="email2" id="email2" style="width:130px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
-			<select id="email3" style="width:115px;line-height:1.42857143;color:#555;height:34px;border:1px solid #ccc; margin-left:10px;">
-				<option value="-">직접입력</option>
-				<option value="naver.com">네이버</option>
-				<option value="nate.com">네이트</option>
-				<option value="google.com">구글</option>
-			</select>
-			<p>주소</p>
-			<input type="text" name="address" style="width:400px;" class="form-control jogin-control" placeholder="주소">
-			<p>프로필 사진</p>
-			<input type="file" name="upload" id="photo" style="width:400px;" class="form-control jogin-control" accept="image/*">
-			<img src="#" alt="미리보기" id="preview" style="max-width:200px;">
+			<table class="tbljoin" style="width: 1100px;">
+				<tr>
+					<th>프로필사진</th>
+					<td>
+						<img src="../images/user.png" alt="미리보기" id="preview" style="max-width:100px;"><br><br>
+						<input type="file" name="upload" id="photo" style="width:300px;float: left" class="form-control jogin-control" accept="image/*">
+						
+					</td>
+					<td colspan="2">
+						
+					</td>
+					
+				</tr>
+				<tr>
+					<th>이름</th>
+					<td>
+						<input type="text" id="name" name="name" style="width:400px;" class="form-control jogin-control"
+						required placeholder="이름을 입력해주세요.">
+					</td>
+					<th>생년월일</th>
+					<td>
+						<input type="text" name="month" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+						월&nbsp;
+						<input type="text" name="day" style="width:110px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+						일&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<th>아이디</th>
+					<td>
+						<b class="idok"></b>
+						<input type="text" name="id" id="id" style="width:400px;" class="form-control jogin-control" required>
+						<button type="button" class="btn btn-sm btn-danger" id="idcheck">중복 체크</button>
+					</td>
+					<th>전화번호</th>
+					<td><input type="text" id="phone" name="tel1"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+						&nbsp;-&nbsp;
+						<input type="text" id="phone" name="tel2"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+						&nbsp;-&nbsp;
+						<input type="text" id="phone" name="tel3"  style="width:120px; border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td>
+						<input type="password" name="password" id="pass1" style="width:400px;" class="form-control jogin-control pass" required placeholder="비밀번호">
+					</td>
+					<th>이메일</th>
+					<td>
+						<input type="text" name="email1" style="width:120px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+						<b>@</b>
+						<input type="text" name="email2" id="email2" style="width:130px;border:1px solid #ccc; border-radius: 4px;font-size:14px;line-height:1.42857143;color:#555;height:34px;" required>
+						<select id="email3" style="width:115px;line-height:1.42857143;color:#555;height:34px;border:1px solid #ccc; margin-left:10px;">
+							<option value="-">직접입력</option>
+							<option value="naver.com">네이버</option>
+							<option value="nate.com">네이트</option>
+							<option value="google.com">구글</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호 확인</th>
+					<td>
+						<b class="passok"></b>
+						<input type="password" id="pass2" style="width:400px;" required class="form-control jogin-control pass" placeholder="한 번 더 입력">
+						<!-- <input type="hidden" name="loginPwReal"> -->
+					</td>
+					<th>주소</th>
+					<td>
+						<input type="text" name="address" style="width:400px;" class="form-control jogin-control" placeholder="주소">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" style="background-color: transparent;">
+						<button type="submit" id="join" class="joinbtn">
+							<img src="../images/signup.png" class="sign_up" id="sign_up" title="sign_up">
+						</button>
+					</td>
+				</tr>
+			</table>
+				</form>
+	</div>
+		
+		
 			<script>
 			function readURL(input)
 			{
@@ -140,12 +193,7 @@
 			   readURL(this); 
 			});
 			</script>
-			</div>
-			<br><br><br><br>
-			<button><img src="images/googleloginbtn.png"></button>
-			<br><br><br><br>
-			<button type="submit" id="join" class="btn btn-info joinbtn" style="width:400px; background-color:#94d5fe; line-height:1.42857143; height:34px; ">회원가입</button>
-		</form>
-	</div>
+
+	
 </body>
 </html>

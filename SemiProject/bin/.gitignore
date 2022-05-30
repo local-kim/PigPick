@@ -31,5 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 
 /.DS_Store
+=======
+>>>>>>> branch 'master' of https://github.com/local-kim/SemiProject.git

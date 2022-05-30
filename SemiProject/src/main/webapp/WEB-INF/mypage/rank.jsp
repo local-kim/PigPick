@@ -14,16 +14,15 @@
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<h1>순위</h1>
-	
+<br><br>
+<%-- <h3>${list}</h3> --%>
 	<div class="section" id="section6">
 		<!-- example -->
 		<h1>My Menu List</h1>
-		<br><br>
-		<h3>${list}</h3>
-		<table class="container" style="width: 1100px;">
+		<br><br><br>
+		<table class="container" >
 			<tr>
-				<th class="text-center" style="width: 50px">No.</th>
+				<th class="text-center" style="width: 100px;">No.</th>
 				<th class="text-center" style="width: 500px">Menu</th>
 				<th class="text-center" style="width: 70x">Category</th>
 				<th class="text-center" style="width: 70x">Count</th>
@@ -36,7 +35,7 @@
 					<!-- 메뉴이름 -->
 					<td>${dto.menu_name}</td>
 					<!-- 분류 -->
-					<td>카테고리</td>
+					<td>${dto.category}</td>
 					<!-- 횟수 -->
 					<td>${dto.count}</td>	
 				</tr>

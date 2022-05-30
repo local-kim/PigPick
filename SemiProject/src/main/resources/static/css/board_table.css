@@ -22,22 +22,23 @@ h1{
   margin-bottom: 15px;
 }
 .review3_table{
-  width:800px;
+  width:80%;
   table-layout: fixed;
   
 }
 .tbl-header{
-
+  width:80%;
   background-color: rgba(255,255,255,0.3);
  }
 .tbl-content{
-  height:300px;
+  width:80%;
+  height:600px;
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
 }
 th{
-  width:300px;
+
   padding: 20px 15px;
   text-align: center;
   font-weight: 500;
@@ -46,7 +47,7 @@ th{
   text-transform: uppercase;
 }
 td{
-  width:300px;
+ 
   padding: 15px;
   text-align: center;
   vertical-align:middle;
@@ -90,11 +91,12 @@ td{
 }
 .btn_board_write{
 	position:relative;
-	left: 40%;
-	top: 100px;
+	left: 77%;
+	bottom:20px;
 	background-color: orange;
 	color:white;
 	border:0;
+	width: 100px;
 }
 
 /* demo styles */

@@ -13,8 +13,10 @@ public class ReviewDto {
 	private String member_num;
 	private String member_name;
 	private String place_id;
-//	private String place_name;	// 나중에 place 테이블 만들고 조인
+	private String place_name;
+	private String category;
 	private String stars;
 	private String content;
+	private String photos;
 	private Timestamp created_at;
 }

@@ -524,16 +524,16 @@ div.loginform{
 
 #section6 {
     width: 100%;
-    height: 900px;
+    height: 1090px;
     position: relative;
     border:1px solid #2d35af;
     /*추후수정예정*/
 }
 #section6 h1{
 	position:relative;
-	left:-1%;
+
 	top:6%;
-	font-size:4.8em;
+	font-size:3em;
 	font-weight:bold;
 	color:white;
 	text-shadow:-3px 0 #df642b, 0 3px #df642b, 3px 0 #df642b, 0 -3px #df642b;
@@ -577,7 +577,6 @@ div.mymenulistmore{
     position: relative;
     border:0px solid #2d35af;
     top: 100px;
-    left: 800px;
  
 
 }
@@ -586,8 +585,8 @@ div.mymenulistmore{
 	position:relative;
 	top:18%;
 	width:600px;
-	height:700px;
-	left: 30%;
+	height:800px;
+	
 }
 #section7.joinform p{
 	position:relative;
@@ -604,6 +603,14 @@ div.mymenulistmore{
 	margin:10px 0 5px 0;
 }
 
+/*board*/
+#section8 {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    border:1px solid #2d35af;
+   
+}
 
 
 
