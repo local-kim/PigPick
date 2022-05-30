@@ -10,16 +10,17 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <style>
-.INTRODUCE{
+.Introduce{
 	border:10px solid #E87100;
 	background: white;
 	border-radius: 90px;
 	position:absolute;
 	top:130px;
-	left:570px;
+	left:600px;
+	
 }
 #logo_img{
 	display:block;
@@ -30,15 +31,13 @@
 
 <body>
 <br>
-<div class="INTRODUCE">
+<div class="Introduce">
 <img src="images/logo_pigpick.jpg" id="logo_img" width="400" height="90">
 <br><br>
-<input type="button" value="PIGPICK 이란?"  style=" margin:auto; 
+<input type="button" value="PIGPICK 이란?" style=" margin:auto; 
         display:block;  background-color:#E87100; padding:20px;  color: white; font-size : 28px;
 	font-family : GmarketSansTTFMedium;  border:none;
     border-radius:10px;" onclick="location.href='/popup/picintro'"></input><br>
-
-
 
 
 <!--  
@@ -52,9 +51,8 @@
 	
 	-->
 	
-	
-	
-	
+
+
 	<input type="button" value="PIGPICK 이용방법" style=" margin:auto;
         display:block;  background-color:#E87100; color: white; padding:20px; border:none;
     border-radius:10px; font-size : 28px;
@@ -62,6 +60,7 @@
 }
 	<br>
 
+	
 	
 	<img src="../images/pipig.png" style="position:relative;
 	bottom:10px; left:150px;">
