@@ -12,15 +12,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<<<<<<< HEAD
 <style>
 .INTRODUCE{
-	border:10px solid #DC4522;
+	border:10px solid #E87100;
 	background: white;
 	border-radius: 90px;
 	position:absolute;
-	top:280px;
-	left:680px;
+	top:130px;
+	left:570px;
 }
 #logo_img{
 	display:block;
@@ -32,10 +31,10 @@
 <body>
 <br>
 <div class="INTRODUCE">
-<img src="images/logo_pigpick.jpg" id="logo_img" width="520" height="150">
+<img src="images/logo_pigpick.jpg" id="logo_img" width="400" height="90">
 <br><br>
-<input type="button" value="PIGPICK이란?"  style=" margin:auto; 
-        display:block;  background-color:#E87100; padding:20px; color: white; font-size : 40px;
+<input type="button" value="PIGPICK 이란?"  style=" margin:auto; 
+        display:block;  background-color:#E87100; padding:20px;  color: white; font-size : 28px;
 	font-family : GmarketSansTTFMedium;  border:none;
     border-radius:10px;" onclick="location.href='/popup/picintro'"></input><br>
 
@@ -58,13 +57,14 @@
 	
 	<input type="button" value="PIGPICK 이용방법" style=" margin:auto;
         display:block;  background-color:#E87100; color: white; padding:20px; border:none;
-    border-radius:10px; font-size : 40px;
+    border-radius:10px; font-size : 28px;
 	font-family : GmarketSansTTFMedium;" onclick="location.href='/popup/intro'"></input>
 }
 	<br>
 
 	
-	<img src="../images/logop.gif">
+	<img src="../images/pipig.png" style="position:relative;
+	bottom:10px; left:150px;">
 		<!--  
 		<div   class="row align-items-center justify-content-center text-center">
 		<img id="score" src="images/ggulggul.png"/>
