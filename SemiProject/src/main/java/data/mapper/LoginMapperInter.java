@@ -9,4 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface LoginMapperInter {
 	public int login(Map<String, String> map);
 	public List<Map<String, Object>> getLoginInfo(String id);
+	public int checkKakaoMember(String id);
 }

@@ -17,89 +17,103 @@
 <body>
 
 <section>
-	
 	<div class="section" id="section6">
-	<br><br>
+		<br><br>
+		<h1>Write</h1>
+		<br><br><br>
+		<c:if test="${sessionScope.loggedIn==null }">
+			<script type="text/javascript">
+				alert("로그인 후 글쓰기를 시도해주세요");
+				location.href='../login';
+			</script>
+		</c:if>
 
-	<h1>Write</h1>
-	
-	<br><br><br>
-
-
-	<c:if test="${sessionScope.loggedIn==null }">
-	<script type="text/javascript">
-		alert("로그인 후 글쓰기를 시도해주세요");
-		location.href='../login';
-	</script>
-	</c:if>
-
-	
+		<form action="insert" method="post" enctype="multipart/form-data">
+			<table class="container" style="width: 1000px;">
+				<tr>
+					<th class="text-center">식당 찾기</th>
+					<td>
+		  			<div class="map_wrap">
+							<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+							<div id="menu_wrap" class="bg_white">
+								<div class="option">
+		       				<input type="text" value="" id="keyword" size="20">
+		       				<button type="button" onclick="searchPlaces()">검색하기</button>
+								</div>
+								<ul id="placesList"></ul>
+								<div id="pagination"></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-center" >나의 맛집</th>
+					<td>
+						<input type="text" value="" id="place_name" name="place_name">
+						<input type="hidden" value="" id="place_id" name="place_id">
+						<input type="hidden" value="" id="place_category_name" name="place_category_name">
+						<input type="hidden" value="" id="place_phone" name="place_phone">
+						<input type="hidden" value="" id="place_x" name="place_x">
+						<input type="hidden" value="" id="place_y" name="place_y">
+						<input type="hidden" value="" id="place_address_name" name="place_address_name">
+					</td>
+				</tr>
+				<tr>
+	  			<th class="text-center" >★★★★★</th>
+					<td>
+	  				<select name="stars">
+				  			<option value="">별점을 선택하세요</option>
+				  			<option value="01">☆☆☆☆★</option>
+				  			<option value="02">☆☆☆★★</option>
+				  			<option value="03">☆☆★★★</option>
+				  			<option value="04">☆★★★★</option>
+				  			<option value="05">★★★★★</option>
+	  				</select> 
+					</td>
+	   		</tr>
+				<tr>
+					<th class="text-center">리뷰 사진</th>
+					<td>
+						<input type="file" name="upload" class="form-control" multiple>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea style="width: 100%; height: 300px;" name="content" class="form-control" required
+						placeholder="리뷰를 작성해주세요"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button type="submit" onclick="location.href='/review/insert'"
+						style="width: 100px;background-color: orange">저장</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</section>
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=462602bfbf3fad68a3a7744b60ee4c02&libraries=services,clusterer,drawing"></script>
 	<script>
 		// 마커를 담을 배열입니다
 		var markers = [];
-		
-		var currentPos;
-		var map;
-		var currentMarker;
+
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };
+
+		// 지도를 생성합니다    
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
 
 		// 장소 검색 객체를 생성합니다
-		var ps = new kakao.maps.services.Places();
+		var ps = new kakao.maps.services.Places();  
 
 		// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
 		var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 		
-		// 내 위치 마커로 표시하는 코드
-		// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-		if (navigator.geolocation) {
-		    
-	    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-	    navigator.geolocation.getCurrentPosition(function(position) {
-	        
-        var lat = position.coords.latitude, // 위도
-            lon = position.coords.longitude; // 경도
-        
-        // 현재 위치 좌표
-        currentPos = new kakao.maps.LatLng(lat, lon);
-            
-        var mapContainer = document.getElementById('map'); // 지도를 표시할 div
-				var mapOption = {
-	      		center: currentPos, // 지도의 중심좌표
-	      		level: 3 // 지도의 확대 레벨
-		    };
-        
-    		// 지도를 생성합니다
-				map = new kakao.maps.Map(mapContainer, mapOption);
-    			
-				// 마커 생성
-		    currentMarker = new kakao.maps.Marker({
-		    		map: map,
-		    		position: currentPos
-		    });
-		
-				
-	  	});
-		    
-		} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-		    
-		    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667);
-		    var message = '위치 정보를 확인할 수 없습니다.';
-		        
-		    displayMarker(locPosition, message);
-		
-		    mapContainer = document.getElementById('map'); // 지도를 표시할 div
-		    mapOption = {
-		        center: new kakao.maps.LatLng(33.450701, 126.570667),	//lat, lon), // 지도의 중심좌표
-		        level: 3 // 지도의 확대 레벨
-		    };
-		    
-				// 지도를 생성합니다
-				map = new kakao.maps.Map(mapContainer, mapOption);
-		}
-		
-		
-
 		// 키워드 검색을 요청하는 함수입니다
 		function searchPlaces() {
 	    var keyword = document.getElementById('keyword').value;
@@ -152,7 +166,7 @@
 	    // 지도에 표시되고 있는 마커를 제거합니다
 	    removeMarker();
 	    
-	    bounds.extend(currentPos);
+	    /* bounds.extend(currentPos); */
 	    
 	    for (var i = 0; i < places.length; i++) {
 	    	// 마커를 생성하고 지도에 표시합니다
@@ -202,9 +216,9 @@
 	    var el = document.createElement('li'),
 	    		itemStr = "<span class='markerbg marker_" + (index+1) + "'></span>" +
 	                		"<div class='info'>" +
-	                		"	<input type='hidden' value=" + places.id + " class='search_id'>" +
 	                		"	<h4 class='search_place_name'>" + places.place_name + "</h4>" +
 	    							"	<span class='search_category_name'>" + places.category_name + "</span><br>" +
+	                		"	<input type='hidden' value=" + places.id + " class='search_id'>" +
 	    							"	<input type='hidden' value=" + places.phone + " class='search_phone'>" +
 	    							"	<input type='hidden' value=" + places.x + " class='search_x'>" +
 	    							"	<input type='hidden' value=" + places.y + " class='search_y'>";
@@ -298,97 +312,18 @@
 	    	el.removeChild (el.lastChild);
 	    }
 		}
-	</script>
-	
-	<form action="insert" method="post" enctype="multipart/form-data">
-		<table class="container" style="width: 1000px;">
-			<tr>
-				<th class="text-center">식당 찾기</th>
-				<td>
-			
-	  			<div class="map_wrap">
-					<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;">
-				</div>
-					<div id="menu_wrap" class="bg_white">
-						<div class="option">
-							<div>
-								<div>
-			       				<input type="text" value="" id="keyword" size="20">
-			       				<button type="button" onclick="searchPlaces()">검색하기</button>
-		    					</div>
-							</div>
-						</div>
-				
-				<ul id="placesList"></ul>
-				<div id="pagination"></div>
-			</div>
-		</div>
-	
-	</td>
-			</tr>
-			
-			<tr>
-				<th class="text-center" >나의 맛집</th>
-				<td>
-					<input type="text" value="" id="place_name" name="place_name">
-					<input type="hidden" value="" id="place_id" name="place_id">
-					<input type="hidden" value="" id="place_category_name" name="place_category_name">
-					<input type="hidden" value="" id="place_phone" name="place_phone">
-					<input type="hidden" value="" id="place_x" name="place_x">
-					<input type="hidden" value="" id="place_y" name="place_y">
-					<input type="hidden" value="" id="place_address_name" name="place_address_name">
-				</td>
-			</tr>
-			<tr>
-  			<th class="text-center" >★★★★★</th>
-				<td>
-  				<select name="stars">
-			  			<option value="">별점을 선택하세요</option>
-			  			<option value="01">☆☆☆☆★</option>
-			  			<option value="02">☆☆☆★★</option>
-			  			<option value="03">☆☆★★★</option>
-			  			<option value="04">☆★★★★</option>
-			  			<option value="05">★★★★★</option>
-  				</select> 
-				</td>
-   		</tr>
-			<tr>
-				<th class="text-center">리뷰 사진</th>
-				<td>
-					<input type="file" name="upload" class="form-control"
-					    multiple="multiple">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<textarea style="width: 100%; height: 300px;" name="content"
-					class="form-control" required="required"
-					placeholder="리뷰를 작성해주세요"></textarea>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<button type="submit" onclick="location.href='/review/insert'"
-					style="width: 100px;background-color: orange">저장</button>
-				</td>
-			</tr>
-		</table>
-	</form>
-	
-	<script>
+		
 		$(function(){
 			$(document).on("click", ".search_place_name", function () {
-			    $("#place_name").val($(this).text());
-			    $("#place_id").val($(this).siblings(".search_id").val());
-			    $("#place_category_name").val($(this).siblings(".search_category_name").text());
-			    $("#place_phone").val($(this).siblings(".search_phone").val());
-			    $("#place_x").val($(this).siblings(".search_x").val());
-			    $("#place_y").val($(this).siblings(".search_y").val());
-			    $("#place_address_name").val($(this).siblings(".search_address_name").text());
-			  });
+		    $("#place_name").val($(this).text());
+		    $("#place_id").val($(this).siblings(".search_id").val());
+		    $("#place_category_name").val($(this).siblings(".search_category_name").text());
+		    $("#place_phone").val($(this).siblings(".search_phone").val());
+		    $("#place_x").val($(this).siblings(".search_x").val());
+		    $("#place_y").val($(this).siblings(".search_y").val());
+		    $("#place_address_name").val($(this).siblings(".search_address_name").text());
+		  });
 		});
 	</script>
-	</div>
-	</section>
 </body>
 </html>

@@ -59,7 +59,7 @@
         	  $.ajax({
         			type:"get",
         			dataType:"text",
-        			url:"kakaoinsert",
+        			url:"kakao",
         			data:{"kid": kid, "kemail" : kemail, "knickname" : knickname, "kp": kp, "kb": kb},
         			success:function(){
         				location.href = "/";
@@ -163,18 +163,18 @@ function naverLogout() {
 					</td>
 				</tr>
 				<tr>
-					<td align="center">
-					<button id="GgCustomLogin" style="background-color: transparent;
-					border:0;width: 40px;">
-					&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/google-symbol.png" class="google" title="google"
-				 	style="background-color: transparent;
-					border:0;width: 40px;"></button><!-- onclick="javascript:void(0)" -->
+					<td align="center" colspan="2">
+						<button type="submit"  style="float:left; background-color: transparent;
+						border:0;width: 100px;">
+						&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/log-in.png" class="log-in-btn" title="login"
+					 	style="width: 100px;border: 0;"></button>
 					</td>
-					<td align="center">
-					<button type="submit"  style="float:left; background-color: transparent;
-					border:0;width: 100px;">
-					&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/log-in.png" class="log-in-btn" title="login"
-				 	style="width: 100px;border: 0;"></button>
+				</tr>
+				<tr>
+					<td onclick="kakaoLogin(); kakaoSession();" colspan="2">
+						<a href="javascript:void(0)">
+		          <span><img src="../images/kakaologin.png"></span>
+		      		</a>
 					</td>
 				</tr>
 			</table>
@@ -199,7 +199,7 @@ function naverLogout() {
   
 	<!-- 카카오 로그인 자리 -->
 	
-	 <ul>
+<!-- 	 <ul>
 	<li onclick="kakaoLogin(); kakaoSession();">
       <a href="javascript:void(0)">
           <span><img src="../images/kakaologin.png"></span>
@@ -211,6 +211,6 @@ function naverLogout() {
           <span>카카오 로그아웃</span>
       </a>
 	</li>
-</ul> 
+</ul>  -->
 </body>
 </html>

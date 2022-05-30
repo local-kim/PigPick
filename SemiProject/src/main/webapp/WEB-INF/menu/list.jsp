@@ -15,12 +15,12 @@
 		.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 		.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 		.map_wrap {position:relative;width:100%;height:500px;}
-		#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
-		.bg_white {background:#fff;}
+		/* #menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+		.bg_white {background:#fff;} */
 		#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
-		#menu_wrap .option{text-align: center;}
+		/* #menu_wrap .option{text-align: center;}
 		#menu_wrap .option p {margin:10px 0;}  
-		#menu_wrap .option button {margin-left:5px;}
+		#menu_wrap .option button {margin-left:5px;} */
 		#placesList li {list-style: none;}
 		#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
 		#placesList .item span {display: block;margin-top:4px;}
@@ -53,27 +53,27 @@
 <body>
 	<div class="section" id="section2">
 	
-		<img src="images/menu_pick.png" alt=""
+		<!-- <img src="images/menu_pick.png" alt=""
 		class="menupicktag">
  
-		<img src="images/tape.png" alt="" class="tape">
+		<img src="images/tape.png" alt="" class="tape"> -->
 		
 		<br><br><br><br><br><br><br><br>
 		<h1>${menuName} 식당리스트</h1>
 
 		<div class="map_wrap">
 			<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+		</div>
 		
-			<div id="menu_wrap" class="bg_white">
-				<div class="option">
-					<div>
-						내 주변 ${menuName} 맛집
-					</div>
+		<div id="menu_wrap" class="bg_white">
+			<div class="option">
+				<div>
+					내 주변 ${menuName} 맛집
 				</div>
-				<hr>
-				<ul id="placesList"></ul>
-				<div id="pagination"></div>
 			</div>
+			<hr>
+			<ul id="placesList"></ul>
+			<div id="pagination"></div>
 		</div>
 		
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=462602bfbf3fad68a3a7744b60ee4c02&libraries=services,clusterer,drawing"></script>
@@ -247,14 +247,13 @@
 		    var el = document.createElement('li'),
 		    		itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
 		                		'<div class="info">' +
-		                		'   <h4><a href=' + places.place_url + " target='_blank'>" + places.place_name + '</a></h4>';
+		                		'   <h4><a href=' + places.place_url + " target='_blank'>" + places.place_name + "</a>&nbsp;&nbsp;" + places.distance + "m</h4>";
 		        
-		    itemStr += '    <span>' + places.category_name + '</span>';
-		    itemStr += '    <span>거리 : ' + places.distance + 'm</span>';
+		    /* itemStr += '    <span>' + places.category_name + '</span>'; */
+		    /* itemStr += '    <span>거리 : ' + places.distance + 'm</span>'; */
 	
 		    if (places.road_address_name) {
-	      	itemStr += '    <span>' + places.road_address_name + '</span>' +
-	                    '   <span class="jibun gray">' + places.address_name + '</span>';
+	      	itemStr += '    <span>' + places.road_address_name + '</span>';
 		    } else {
 		    	itemStr += '    <span>' + places.address_name + '</span>';
 		    }
@@ -345,7 +344,7 @@
 			}
 		</script>
 
-		<div class="round"></div>
+		<!-- <div class="round"></div> -->
 	</div>
 </body>
 </html>

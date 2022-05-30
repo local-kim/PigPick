@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import data.dto.MemberDto;
 import data.service.LoginService;
+import data.service.MemberService;
 
 @Controller
 public class LoginController {
@@ -20,10 +22,13 @@ public class LoginController {
 	@Autowired
 	private LoginService service;
 	
+	@Autowired
+	private MemberService memberService;
+	
 	// 로그인 페이지
 	@GetMapping("/login")
 	public String test() {
-		return "/login/form2";
+		return "/login/form";
 	}
 			
 	// 로그인 처리
@@ -44,9 +49,41 @@ public class LoginController {
 			return "redirect:/";
 		}
 		else {
-			System.out.println("로그인 실패");
-			return "redirect:/test";
+			return "redirect:/login";
 		}
+	}
+
+	// 카카오 로그인
+	@GetMapping("/kakao")
+	@ResponseBody
+	public void kakaoinsert(
+			@RequestParam String kid,
+			@RequestParam String kemail,
+			@RequestParam String knickname,
+			@RequestParam(required = false) String kp,
+			@RequestParam String kb,
+			HttpSession session
+			) {
+		if(service.checkKakaoMember(kid) == 0) {
+			// DB에 없으면 저장
+			MemberDto member = new MemberDto();
+		
+			member.setBirthday(kb);
+			member.setEmail(kemail);
+			member.setPhoto(kp);
+			member.setId(kid);
+			member.setName(knickname);
+			member.setAdmin(1);
+			
+			memberService.insertMember(member);
+		}
+		
+		List<Map<String, Object>> map = service.getLoginInfo(kid);
+		
+		session.setAttribute("loginName", knickname);
+		session.setAttribute("loginId", kemail);
+		session.setAttribute("loggedIn", true);
+		session.setAttribute("loginNum", map.get(0).get("num"));
 	}
 	
 	// 로그아웃 (ajax)

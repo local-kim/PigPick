@@ -29,11 +29,9 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;
 	
-//	private String[] category = {"한식", "일식", "중식", "양식", "아시아", "기타"};
-
 	@GetMapping("")
 	public String mypage() {
-		return "/mypage/mypage";
+		return "/mypage/list";
 	}
 	
 	@GetMapping("/rank")
@@ -41,12 +39,12 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		List<MenuRankDto> list = service.getMenuRank(member_num);
+		List<MenuRankDto> list = service.getMenuRank(memberNum);
 		model.addAttribute("list", list);
 		
-		return "/mypage/mypage2";
+		return "/mypage/rank";
 	}
 	
 	@GetMapping("/review")
@@ -54,12 +52,12 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		List<ReviewDto> list = service.getReviewList(member_num);
+		List<ReviewDto> list = service.getReviewList(memberNum);
 		model.addAttribute("list", list);
 		
-		return "/mypage/mypage3";
+		return "/mypage/review";
 	}
 	
 	@GetMapping("/info")
@@ -67,25 +65,25 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		MemberDto info = service.getMemberInfo(member_num);
+		MemberDto info = service.getMemberInfo(memberNum);
 		model.addAttribute("info", info);
 		
-		return "/mypage/mypage4";
+		return "/mypage/info";
 	}
 	
-	@GetMapping("/editinfo")
+	@GetMapping("/edit")
 	public String mypage5(
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		MemberDto info = service.getMemberInfo(member_num);
+		MemberDto info = service.getMemberInfo(memberNum);
 		model.addAttribute("info", info);
 		
-		return "/mypage/mypage5";
+		return "/mypage/edit";
 	}
 	
 	@PostMapping("/update")
@@ -112,12 +110,23 @@ public class MyPageController {
 			}
 		}
 		
-		String member_num = (String)session.getAttribute("loginNum");
+		String memberNum = (String)session.getAttribute("loginNum");
 		
-		member.setNum(member_num);
+		member.setNum(memberNum);
 		
-		service.updateMemberInfo(member);
+		service.updateMember(member);
 		
 		return "redirect:/mypage/info";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(
+			HttpSession session
+			) {
+		int memberNum = (int)session.getAttribute("loginNum");
+		
+		service.deleteMember(memberNum);
+		
+		return "redirect:/";
 	}
 }
