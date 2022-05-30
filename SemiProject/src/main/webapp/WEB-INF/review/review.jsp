@@ -19,6 +19,10 @@ $(window).on("load resize ", function() {
 	  $('.tbl-header').css({'padding-right':scrollWidth});
 	}).resize();
 </script>
+<style>
+a:hover{text-decoration:none;}
+
+</style>
 <body>
 	
 	<section>
@@ -29,7 +33,7 @@ $(window).on("load resize ", function() {
 	<h1>Review</h1>
 	<br><br><br>
 	<button type="button" class="btn_write" onclick="location.href='/review/new'">Write</button>
-    <table class="container">z
+    <table class="container">
 	
 	
 
@@ -59,7 +63,7 @@ $(window).on("load resize ", function() {
 					<c:if test="${totalCount>0}"> <!-- 글이 있을때 -->
 						<c:forEach var="dto" items="${list}">
 						<tr>
-							<input type="hidden" value="${dto.num}">
+							<input type="hidden" value="${dto.num}" >
 							<td>${no}</td>
 							<c:set var="no" value="${no-1}"/>
 							
@@ -80,7 +84,9 @@ $(window).on("load resize ", function() {
 							</td>--%>
 							
 							<td><a href="/review/content?num=${dto.num}">${dto.content}</a></td>
+							
 							<td>${dto.stars}</td>
+							
 							<td>${dto.member_name}</td>
 							<td><fmt:formatDate value="${dto.created_at}" pattern="yyyy-MM-dd" /></td>
 						</tr>
