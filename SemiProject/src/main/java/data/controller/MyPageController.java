@@ -127,6 +127,9 @@ public class MyPageController {
 		
 		service.deleteMember(memberNum);
 		
+		// 세션에서 제거
+		session.removeAttribute("loggedIn");
+		
 		return "redirect:/";
 	}
 }
