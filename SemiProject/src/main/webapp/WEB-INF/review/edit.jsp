@@ -19,10 +19,10 @@
 		<br><br>
 		<h1>리뷰 수정/삭제</h1>
 		<br><br><br><br><br><br>
-		<form action="update" method="post">
+		<form action="update" method="post" enctype="multipart/form-data">
 			<button type="submit" class="btnreview_update">Update</button>
       <input type="hidden" name="num" value="${review.num}">
-			<input type="hidden" name="place_id" value="${review.place_id}">	
+			<input type="hidden" name="place_id" value="${review.place_id}">
     	<table class="container">
 				<tr>
 					<th>식당</th>
@@ -42,6 +42,12 @@
 				  			<option value="05">★★★★★</option>
 	  				</select>
 	  			</td>
+				</tr>
+				<tr>
+					<th class="text-center">리뷰 사진</th>
+					<td>
+						<input type="file" name="upload" class="form-control" multiple>
+					</td>
 				</tr>
 				<tr>
 					<th>리뷰</th>

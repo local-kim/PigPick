@@ -38,7 +38,7 @@
 		values (#{member_num}, #{place_id}, #{stars}, #{content}, #{photos})
 	</insert>
 	<update id="updateReview" parameterType="review">
-		update review set stars = #{stars}, content = #{content} where num = #{num}
+		update review set stars = #{stars}, content = #{content}, photos = #{photos} where num = #{num}
 	</update>
 	<delete id="deleteReview" parameterType="int">
 		delete from review where num=#{num}
