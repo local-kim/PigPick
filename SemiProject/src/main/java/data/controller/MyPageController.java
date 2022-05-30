@@ -110,7 +110,7 @@ public class MyPageController {
 			}
 		}
 		
-		String memberNum = (String)session.getAttribute("loginNum");
+		String memberNum = Integer.toString((int)session.getAttribute("loginNum"));
 		
 		member.setNum(memberNum);
 		

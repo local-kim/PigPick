@@ -20,7 +20,7 @@
 	</select>
 	<update id="updateMember" parameterType="Map">
 		UPDATE member 
-		SET tel = #{tel}, address = #{address} 
+		SET name = #{name}, email = #{email}, tel = #{tel}, address = #{address}, photo = #{photo} 
 		WHERE num = #{num}
 	</update>
 	<delete id="deleteMember" parameterType="int">
