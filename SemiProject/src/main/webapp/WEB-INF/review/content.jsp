@@ -49,20 +49,19 @@ $(window).on("load resize ", function() {
 			<th>Date</th>
 			<td>${review.created_at}</td>
 		</tr>
-		<tr>	
-			<th>photo</th>
-			<td>
-				<c:if test="${dto.photos!='no' }">
-					<c:forTokens var="photo" items="${dto.photos }" delims="," varStatus="n">
-				<a href="../review_img/${photo }" target="_new" style="cursor: pointer;">
-				<img src="../review_img/${photo }"
-				style="max-width: 200px; border: 0px solid orange;"></a>
-				<c:if test="${n.count%2==0 }"><br><br></c:if>
-				
+		<c:if test="${review.photos != null}">
+			<tr>	
+				<th>photo</th>
+				<td>
+					<c:forTokens var="photo" items="${review.photos}" delims="," varStatus="n">
+						<a href="../review_img/${photo}" target="_new" style="cursor: pointer;">
+						<img src="../review_img/${photo}"
+						style="max-width: 200px; border: 0px solid orange;"></a>
+						<c:if test="${n.count % 2 == 0}"><br><br></c:if>
 					</c:forTokens>
-				</c:if>
-			</td>
-		</tr>
+				</td>
+			</tr>
+		</c:if>
 		<tr>
 			<th colspan="2">내용</th>
 		
