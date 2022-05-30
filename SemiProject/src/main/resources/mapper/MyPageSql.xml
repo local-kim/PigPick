@@ -18,9 +18,12 @@
 		SELECT * FROM member  
 		WHERE num = #{member_num}
 	</select>
-	<update id="updateMemberInfo" parameterType="Map">
+	<update id="updateMember" parameterType="Map">
 		UPDATE member 
 		SET tel = #{tel}, address = #{address} 
 		WHERE num = #{num}
 	</update>
+	<delete id="deleteMember" parameterType="int">
+		delete from member where num = #{member_num}
+	</delete>
 </mapper>

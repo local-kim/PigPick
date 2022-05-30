@@ -13,5 +13,6 @@ public interface MyPageMapperInter {
 	public List<MenuRankDto> getMenuRank(int member_num);
 	public List<ReviewDto> getReviewList(int member_num);
 	public MemberDto getMemberInfo(int member_num);
-	public void updateMemberInfo(MemberDto member);
+	public void updateMember(MemberDto member);
+	public void deleteMember(int member_num);
 }

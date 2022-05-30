@@ -15,28 +15,33 @@ import util.Util;
 public class MyPageService implements MyPageServiceInter {
 	
 	@Autowired
-	MyPageMapperInter mapper;
+	private MyPageMapperInter mapper;
 
 	@Override
-	public List<MenuRankDto> getMenuRank(int member_num) {
-		List<MenuRankDto> list = mapper.getMenuRank(member_num);
+	public List<MenuRankDto> getMenuRank(int memberNum) {
+		List<MenuRankDto> list = mapper.getMenuRank(memberNum);
 		Util.convertCategory(list);
 		
 		return list;
 	}
 	
 	@Override
-	public List<ReviewDto> getReviewList(int member_num) {
-		return mapper.getReviewList(member_num);
+	public List<ReviewDto> getReviewList(int memberNum) {
+		return mapper.getReviewList(memberNum);
 	}
 	
 	@Override
-	public MemberDto getMemberInfo(int member_num) {
-		return mapper.getMemberInfo(member_num);
+	public MemberDto getMemberInfo(int memberNum) {
+		return mapper.getMemberInfo(memberNum);
 	}
 	
 	@Override
-	public void updateMemberInfo(MemberDto member) {
-		mapper.updateMemberInfo(member);
+	public void updateMember(MemberDto member) {
+		mapper.updateMember(member);
+	}
+	
+	@Override
+	public void deleteMember(int memberNum) {
+		mapper.deleteMember(memberNum);
 	}
 }

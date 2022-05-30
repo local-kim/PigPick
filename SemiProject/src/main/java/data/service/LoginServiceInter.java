@@ -6,4 +6,5 @@ import java.util.Map;
 public interface LoginServiceInter {
 	public boolean login(String id, String password);
 	public List<Map<String, Object>> getLoginInfo(String id);
+	public int checkKakaoMember(String id);
 }

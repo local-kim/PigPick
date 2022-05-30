@@ -39,9 +39,9 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		List<MenuRankDto> list = service.getMenuRank(member_num);
+		List<MenuRankDto> list = service.getMenuRank(memberNum);
 		model.addAttribute("list", list);
 		
 		return "/mypage/mypage2";
@@ -52,9 +52,9 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		List<ReviewDto> list = service.getReviewList(member_num);
+		List<ReviewDto> list = service.getReviewList(memberNum);
 		model.addAttribute("list", list);
 		
 		return "/mypage/mypage3";
@@ -65,9 +65,9 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		MemberDto info = service.getMemberInfo(member_num);
+		MemberDto info = service.getMemberInfo(memberNum);
 		model.addAttribute("info", info);
 		
 		return "/mypage/mypage4";
@@ -78,9 +78,9 @@ public class MyPageController {
 			Model model,
 			HttpSession session
 			) {
-		int member_num = (int)session.getAttribute("loginNum");
+		int memberNum = (int)session.getAttribute("loginNum");
 		
-		MemberDto info = service.getMemberInfo(member_num);
+		MemberDto info = service.getMemberInfo(memberNum);
 		model.addAttribute("info", info);
 		
 		return "/mypage/mypage5";
@@ -110,12 +110,23 @@ public class MyPageController {
 			}
 		}
 		
-		String member_num = (String)session.getAttribute("loginNum");
+		String memberNum = (String)session.getAttribute("loginNum");
 		
-		member.setNum(member_num);
+		member.setNum(memberNum);
 		
-		service.updateMemberInfo(member);
+		service.updateMember(member);
 		
 		return "redirect:/mypage/info";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(
+			HttpSession session
+			) {
+		int memberNum = (int)session.getAttribute("loginNum");
+		
+		service.deleteMember(memberNum);
+		
+		return "redirect:/";
 	}
 }

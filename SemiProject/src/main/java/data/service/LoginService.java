@@ -30,4 +30,8 @@ public class LoginService implements LoginServiceInter {
 		return mapper.getLoginInfo(id);
 	}
 
+	@Override
+	public int checkKakaoMember(String id) {
+		return mapper.checkKakaoMember(id);
+	}
 }

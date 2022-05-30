@@ -8,5 +8,4 @@ import data.dto.MemberDto;
 public interface MemberMapperInter {
 	public void insertMember(MemberDto member);
 	public int checkId(String id);
-	public int checkKakaoMember(String id);
 }
