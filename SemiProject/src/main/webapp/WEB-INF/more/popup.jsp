@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <style>
 .Introduce{
 	border:10px solid #E87100;
@@ -29,8 +30,10 @@
 
 </style>
 
+
 <body>
 <br>
+
 <div class="Introduce">
 <img src="images/logo_pigpick.jpg" id="logo_img" width="400" height="90">
 <br><br>
@@ -57,7 +60,7 @@
         display:block;  background-color:#E87100; color: white; padding:20px; border:none;
     border-radius:10px; font-size : 28px;
 	font-family : GmarketSansTTFMedium;" onclick="location.href='/popup/intro'"></input>
-}
+
 	<br>
 
 	

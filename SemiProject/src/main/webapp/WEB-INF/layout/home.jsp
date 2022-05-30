@@ -11,12 +11,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script>
+        function openWindowPop(){
+            var url = "popup";
+            var name = "popup";
+            var option = "width = 500, height = 500, top = 100, left = 200, location = no, status=no, menubar=no, toolbar=no, scrollbars=yes;"
+            window.open(url, name, option);
+        }
+    </script>
 </head>
+
 <body>
 	<div class="section" id="section1">
 	<div  style="z-index:999999999; top:50%; position:absolute;">
 	
 	</div>
+	
+	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');">팝업창 열기</a>
+	
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
  
