@@ -92,7 +92,7 @@ $(document).ready(function () {
 	</div>
 <br><br>
 	<div>
-		<p style="background-color: #98B5B7; border-radius: 50px;">MyPage</p></div>
+		<p style="background-color: #98B5B7; border-radius: 50px;">MY PAGE</p></div>
 		<br><br>
 		
 	
@@ -109,7 +109,7 @@ $(document).ready(function () {
 
 	<br><br>
 	<div>
-		<p style="background-color: #98B5B7; border-radius: 50px;">Board</p></div>
+		<p style="background-color: #98B5B7; border-radius: 50px;">BOARD</p></div>
 		<br><br>
 	
 	

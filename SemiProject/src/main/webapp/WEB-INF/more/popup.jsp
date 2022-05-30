@@ -63,7 +63,8 @@
 	<br>
 
 	
-	<img src="../images/logop.gif" width="400" height="450">
+	<img src="../images/pipig.png" style="position:relative;
+	bottom:10px; left:150px;">
 		<!--  
 		<div   class="row align-items-center justify-content-center text-center">
 		<img id="score" src="images/ggulggul.png"/>
