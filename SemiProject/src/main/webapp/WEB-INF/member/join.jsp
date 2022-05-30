@@ -12,9 +12,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="css/style.css"  rel="stylesheet" type="text/css" />
 	<link href="css/join_style.css"  rel="stylesheet" type="text/css" />
-	
-<script>
+	<script type="text/javascript" src="<c:url value='/resource/js/core.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/resource/js/sha256.min.js'/>"></script>
+	<script>
+
+
 	$(function(){
+	
 		
 		//비밀번호 체크
 		$("#pass2").keyup(function(){
@@ -61,6 +65,8 @@
 	});
 	
 	function check(){
+		/* var joinFormSubmitted = false; */
+		
 		if($("b.idok").text()!='ok'){
 		alert("아이디체크 버튼을 눌러서 중복확인해주세요");
 		return false;
@@ -74,8 +80,9 @@
 		}else{
 			return true;
 			alert("회원가입되셨습니다.");
-		}	
-	}
+		}
+		
+		
 </script>
 </head>
 <body>
@@ -148,6 +155,7 @@
 					<td>
 						<b class="passok"></b>
 						<input type="password" id="pass2" style="width:400px;" required class="form-control jogin-control pass" placeholder="한 번 더 입력">
+						<!-- <input type="hidden" name="loginPwReal"> -->
 					</td>
 					<th>주소</th>
 					<td>
