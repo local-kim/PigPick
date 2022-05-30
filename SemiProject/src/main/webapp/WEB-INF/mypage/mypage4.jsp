@@ -38,22 +38,23 @@ $(function(){
 		<br><br><br>
 		<table class="container" style="width:1000px;">
 			 <tr>
-			 <th rowspan="2" class="text-center" style=" width:200px; height:200px;">
+			 <th class="text-center" style=" width:200px; height:200px;">
 			 
 			 <img src="" class="user_img" id="user_img" title="내사진"
 		      style="width:200px;height: 200px;object-fit: cover;border:0;">
 			
 			 </th>
+		
 			 <!-- <th class="text-center" style="height: 100px;">Name</th> -->
-			 <td style="width: 400px;">
-				${info.name}
-			<tr>
-			 </td>
-			 <!-- <th class="text-center" style="height: 100px;">ID</th> -->
-			 <td style="width: 400px;">
-				${info.id}
-			</td>
-			</tr>
+			 	<th style="width: 400px;">
+			 		
+					Name&nbsp;&nbsp;<b style="color: black;">${info.name}</b>
+					<br><br>
+					<hr>
+	
+					ID&nbsp;&nbsp;<b style="color: black;">${info.id}</b>
+				</th>
+		
 			<%-- <c:if test="">
 		
 			</c:if>
