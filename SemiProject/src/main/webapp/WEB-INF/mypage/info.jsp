@@ -87,7 +87,7 @@ $(function(){
 		</table>
 
 			<div style="position: absolute; left: 45%;">
-				<button type="button" class=btn_edit onclick="location.href='/mypage/editinfo'">Edit</button>
+				<button type="button" class=btn_edit onclick="location.href='/mypage/edit'">Edit</button>
 				&nbsp;&nbsp;
 				<button type="button" class=btn_before onclick="history.back()">Before</button>
 			</div>

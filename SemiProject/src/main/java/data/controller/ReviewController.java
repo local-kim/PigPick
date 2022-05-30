@@ -37,14 +37,14 @@ public class ReviewController {
 			Model model
 			) {
 		// pagination
-		int totalCount;	// 총 개수
-		int perPage = 5;		// 페이지 당 글 수
-		int perBlock = 5;	// 블럭 당 페이지 수
-		int totalPage;	// 총 페이지 수
-		int startNum;	// 한 페이지에서 보여질 시작글 번호
-		int startPage;	// 한 블럭에서 보여질 시작 페이지 번호
-		int endPage;		// 한 블럭에서 보여질 끝 페이지 번호
-		int no;	// 각 페이지 당 보여질 시작 번호
+		int totalCount;
+		int perPage = 5;	
+		int perBlock = 5;
+		int totalPage;
+		int startNum;
+		int startPage;
+		int endPage;	
+		int no;
 		
 		totalCount = service.getTotalCount();
 		
@@ -72,12 +72,12 @@ public class ReviewController {
 		model.addAttribute("no", no);
 		model.addAttribute("list", list);
 		
-		return "/review/review";
+		return "/review/list";
 	}
 	
 	@GetMapping("/new")
 	public String write() {
-		return "/review/review2";
+		return "/review/new";
 	}
 	
 	@PostMapping("/insert")
@@ -147,7 +147,7 @@ public class ReviewController {
 		
 		model.addAttribute("review", review);
 		
-		return "/review/review3";
+		return "/review/content";
 	}
 	
 	@GetMapping("/place")
@@ -175,7 +175,7 @@ public class ReviewController {
 		
 		model.addAttribute("review", review);
 		
-		return "/review/review4";
+		return "/review/edit";
 	}
 	
 	@PostMapping("/update")

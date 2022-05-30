@@ -31,7 +31,7 @@ public class MyPageController {
 	
 	@GetMapping("")
 	public String mypage() {
-		return "/mypage/mypage";
+		return "/mypage/list";
 	}
 	
 	@GetMapping("/rank")
@@ -44,7 +44,7 @@ public class MyPageController {
 		List<MenuRankDto> list = service.getMenuRank(memberNum);
 		model.addAttribute("list", list);
 		
-		return "/mypage/mypage2";
+		return "/mypage/rank";
 	}
 	
 	@GetMapping("/review")
@@ -57,7 +57,7 @@ public class MyPageController {
 		List<ReviewDto> list = service.getReviewList(memberNum);
 		model.addAttribute("list", list);
 		
-		return "/mypage/mypage3";
+		return "/mypage/review";
 	}
 	
 	@GetMapping("/info")
@@ -70,10 +70,10 @@ public class MyPageController {
 		MemberDto info = service.getMemberInfo(memberNum);
 		model.addAttribute("info", info);
 		
-		return "/mypage/mypage4";
+		return "/mypage/info";
 	}
 	
-	@GetMapping("/editinfo")
+	@GetMapping("/edit")
 	public String mypage5(
 			Model model,
 			HttpSession session
@@ -83,7 +83,7 @@ public class MyPageController {
 		MemberDto info = service.getMemberInfo(memberNum);
 		model.addAttribute("info", info);
 		
-		return "/mypage/mypage5";
+		return "/mypage/edit";
 	}
 	
 	@PostMapping("/update")
