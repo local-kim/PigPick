@@ -110,7 +110,7 @@ public class MyPageController {
 			}
 		}
 		
-		String memberNum = (String)session.getAttribute("loginNum");
+		String memberNum = Integer.toString((int)session.getAttribute("loginNum"));
 		
 		member.setNum(memberNum);
 		
@@ -126,6 +126,9 @@ public class MyPageController {
 		int memberNum = (int)session.getAttribute("loginNum");
 		
 		service.deleteMember(memberNum);
+		
+		// 세션에서 제거
+		session.removeAttribute("loggedIn");
 		
 		return "redirect:/";
 	}

@@ -12,7 +12,7 @@
 		limit #{start}, #{perpage}
 	</select>
 	<select id="getReview" parameterType="int" resultType="review">
-		select review.num as num, member.num as member_num, member.name as member_name, place_id, place.name as place_name, stars, content, created_at 
+		select review.num as num, member.num as member_num, member.name as member_name, place_id, place.name as place_name, stars, content, photos, created_at 
 		from review, member, place 
 		where review.member_num = member.num and review.place_id = place.id and review.num = #{review_num}
 	</select>
@@ -38,7 +38,7 @@
 		values (#{member_num}, #{place_id}, #{stars}, #{content}, #{photos})
 	</insert>
 	<update id="updateReview" parameterType="review">
-		update review set stars = #{stars}, content = #{content} where num = #{num}
+		update review set stars = #{stars}, content = #{content}, photos = #{photos} where num = #{num}
 	</update>
 	<delete id="deleteReview" parameterType="int">
 		delete from review where num=#{num}

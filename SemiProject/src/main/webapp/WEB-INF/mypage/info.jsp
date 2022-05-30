@@ -91,6 +91,7 @@ $(function(){
 				<button type="button" class=btn_edit onclick="location.href='/mypage/edit'">Edit</button>
 				&nbsp;&nbsp;
 				<button type="button" class=btn_before onclick="history.back()">Before</button>
+				<button type="button" onclick="location.href='/mypage/delete'">탈퇴</button>
 			</div>
 		</div>
 		</div>

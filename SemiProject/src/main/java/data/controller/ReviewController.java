@@ -181,30 +181,30 @@ public class ReviewController {
 	@PostMapping("/update")
 	public String update(
 			@ModelAttribute InsertReviewDto review,
-//			@RequestParam int num,
-//			@RequestParam ArrayList<MultipartFile> upload,
+			@RequestParam int num,
+			@RequestParam ArrayList<MultipartFile> upload,
 			HttpServletRequest request
 			) {
-//		// 사진 처리(여러장)
-//		if(!upload.get(0).getOriginalFilename().equals("")) {
-//			String photos = "";
-//			
-//			for(MultipartFile f : upload) {
-//				String uploadPath = request.getServletContext().getRealPath("/review_img");
-//				String fileName = FileUtil.changeFileName(f.getOriginalFilename());
-//				photos += fileName + ",";
-//				
-//				try {
-//					f.transferTo(new File(uploadPath + File.separator + fileName));
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//			
-//			photos = photos.substring(0, photos.length() - 1);
-//			review.setPhotos(photos);
-//		}
-		System.out.println(review);
+		// 사진 처리(여러장)
+		if(!upload.get(0).getOriginalFilename().equals("")) {
+			String photos = "";
+			
+			for(MultipartFile f : upload) {
+				String uploadPath = request.getServletContext().getRealPath("/review_img");
+				String fileName = FileUtil.changeFileName(f.getOriginalFilename());
+				photos += fileName + ",";
+				
+				try {
+					f.transferTo(new File(uploadPath + File.separator + fileName));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			photos = photos.substring(0, photos.length() - 1);
+			review.setPhotos(photos);
+		}
+		
 		service.updateReview(review);
 		
 		return "redirect:/review/content?num=" + review.getNum();

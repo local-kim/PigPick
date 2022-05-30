@@ -72,7 +72,7 @@ function readURL(input)
 					<img src="../profile_img/${info.photo}" style="width:200px;height: 200px;object-fit: cover;"><br><br><br>
 		     		<input type="file" style="width: 300px;height:50px; margin: 0 auto; border:0;font-size:20px;
 		     		background-color: transparent;"
-		     		name="" id="myphoto" class="form-control"
+		     		name="upload" id="myphoto" class="form-control"
 					style="">
 				</td>
 				
