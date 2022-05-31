@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import data.dto.MemberDto;
 import data.service.MemberService;
 import util.FileUtil;
+import util.Util;
 
 @Controller
 public class MemberController {
@@ -82,6 +83,9 @@ public class MemberController {
 				e.printStackTrace();
 			}
 		}
+		
+		// 비밀번호 암호화
+		member.setPassword(Util.encode(member.getPassword()));
 		
 		service.insertMember(member);
 		

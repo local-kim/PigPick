@@ -54,6 +54,9 @@ public class MenuController {
 			Model model,
 			HttpSession session
 			) {
+		if(session == null)
+			System.out.println("session is null");
+		
 		// 먹은 횟수 증가(로그인 중일때만)
 		if(session != null && (boolean)session.getAttribute("loggedIn")) {	// error
 			int memberNum = (int)session.getAttribute("loginNum");

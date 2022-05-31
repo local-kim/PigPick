@@ -1,5 +1,6 @@
 package util;
 
+import java.security.MessageDigest;
 import java.util.List;
 
 import data.dto.MenuRankDto;
@@ -13,5 +14,25 @@ public class Util {
 		for(MenuRankDto dto : list) {
 			dto.setCategory(category[Integer.parseInt(dto.getCategory())]);
 		}
+	}
+	
+	public static String encode(String str) {
+		String encodedString ="";
+		
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			
+			md.update(str.getBytes());
+			
+			byte[] encodedData = md.digest();
+			
+			for(int i = 0; i < encodedData.length; i++) {
+				encodedString += Integer.toHexString(encodedData[i] & 0xFF);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return encodedString;
 	}
 }

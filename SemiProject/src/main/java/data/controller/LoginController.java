@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import data.dto.MemberDto;
 import data.service.LoginService;
 import data.service.MemberService;
+import util.Util;
 
 @Controller
 public class LoginController {
@@ -38,6 +39,8 @@ public class LoginController {
 			@RequestParam String password,
 			HttpSession session
 			) {
+		password = Util.encode(password);
+		
 		if(service.login(id, password)) {
 			List<Map<String, Object>> map = service.getLoginInfo(id);
 			
