@@ -19,6 +19,19 @@
             window.open(url, name, option);
         }
     </script>
+    <style type="text/css">
+    a#pop {
+    background-color: white;
+    padding: 26px;
+    border-radius: 45px;
+    position: relative;
+    left: 58%;
+    top: 30%;
+    font-weight: bold;
+    color: black;
+    /* width: 1000000000000000px; */
+    font-size: 20px;
+    </style>
 </head>
 
 <body>
@@ -26,7 +39,6 @@
 	<div  style="z-index:999999999; top:50%; position:absolute;">
 	
 	</div>
-	
 	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');" id="pop">팝업창 열기</a>
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
