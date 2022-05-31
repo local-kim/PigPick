@@ -154,18 +154,11 @@ div.nav	{
 			<li><a onclick="location.href='/'">HOME</a></li>
 			<li><a onclick="location.href='/mypage/info'">My Profile</a></li>
 			<li><a onclick="location.href='/mypage'">My Page</a></li>
-			<li><a onclick="location.href='/mypage/review'">review</a></li>
-			
-			
-		
-		
+			<li><a onclick="location.href='/mypage/review'">Review</a></li>
 		</ul>
 	
 	</nav>
 	</div>
-	
-
-	
 	
 	<!-- /header -->
 	
@@ -208,8 +201,6 @@ div.nav	{
 		<p style="text-align: center; padding: 10px;">리뷰 관리</p>
 		</div>
 		
-		
-			
 		<div id="main">
 		<a href="/admin/stats" target="_blank">
 			<img src="../images/basic_mixer2.png" alt="flag" style="width:80px; height:80px;">
@@ -218,7 +209,6 @@ div.nav	{
 		</div>
 		
 		
-				
 		<div id="main">
 		<a href="/admin/menu" target="_blank">
 			<img src="../images/basic_magnifier_plus.png" alt="flag" style="width:80px; height:80px;">
@@ -226,14 +216,12 @@ div.nav	{
 		<p style="text-align: center; padding: 10px;">메뉴 추가</p>
 		</div>
 		
-		
 			<div id="main">
 		<a href="/mypage/info" target="_blank">
 			<img src="../images/basic_star.png" alt="flag" style="width:80px; height:80px;">
 		</a>
 		<p style="text-align: center; padding: 10px;">My Profile</p>
 		</div>
-		
 		
 	<!-- 
 	<div class="nav">
@@ -278,19 +266,11 @@ div.nav	{
 			</article>
 		</section>
 	</div>
-	
-
 	 -->
 
-	
 		<div id="footer">
 		<footer style="background-color: #F5F5F5;">copyright (c) 2022 pigpick</footer>
-		</div>
-		
-	
-
-	<div>
-		
+		</div>	
 </div>
 </body>
 </html>
