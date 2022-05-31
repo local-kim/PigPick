@@ -55,7 +55,7 @@ public class MenuController {
 			HttpSession session
 			) {
 		// 먹은 횟수 증가(로그인 중일때만)
-		if(session != null && (boolean)session.getAttribute("loggedIn")) {	// error
+		if(session.getAttribute("loggedIn") != null && (boolean)session.getAttribute("loggedIn")) {
 			int memberNum = (int)session.getAttribute("loginNum");
 			
 			if(service.checkMenuRank(memberNum, menuNum) == 0) {	// 테이블에 없을 때
