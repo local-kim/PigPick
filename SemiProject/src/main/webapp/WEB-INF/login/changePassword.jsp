@@ -15,7 +15,8 @@
 	<form action="/findPassword/result" method="post">
 		<div>
 			<span>변경할 비밀번호 입력</span>
-			<input type="text" name="password" placeholder="새로운 비밀번호">
+			<input type="hidden" name="id" value="${id}">
+			<input type="password" name="password" placeholder="새로운 비밀번호">
 		</div>
 		<button>변경하기</button>
 	</form>

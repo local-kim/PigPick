@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -112,6 +113,8 @@ public class LoginController {
 			@RequestParam String email
 			) {
 		// 이름, 이메일, 전화번호 일치하는지 확인
+		// 일치하면 다음 페이지(idResult.jsp)로 이동 및 아이디 값 넘김
+		// 불일치하면 현재 /findId 로 리다이렉트
 		
 		return "/login/idResult";
 	}
@@ -126,18 +129,25 @@ public class LoginController {
 	public String changePassword(
 			@RequestParam String name,
 			@RequestParam String id,
-			@RequestParam String email
+			@RequestParam String email,
+			Model model
 			) {
 		// 이름, 아이디, 이메일 일치하는지 확인
+		if(service.checkPassword(name, id, email)) {
+			model.addAttribute("id", id);
+			return "/login/changePassword";
+		}
 		
-		return "/login/changePassword";
+		return "redirect:/findPassword";
 	}
 	
 	@PostMapping("/findPassword/result")
 	public String findPasswordResult(
+			@RequestParam String id,
 			@RequestParam String password
 			) {
 		// DB에서 비밀번호 업데이트
+		service.changePassword(id, password);
 		
 		return "/login/passwordResult";
 	}

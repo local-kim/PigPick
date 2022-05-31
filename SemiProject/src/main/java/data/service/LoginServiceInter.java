@@ -7,4 +7,6 @@ public interface LoginServiceInter {
 	public boolean login(String id, String password);
 	public List<Map<String, Object>> getLoginInfo(String id);
 	public int checkKakaoMember(String id);
+	public boolean checkPassword(String name, String id, String email);
+	public void changePassword(String id, String password);
 }

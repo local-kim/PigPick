@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import data.mapper.LoginMapperInter;
+import util.Util;
 
 @Service
 public class LoginService implements LoginServiceInter {
@@ -33,5 +34,26 @@ public class LoginService implements LoginServiceInter {
 	@Override
 	public int checkKakaoMember(String id) {
 		return mapper.checkKakaoMember(id);
+	}
+	
+	@Override
+	public boolean checkPassword(String name, String id, String email) {
+		Map<String, String> map = new HashMap<>();
+		
+		map.put("name", name);
+		map.put("id", id);
+		map.put("email", email);
+		
+		return (mapper.checkPassword(map) == 1) ? true : false;
+	}
+	
+	@Override
+	public void changePassword(String id, String password) {
+		Map<String, String> map = new HashMap<>();
+		
+		map.put("id", id);
+		map.put("password", Util.encode(password));
+		
+		mapper.changePassword(map);
 	}
 }

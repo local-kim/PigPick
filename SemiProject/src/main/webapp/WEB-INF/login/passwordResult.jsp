@@ -11,5 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <body>
 	<h1>비밀번호 변경 결과</h1>
+	<h1>비밀번호가 변경되었습니다.</h1>
 </body>
 </html>
