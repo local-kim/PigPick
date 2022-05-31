@@ -164,22 +164,7 @@ div.nav	{
 	</nav>
 	</div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	<!-- /header -->
@@ -190,10 +175,13 @@ div.nav	{
 			<h1 style="color:#696969">시스템 관리</h1>
 				<ul>
 				<li><a  onclick="location.href='/'">HOME</a></li>
+				<li><a onclick="location.href='/mypage/info'">My Profile</a></li>
 					<li><a  onclick="location.href='/admin/member'">회원 관리</a></li>
 					<li><a  onclick="location.href='/admin/review'">리뷰 관리</a></li>
 					<li><a  onclick="location.href='/admin/stats'">메뉴 통계</a></li>
-					<li><a  onclick="location.href='/admin/menu'">메뉴 추가</a></li>		
+					<li><a  onclick="location.href='/admin/menu'">메뉴 추가</a></li>
+					
+							
 				</ul>
 			</aside>
 		</div>
@@ -237,7 +225,16 @@ div.nav	{
 		</a>
 		<p style="text-align: center; padding: 10px;">메뉴 추가</p>
 		</div>
-	
+		
+		
+			<div id="main">
+		<a href="/mypage/info" target="_blank">
+			<img src="../images/basic_star.png" alt="flag" style="width:80px; height:80px;">
+		</a>
+		<p style="text-align: center; padding: 10px;">My Profile</p>
+		</div>
+		
+		
 	<!-- 
 	<div class="nav">
 		<nav>
