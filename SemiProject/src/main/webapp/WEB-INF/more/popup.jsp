@@ -21,7 +21,7 @@
 	position:absolute;
 	top:130px;
 	left:600px;
-	
+	font-family : GmarketSansTTFMedium;
 }
 #logo_img{
 	display:block;
