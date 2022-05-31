@@ -80,7 +80,7 @@ h2 a {
    top: 600px;
 }
 .container_2 th{
-	 color: #185875;
+	 color:#2d35af;
 	 border-bottom: 1px solid #ddd;
 	
 }
@@ -105,7 +105,7 @@ h2 a {
 	position:relative;
 	left: 80%;
 	top: 30px;
-	background-color: orange;
+	background-color: #2d35af;
 	color:white;
 	border:0;
 	width: 100px;
@@ -116,7 +116,7 @@ h2 a {
 .btn_edit, .btn_before{
 	position:relative;
 	top: 30px;
-	background-color: orange;
+	background-color: #2d35af;
 	color:white;
 	border:0;
 	width: 100px;
@@ -129,7 +129,7 @@ h2 a {
 	position:relative;
 	left: 85%;
 	top: 30px;
-	background-color: orange;
+	background-color:#2d35af;
 	color:white;
 	border:0;
 	width: 100px;
@@ -142,13 +142,24 @@ h2 a {
 	position:relative;
 	left: 80%;
     bottom:20px;
-	background-color: orange;
+	background-color: #2d35af;
 	color:white;
 	border:0;
 	width: 100px;
 	height:50px;
 	font-size:25px;
 	border-radius: 20px;
+}
+.btn_review_save{
+	position:relative;
+	background-color: #2d35af;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
+	font-size:25px;
+	border-radius: 20px;
+	
 }
 
 .paging{
@@ -169,7 +180,7 @@ h2 a {
 	.pagination > .active > a
 	{
 	    color: white;
-	    background-color: blue !Important;
+	    background-color: #2d35af !Important;
 	    border: solid 1px #5A4181 !Important;
 	}
 	

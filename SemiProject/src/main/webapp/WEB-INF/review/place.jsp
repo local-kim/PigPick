@@ -17,9 +17,10 @@
 <div class="section" id="section6">
 	<br><br><br><br><br><br>
 	
-	<div style="position:absolute; left: 3%;top: 200px;">
-		<h1>${place.name} (${stars})</h1>
-		<h3 style="color:  #FB667A;"><b>${fn:length(list)}개</b>의 후기가 있습니다</h3>
+	<div style="position:absolute; left: 5%;top: 200px;">
+		<h1 style="text-align: left;">${place.name} (${stars})</h1>
+		<h3 style="color:  #97caEf;text-decoration: underline;">
+		<b>${fn:length(list)}개</b>의 후기가 있습니다</h3>
 		<br>
 		<h3>${place.category}</h3>
 		<h3>${place.phone}</h3>
@@ -53,11 +54,11 @@
 	</script>
 	
 	
-	<table class="container_2" style="position:absolute; left: 3%;background-color: white;">
+	<table class="container_2" style="position:absolute; left: 1%;background-color: white;">
 	
 		<tr>
 			<th>작성자</th>
-			<th>내용</th>
+			<th>한줄평</th>
 			<th>별점</th>
 			<th>작성 시간</th>
 		</tr>

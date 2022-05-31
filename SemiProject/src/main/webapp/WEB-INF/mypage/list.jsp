@@ -48,7 +48,7 @@
 		
 			
 			<h1 class="user" style="position:absolute; top:280px; left:680px; z-index:200;">
-			<b style="background: #ffc;">${sessionScope.loginName}</b></h1>
+			<b>&nbsp;${sessionScope.loginName}</b></h1>
 			<img src="images/userspage.png" class="userspage" id="userspage" title="userspage">
 			
 			
