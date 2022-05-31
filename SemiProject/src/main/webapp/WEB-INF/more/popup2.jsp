@@ -19,7 +19,7 @@ body{
 height:800px;
 overflow:scroll; */
 }
-div.popup_all_info *{
+div.popup_all_info{
 	width:inherit;
 	height:inherit;
 	background-color: white;
@@ -58,12 +58,12 @@ $("div.header").css("display","none");
 		<br>
 
 	<div> <!--  style="display: none">-->
-		<img src="../images/key.png" id="key" style="width:150px; height:150px; position:relative; top: 50px;">
+		<img src="../images/key.png" id="key" style="width:130px; position:relative; top: 50px;">
 		&ensp;&ensp;&ensp;<strong>상단 오른쪽그림을 클릭해서<br>
 		<strong style="color: #2626C2;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;로그인</strong>&ensp;해주세요</strong><br><br>
-		<strong><img src="../images/join.png" id="join_img" style="width:140px; height:140px; position:relative; top: 50px;">
+		<strong><img src="../images/join.png" id="join_img" style="width:130px; position:relative; top: 50px;">
 		&ensp;&ensp;&ensp;&ensp;회원가입을 하지 않으셨다면 <br> 
-		<strong style="color: #2626C2;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+		<strong style="color: #2626C2;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 		JOIN</strong> 을 눌러서 가입해 주세요</strong>
 	</div>
 
@@ -104,9 +104,9 @@ $(document).ready(function () {
 		
 	
 	<div>
-		<strong style="color: #E62B00;">My Menu List</strong><strong>&ensp;는
+		<strong style="color: #E62B00;">My Menu List</strong><strong>는</strong><br><br>
 		
-		<br><br> 내가 먹은 음식과 먹은 횟수를 볼 수 있어요</strong><br><br> <br>
+		<strong style="margin-left:-5px;">내가 먹은 음식과 먹은 횟수를 볼 수 있어요</strong><br><br> <br>
 		
 		<strong style="color: #E62B00;">My Page Review&ensp;</strong><strong>에서는 
 		

@@ -17,6 +17,7 @@ body{
 /* width:500px;
 height:900px; */
 }
+
 div.piginfo{
 	width:inherit;
 	height:inherit;
