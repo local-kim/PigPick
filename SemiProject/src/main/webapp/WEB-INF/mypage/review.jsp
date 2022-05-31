@@ -30,7 +30,7 @@
 				<th class="text-center" >contents</th>
 				<th class="text-center" >★★★★★</th>
 				<th class="text-center" >
-				<span class="glyphicon glyphicon-calendar" style="color: green;"></span></th>
+				<span class="glyphicon glyphicon-calendar"></span></th>
 			
 			</tr>
 			<c:forEach var="dto" items="${list}" varStatus="i">

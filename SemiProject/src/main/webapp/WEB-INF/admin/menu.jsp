@@ -10,20 +10,29 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<br><br><br><br><br><br>
+
+	<br><br><br>
+
+	<div class="section" id="section6">
+	<br><br><br>
 	<h1>메뉴 추가</h1>
+	<br><br><br>
+
+
+	
 	<form action="insert" method="get">
-		<table>
+		<table class="container">
 			<tr>
-				<td>메뉴 이름</td>
+				<th>메뉴 이름</th>
 				<td>
 					<input type="text" name="name">
 				</td>
 			</tr>
 			<tr>
-				<td>카테고리</td>
+				<th>카테고리</th>
 				<td>
 					<label>
 						<input type="radio" value="0" name="category">한식
@@ -46,7 +55,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>타입</td>
+				<th>타입</th>
 				<td>
 					<label>
 						<input type="radio" value="0" name="type">밥
@@ -72,7 +81,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>맵기</td>
+				<th>맵기</th>
 				<td>
 					<label>
 						<input type="checkbox" value="1" name="spicy"> 매운거
@@ -86,5 +95,6 @@
 			</tr>
 		</table>
 	</form>
+</div>
 </body>
 </html>
