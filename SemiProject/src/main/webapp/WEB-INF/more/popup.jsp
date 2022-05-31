@@ -10,7 +10,7 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<!-- <link href="../css/style.css" rel="stylesheet" type="text/css"/> -->
 </head>
 
 <style>
@@ -18,19 +18,21 @@
 	border:10px solid #E87100;
 	background: white;
 	border-radius: 90px;
-	position:absolute;
-	top:130px;
-	left:600px;
-	
+	width:500px;
+	height:800px;
+	position:fixed;
+	left:100px;
+	top:10px;
+	margin:0;
 }
 #logo_img{
 	display:block;
 	margin:auto;
 }
-
 </style>
-
-
+<script type="text/javascript">
+$("div.header").css("display","none");
+</script>
 <body>
 <br>
 

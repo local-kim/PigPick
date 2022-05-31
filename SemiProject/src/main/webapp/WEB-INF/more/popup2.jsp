@@ -10,30 +10,37 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../css/style.css" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <style type="text/css">
-
-div.popup_all_info {
+body{
+/* width:500px;
+height:800px;
+overflow:scroll; */
+}
+div.popup_all_info *{
+	width:inherit;
+	height:inherit;
 	background-color: white;
 	font-size : 30px;
 	font-family : GmarketSansTTFMedium;
 	border-radius: 50px;
-	margin: 10px 20px 0px 0px;
 	display: table-cell;
-	
-	border-style: outset;
-	box-shadow: #99A3A4 1px 1px;
-	position: absolute; left: 28%;
+	/* border-style: outset; */
+	/* box-shadow: #99A3A4 1px 1px; */
+	position: relative;
 	text-align: center;
 	padding: 100px;
+	top:-200px;
 }
 
 
 
 </style>
-
+<script type="text/javascript">
+$("div.header").css("display","none");
+</script>
 <br><br><br><br><br><br><br><br><br><br>
 <body>
 

@@ -27,8 +27,8 @@ $(window).on("load resize ", function() {
 a:hover{text-decoration:none;}
 
  .star-rating{width:174px; height:35.6px; }
-.null{width:auto; height:35.6px; z-index:98; background:url(../images/nullstar.png)no-repeat; background-size: cover;}
-.full{margin-left:3px;height:35.6px;z-index:99; backgorund-position:left; background:url(../images/fullstar.png) no-repeat; background-size:cover; margin:0;}
+.null{width:auto; height:35.6px; z-index:99; background:url(../images/nullstar5.png)no-repeat; background-size: cover;}
+.full{height:35.6px; backgorund-position:left;z-index:1;  background:url(../images/fullstar4.png) no-repeat; background-size:cover; margin:0;}
 
 </style>
 <body>
@@ -104,7 +104,7 @@ a:hover{text-decoration:none;}
    									var fstar = parseInt(star);
    									/*console.log(typeof(fstar));*/
    									
-   									var onstarfix=20.28; //fixstar
+   									var onstarfix=20; //fixstar
    									var starwidth = (fstar * onstarfix);
    									/*var ss=String(starwidth).val();*/
    									var inpt1 = $("input[name=${no+1}]");

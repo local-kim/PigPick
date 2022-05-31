@@ -10,36 +10,43 @@
  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../css/style.css" rel="stylesheet" type="text/css" /> -->
 </head>
 <style>
-
+body{
+/* width:500px;
+height:900px; */
+}
 div.piginfo{
+	width:inherit;
+	height:inherit;
 	background-color: white;
 	font-size : 30px;
 	font-family : GmarketSansTTFMedium;
 	border-radius: 50px;
-	display: table-cell;
-	
-	border-style: outset;
-	box-shadow: #99A3A4 1px 1px;
-	position: absolute; left: 12%;
+	/* display: table-cell; */
+	/* border-style: outset;
+	box-shadow: #99A3A4 1px 1px; */
+	position: relative;
 	text-align: center;
+	top:-120px;
 	padding: 50px;
-	top:200px;
 }
 
 
 
 </style>
+<script type="text/javascript">
+$("div.header").css("display","none");
 
+</script>
 
 <body>
 <br><br><br><br><br><br>
 <div class="piginfo">
 	<br><br>
 	<strong style="font-size: 30px;">오늘은 뭘 먹을지 고민이신가요?<br><br>
-	고민을 해결해 드립니다. 음식 메뉴를 골라보세요~<br><br>
+	고민을 해결해 드립니다.<br><br>
 	</strong><br><br>
 	
 

@@ -15,7 +15,7 @@
         function openWindowPop(){
             var url = "popup";
             var name = "popup";
-            var option = "width = 500, height = 500, top = 100, left = 200, location = no, status=no, menubar=no, toolbar=no, scrollbars=yes;"
+            var option = "width = 800, height = 900, top = 100, left = 200, location = no, status=no, menubar=no, toolbar=no, scrollbars=yes;"
             window.open(url, name, option);
         }
     </script>
@@ -27,8 +27,7 @@
 	
 	</div>
 	
-	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');">팝업창 열기</a>
-	
+	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');" id="pop">팝업창 열기</a>
     <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
 	</div>
  
