@@ -17,11 +17,11 @@
 		<table>
 			<tr>
 				<th>회원명</th>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="name" placeholder="이름을 입력해주세요"></td>
 			</tr>
 			<tr>
 				<th>이메일</th>
-				<td><input type="text" name="email"></td>
+				<td><input type="text" name="email" placeholder="이메일을 입력해주세요"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><button type="submit">아이디 찾기</button></td>

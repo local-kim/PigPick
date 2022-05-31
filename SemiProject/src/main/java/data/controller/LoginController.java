@@ -110,12 +110,18 @@ public class LoginController {
 	@PostMapping("/findId/result")
 	public String findIdResult(
 			@RequestParam String name,
-			@RequestParam String email
+			@RequestParam String email,
+			Model model, HttpSession session
 			) {
 		// 이름, 이메일, 전화번호 일치하는지 확인
 		// 일치하면 다음 페이지(idResult.jsp)로 이동 및 아이디 값 넘김
 		// 불일치하면 현재 /findId 로 리다이렉트
-		
+		boolean check=service.checkId(name, email);
+		if(check=true) {
+		model.addAttribute("id",service.findId(name, email));
+		}
+			
+			
 		return "/login/idResult";
 	}
 	

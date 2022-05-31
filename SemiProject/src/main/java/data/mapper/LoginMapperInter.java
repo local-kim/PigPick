@@ -11,5 +11,7 @@ public interface LoginMapperInter {
 	public List<Map<String, Object>> getLoginInfo(String id);
 	public int checkKakaoMember(String id);
 	public int checkPassword(Map<String, String> map);
+	public int checkId(Map<String, String>map);
+	public String findId(Map<String, String>map);
 	public void changePassword(Map<String, String> map);
 }
