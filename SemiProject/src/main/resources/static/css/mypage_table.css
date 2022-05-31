@@ -79,9 +79,30 @@ h2 a {
   padding: 0 0 8em 0;
    top: 600px;
 }
+.container_3 {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+   top: 600px;
+}
 .container_2 th{
 	 color:#2d35af;
 	 border-bottom: 1px solid #ddd;
+	
+}
+.container_3 th{
+	 color:#2d35af;
+	 border-bottom: 2px solid #ddd;
+	 text-align: center;
+	
+}
+.container_3 td{
+	
+	 border-bottom: 1px solid #ddd;
+	 text-align: center;
 	
 }
 
@@ -125,6 +146,18 @@ h2 a {
 	border-radius: 20px;
 	
 }
+.btn_run{
+position:relative;
+	top: 30px;
+	background-color: orange;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
+	font-size:25px;
+	border-radius: 20px;
+}
+
 .btnreview_update {
 	position:relative;
 	left: 85%;

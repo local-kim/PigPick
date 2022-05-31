@@ -27,7 +27,8 @@
 	
 	/* CHECKED STYLES */
 	[type=radio]:checked + img, [type=checkbox]:checked + img {
-	  outline: 2px solid #2d35af;
+	  outline: 2px solid #ddd;
+	  border-radius: 20px;
 	}
 </style>
 <script>
