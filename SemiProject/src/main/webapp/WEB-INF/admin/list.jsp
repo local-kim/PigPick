@@ -22,9 +22,12 @@ div.body {
  font-family : GmarketSansTTFMedium;
 }
 
-div.header {
+div.header0 {
+ 	background-color: #000080;
 	height: 60px;
-	margin: 10px;
+	color: #ffff;
+	text-align: center;
+	font-family : GmarketSansTTFMedium;
 }
 
 div.h1 {
@@ -32,26 +35,15 @@ div.h1 {
 
 }
 
-div.main {
-	display: table-cell;
-	background-color: #FFFFFF;
-	padding: 15px;
-}
+
+
 
 div.nav	{
 	display: table-cell;
-	background-color: #FFFFFF;
-	padding: 15px;
+	background-color: #F0F8FF;
+	padding: 20px;
 }
 
-div.footer {
-	background-color: #bebebe;
-	color: red;
-	text-align: center;
-	padding: 10px;
-	margin: 0px 0px 0px 0px;
-	font-size: 90%;
-}
 
 #aside {
 	width: 175px;
@@ -61,25 +53,26 @@ div.footer {
 
 #left h1{
  font-family: GmarketSansTTFMedium;
- font-size: 20px;
+ font-size: 25px;
 }
 
 #left ul{
 	font-family: GmarketSansTTFMedium;
-	font-size: 15px;
+	font-size: 20px;
 	color:FFF;
 	list-style: none;
 	text-indent: 15px;
 }
 #left ul li{
-	background-color: #3f3f3f;
+	background-color: #F5F5F5;
 	line-height: 28px;
-	border-bottom:  1px solid #333;
+	border-bottom:  1px solid #808080;
+		
 }
 
 #left ul li a {
 	text-decoration: none;
-	color: #FFF;
+	color: #696969;
 	display: block;
 }
 
@@ -91,13 +84,52 @@ div.footer {
 }
 
 #main {
-	font-family: GmarketSansTTFMedium;
+	font-family: HyhwpEq;
 	font-size: 12px;
 	color: #464646;
 	overflow: hidden;
 	float: left;
-	width: 430px;
+	margin:70px;
+	border: 1px solid #ffff;
 	
+	
+}
+
+
+#navinavi {
+	margin: 10px;
+}
+#navinavi ul{
+	list-style: none;
+	text-align: center;
+	border-top: 1px solid red;
+	border-bottom: 1px solid red;
+	padding: 10px 0;
+}
+
+#navinavi ul li{
+	display: inline;
+	text-transform: uppercase;
+	padding: 0 10px;
+	letter-spacing: 10px;
+	
+}
+
+#navinavi ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+#navinavi ul a:hover {
+	text-decoration:  underline;
+}
+
+
+
+#footer {
+	width: 100%;
+	height: 50px;
+	clear: both;
 }
 
 </style>
@@ -105,11 +137,49 @@ div.footer {
  	<br><br><br><br><br><br>
 	<div class="body">
 		
-	<div class="header">
-		<header>
-			<h1>관리자 페이지</h1>
+	<div class="header0">
+		<header style="background-color: #000080;
+	height: 60px;
+	color: #ffff;
+	text-align: center;
+	font-family : Segoe UI;">
+			<h1 style="padding-top: 10px;">ADMIN PAGE</h1>
 		</header>
 	</div>
+	
+	
+	<div id="navinavi">
+	<nav>
+		<ul>
+			<li><a onclick="location.href='/'">HOME</a></li>
+			<li><a onclick="location.href='/mypage/info'">My Profile</a></li>
+			<li><a onclick="location.href='/mypage'">My Page</a></li>
+			<li><a onclick="location.href='/mypage/review'">review</a></li>
+			
+			
+		
+		
+		</ul>
+	
+	</nav>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	<!-- /header -->
@@ -117,47 +187,55 @@ div.footer {
 	<div id="left"> 
 		
 			<aside id="aside">
-			<h1>시스템 관리</h1>
+			<h1 style="color:#696969">시스템 관리</h1>
 				<ul>
-					<li><a target="iframe1" onclick="location.href='/admin/member'">회원 관리</a></li>
-					<li><a target="iframe1" onclick="location.href='/admin/review'">리뷰 관리</a></li>
-					<li><a target="iframe1" onclick="location.href='/admin/stats'">메뉴 통계</a></li>
-					<li><a target="iframe1" onclick="location.href='/admin/menu'">메뉴 추가</a></li>		
+				<li><a  onclick="location.href='/'">HOME</a></li>
+					<li><a  onclick="location.href='/admin/member'">회원 관리</a></li>
+					<li><a  onclick="location.href='/admin/review'">리뷰 관리</a></li>
+					<li><a  onclick="location.href='/admin/stats'">메뉴 통계</a></li>
+					<li><a  onclick="location.href='/admin/menu'">메뉴 추가</a></li>		
 				</ul>
 			</aside>
 		</div>
+		<div id="main">
+		<a href="/admin/member" target="_blank">
+			<img src="../images/basic_home.png" alt="flag" style="width:80px; height:80px;">
+		</a>
+		<p style="text-align: center; padding: 10px;">HOME</p>
+		</div>
+		
 		
 		<div id="main">
 		<a href="/admin/member" target="_blank">
-			<img src="../images/key.png" alt="flag" style="width:320px; height:214px; border: 1px soild black">
+			<img src="../images/basic_webpage_img_txt.png" alt="flag" style="width:80px; height:80px;">
 		</a>
-		<p>회원 관리</p>
+		<p style="text-align: center; padding: 10px;">회원 관리</p>
 		</div>
 		
 			
 		<div id="main">
 		<a href="admin/review" target="_blank">
-			<img src="../images/key.png" alt="flag" style="width:320px; height:214px; border: 1px soild black">
+			<img src="../images/basic_todo_txt.png" alt="flag" style="width:80px; height:80px;">
 		</a>
-		<p>리뷰 관리</p>
+		<p style="text-align: center; padding: 10px;">리뷰 관리</p>
 		</div>
 		
 		
 			
 		<div id="main">
 		<a href="/admin/stats" target="_blank">
-			<img src="../images/key.png" alt="flag" style="width:320px; height:214px; border: 1px soild black">
+			<img src="../images/basic_mixer2.png" alt="flag" style="width:80px; height:80px;">
 		</a>
-		<p>메뉴 통계</p>
+		<p style="text-align: center; padding: 10px;">메뉴 통계</p>
 		</div>
 		
 		
 				
 		<div id="main">
 		<a href="/admin/menu" target="_blank">
-			<img src="../images/key.png" alt="flag" style="width:320px; height:214px; border: 1px soild black">
+			<img src="../images/basic_magnifier_plus.png" alt="flag" style="width:80px; height:80px;">
 		</a>
-		<p>메뉴 추가</p>
+		<p style="text-align: center; padding: 10px;">메뉴 추가</p>
 		</div>
 	
 	<!-- 
@@ -208,23 +286,14 @@ div.footer {
 	 -->
 
 	
-		<div class="footer">
-		<footer>copyright</footer>
+		<div id="footer">
+		<footer style="background-color: #F5F5F5;">copyright (c) 2022 pigpick</footer>
 		</div>
 		
+	
+
+	<div>
 		
-		
-			
-		
- 
-</div>	
-
-
-
-
-
-
-
-
+</div>
 </body>
 </html>
