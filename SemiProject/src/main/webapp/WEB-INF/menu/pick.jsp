@@ -27,7 +27,7 @@
 	
 	/* CHECKED STYLES */
 	[type=radio]:checked + img, [type=checkbox]:checked + img {
-	  outline: 5px solid orange;
+	  outline: 2px solid #2d35af;
 	}
 </style>
 <script>
