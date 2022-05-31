@@ -99,4 +99,46 @@ public class LoginController {
 			) {
 		session.removeAttribute("loggedIn");
 	}
+	
+	// 아이디 찾기
+	@GetMapping("/findId")
+	public String findId() {
+		return "/login/findId";
+	}
+	
+	@PostMapping("/findId/result")
+	public String findIdResult(
+			@RequestParam String name,
+			@RequestParam String email
+			) {
+		// 이름, 이메일, 전화번호 일치하는지 확인
+		
+		return "/login/idResult";
+	}
+	
+	// 비밀번호 찾기
+	@GetMapping("/findPassword")
+	public String findPassword() {
+		return "/login/findPassword";
+	}
+	
+	@PostMapping("/findPassword/change")
+	public String changePassword(
+			@RequestParam String name,
+			@RequestParam String id,
+			@RequestParam String email
+			) {
+		// 이름, 아이디, 이메일 일치하는지 확인
+		
+		return "/login/changePassword";
+	}
+	
+	@PostMapping("/findPassword/result")
+	public String findPasswordResult(
+			@RequestParam String password
+			) {
+		// DB에서 비밀번호 업데이트
+		
+		return "/login/passwordResult";
+	}
 }
