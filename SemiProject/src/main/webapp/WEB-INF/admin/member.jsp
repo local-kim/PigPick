@@ -10,10 +10,73 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<br><br><br><br><br><br>
+	
+
+<section>
+	
+	<div class="section" id="section6">
+	<br><br><br>
 	<h1>회원 관리</h1>
-	${list}
-</body>
+
+	<br><br><br>
+	
+    <table class="container_3">
+	
+	
+
+      <thead>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>ID</th>
+			<th>사진</th>
+			<th>Email</th>
+			<th>연락처</th>
+			<th>주소</th>
+			<th>생일</th>
+			<th><button type="button" onclick="location.href='/member/delete'">삭제</button></th>
+		</tr>
+	
+		 </thead>
+		
+	
+	     <tbody>
+	        
+				
+						<c:forEach var="dto" items="${list}">
+						<tr>
+							
+							<td>${dto.num}</td>
+						
+							<!-- 회원이름 -->
+							<td>${dto.name}</td>
+							
+							
+							<td>${dto.id}</td>
+							
+							
+							
+							<td>${dto.photo}</td>
+							<td>${dto.email}</td>
+							<td>${dto.tel}</td>
+							<td>${dto.address}</td>
+							<td>${dto.birthday}</td>
+							<td><input type="checkbox" name="" value="${dto.num}"></td>
+						</tr>
+						</c:forEach>
+				
+					</tbody>
+		</table>
+	
+		
+	</div>
+
+  
+  
+  
+	
+	</section>
 </html>

@@ -40,5 +40,16 @@ public class AdminService implements AdminServiceInter {
 		
 		return list;
 	}
+	
+	@Override
+	public void deleteMember(int member_num) {
+		mapper.deleteMember(member_num);
+		
+	}
+	@Override
+	public void deleteReview(int review_num) {
+		mapper.deleteReview(review_num);
+		
+	}
 
 }

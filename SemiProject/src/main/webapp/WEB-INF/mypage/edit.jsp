@@ -49,7 +49,7 @@ function readURL(input)
 <%-- <h3>${info}</h3> --%>
 	<div class="section" id="section6">
 	<br>
-		<h1>My Profile Edit</h1>
+		<h1>&nbsp;My Profile Edit</h1>
 		<br><br><br>
 
 	<form action="update" method="post" enctype="multipart/form-data">
@@ -69,7 +69,7 @@ function readURL(input)
 			<tr>
 				<th class="text-center" style="width: 200px;">Photo</th>
 				<td style="text-align: center;">
-					<img src="../profile_img/${info.photo}" style="width:200px;height: 200px;object-fit: cover;"><br><br><br>
+					<img src="../profile_img/${info.photo}" style="width:100px;height: 100px;object-fit: cover;">
 		     		<input type="file" style="width: 300px;height:50px; margin: 0 auto; border:0;font-size:20px;
 		     		background-color: transparent;"
 		     		name="upload" id="myphoto" class="form-control"
@@ -92,7 +92,7 @@ function readURL(input)
 				<th class="text-center" style="width: 100px;">Name</th>
 				<td>
 				<input type="text" name="name" class="form-control"
-					required="required"  style="margin:3px auto; width:800px;height: 50px;border:0;font-size:20px;"
+					required="required"  style="margin:3px auto; width:800px;height: 30px;border:0;font-size:20px;"
 					value="${info.name}">
 				</td>
 			</tr>
@@ -100,7 +100,7 @@ function readURL(input)
 				<th class="text-center" style="width: 100px;">Tel</th>
 				<td>
 				<input type="text" name="tel" class="form-control"
-					required="required"  style="margin:3px auto; width:800px;height: 50px; font-size:20px;"
+					required="required"  style="margin:3px auto; width:800px;height: 30px; font-size:20px;"
 					value="${info.tel}">
 				</td>
 			</tr>
@@ -108,7 +108,7 @@ function readURL(input)
 				<th class="text-center" style="width: 100px;">E-Mail</th>
 				<td>
 				<input type="text" name="email" class="form-control"
-					required="required"  style="margin:3px auto; width:800px; height: 50px; font-size:20px;"
+					required="required"  style="margin:3px auto; width:800px; height: 30px; font-size:20px;"
 					value="${info.email}">
 				</td>
 			</tr>
@@ -124,7 +124,7 @@ function readURL(input)
 				
 		</table>
 		</form>
-		<br>
+		
 		<div>
 			<button type="submit" class="btnedit" style="position:absolute; left: 50%;"
 				 onclick="location.href='/mypage/update'">SAVE</button>

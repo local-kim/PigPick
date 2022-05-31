@@ -78,4 +78,17 @@ public class AdminController {
 		
 		return "redirect:/admin";
 	}
+	
+	@GetMapping("/member/delete")
+	public void memberDelete(
+			@RequestParam int member_num
+			) {
+		service.deleteMember(member_num);
+	}
+	@GetMapping("/review/delete")
+	public void reviewDelete(
+			@RequestParam int review_num
+			) {
+		service.deleteReview(review_num);
+	}
 }

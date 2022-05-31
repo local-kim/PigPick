@@ -78,7 +78,7 @@ div.login{
 	line-height:30px;
 	text-align:left;
     font-size:30px;
-	color: #e96b39;
+	color: white;
 	width:210px;
 	font-weight:bold;
 }
@@ -481,10 +481,12 @@ h1.user{
 .btnedit{
 	width: 150px;
 	height:50px;
+	background-color: #2d35af;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
 	font-size:25px;
-	background-color: orange;
-	color: white;
-	border: 1px solid ornage;
 	border-radius: 20px;
 }
 	
