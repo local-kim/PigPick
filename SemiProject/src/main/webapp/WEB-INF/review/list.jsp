@@ -14,13 +14,21 @@
 <link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <script type="text/javascript">
+
+
 $(window).on("load resize ", function() {
 	  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
 	  $('.tbl-header').css({'padding-right':scrollWidth});
 	}).resize();
+	
 </script>
+
 <style>
 a:hover{text-decoration:none;}
+
+ .star-rating{width:174px; height:35.6px; }
+.null{width:auto; height:35.6px; z-index:98; background:url(../images/nullstar.png)no-repeat; background-size: cover;}
+.full{margin-left:3px;height:35.6px;z-index:99; backgorund-position:left; background:url(../images/fullstar.png) no-repeat; background-size:cover; margin:0;}
 
 </style>
 <body>
@@ -61,9 +69,9 @@ a:hover{text-decoration:none;}
 	        
 					<c:set var="no" value="${totalCount}"/>
 					<c:if test="${totalCount>0}"> <!-- 글이 있을때 -->
-						<c:forEach var="dto" items="${list}">
+						<c:forEach var="dto" items="${list}" varStatus="i">
 						<tr>
-							<input type="hidden" value="${dto.num}" >
+							<input type="hidden" value="${dto.num}" />
 							<td>${no}</td>
 							<c:set var="no" value="${no-1}"/>
 							
@@ -83,9 +91,30 @@ a:hover{text-decoration:none;}
 								</c:if>
 							</td>--%>
 							
-							<td><a href="/review/content?num=${dto.num}">${dto.content}</a></td>
+							<td width="550px"><a href="/review/content?num=${dto.num}">${dto.content}</a></td>
 							
-							<td>${dto.stars}</td>
+							<td class="star-rating" style="text-align:center;">
+   								 <div class="null">
+   								 <input type="hidden" value="${dto.stars}" name="${no+1}">
+   									<div class="full">
+   									 <script type="text/javascript">
+   									var star= ${dto.stars};
+   									/*console.log("star:"+star); */
+   									
+   									var fstar = parseInt(star);
+   									/*console.log(typeof(fstar));*/
+   									
+   									var onstarfix=20.28; //fixstar
+   									var starwidth = (fstar * onstarfix);
+   									/*var ss=String(starwidth).val();*/
+   									var inpt1 = $("input[name=${no+1}]");
+   									/*console.log("inpt:"+inpt1);*/
+   									var test=$(inpt1).next().css("width",starwidth+"%"); //full
+   									console.log(test);
+   									</script>
+   									</div>   							
+   								</div>			 
+							</td>
 							
 							<td>${dto.member_name}</td>
 							<td><fmt:formatDate value="${dto.created_at}" pattern="yyyy-MM-dd" /></td>
