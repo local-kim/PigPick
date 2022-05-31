@@ -42,10 +42,12 @@ public class LoginController {
 			List<Map<String, Object>> map = service.getLoginInfo(id);
 			
 			session.setMaxInactiveInterval(60 * 60 * 24);	// 24h
+			session.setAttribute("loggedIn", true);
 			session.setAttribute("loginId", id);
 			session.setAttribute("loginNum", map.get(0).get("num"));
 			session.setAttribute("loginName", map.get(0).get("name"));
-			session.setAttribute("loggedIn", true);
+			session.setAttribute("loginAdmin", map.get(0).get("admin"));
+			
 			return "redirect:/";
 		}
 		else {
@@ -56,7 +58,7 @@ public class LoginController {
 	// 카카오 로그인
 	@GetMapping("/kakao")
 	@ResponseBody
-	public void kakaoinsert(
+	public void kakaoLogin(
 			@RequestParam String kid,
 			@RequestParam String kemail,
 			@RequestParam String knickname,

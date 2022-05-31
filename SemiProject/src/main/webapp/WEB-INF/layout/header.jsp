@@ -84,6 +84,10 @@
 		
 		<c:if test="${sessionScope.loggedIn != null}">
 			<span>${sessionScope.loginName}(${sessionScope.loginId})님</span>
+			<c:if test="${sessionScope.loginAdmin == '2'}">
+				<span>관리자</span>
+			</c:if>
+			
 			&nbsp;
 			<button type="button" class="btnlogout" style="background-color: transparent;
 			border:0; width:100px" onclick="logout()">

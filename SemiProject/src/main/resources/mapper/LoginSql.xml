@@ -5,7 +5,7 @@
 		SELECT count(*) FROM member WHERE id = #{id} AND password = #{password}
 	</select>
 	<select id="getLoginInfo" parameterType="String" resultType="Map">
-		SELECT num, name FROM member WHERE id = #{id}
+		SELECT num, name, admin FROM member WHERE id = #{id}
 	</select>
 	<select id="checkKakaoMember" parameterType="String" resultType="int">
 		select count(*) from member where id = #{id}

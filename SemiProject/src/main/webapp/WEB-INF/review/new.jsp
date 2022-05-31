@@ -86,7 +86,7 @@
 				<tr>
 					<td colspan="2" align="center">
 						<button type="submit" onclick="location.href='/review/insert'"
-						style="width: 100px;background-color: orange">저장</button>
+						class="btn_review_save">저장</button>
 					</td>
 				</tr>
 			</table>

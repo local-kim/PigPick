@@ -30,7 +30,7 @@
 		<div class="round"></div>
 	</div>
 	<div class="menuname">
-	 <h3>추천메뉴는&nbsp;<b style="background: #ffc;" id="rndmenu"></b> 입니다.</h3>
+	 <h3>&nbsp;추천메뉴는&nbsp;<b id="rndmenu"></b> 입니다.</h3>
 	 <input type="hidden" id="menunum">
 	<script>
 	var list = new Array();

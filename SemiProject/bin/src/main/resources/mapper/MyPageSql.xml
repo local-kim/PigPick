@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.MyPageMapperInter">
+	<select id="getMenuRank" parameterType="int" resultType="menu_rank">
+		SELECT member_num, member.name AS member_name, menu_num, menu.name AS menu_name, category, count 
+		FROM menu_rank, member, menu 
+		WHERE member_num = #{member_num} 
+		AND menu_rank.member_num = member.num 
+		AND menu_rank.menu_num = menu.num 
+		ORDER BY count DESC
+	</select>
+	<select id="getReviewList" parameterType="int" resultType="review">
+		SELECT * 
+		FROM review 
+		WHERE member_num = #{member_num}
+	</select>
+	<select id="getMemberInfo" parameterType="int" resultType="member">
+		SELECT * FROM member 
+		WHERE num = #{member_num}
+	</select>
+	<update id="updateMemberInfo" parameterType="Map">
+		UPDATE member 
+		SET tel = #{tel}, address = #{address} 
+		WHERE num = #{num}
+	</update>
+</mapper>

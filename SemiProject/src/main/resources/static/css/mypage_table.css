@@ -10,7 +10,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
-  color:white;
+ 
  
   
   
@@ -70,6 +70,27 @@ h2 a {
   display: table;
   padding: 0 0 8em 0;
 }
+.container_2 {
+    text-align: left;
+    overflow: hidden;
+    width: 50%;
+    margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+   top: 600px;
+}
+.container_2 th{
+	 color:#2d35af;
+	 border-bottom: 1px solid #ddd;
+	
+}
+
+.container_2 td, .container_2 th {
+    padding-bottom: 2%;
+    padding-top: 2%; 
+  	font-size: 1.5em;
+  	text-align: center;
+}
 
 .container td, .container th {
     padding-bottom: 2%;
@@ -84,7 +105,7 @@ h2 a {
 	position:relative;
 	left: 80%;
 	top: 30px;
-	background-color: orange;
+	background-color: #2d35af;
 	color:white;
 	border:0;
 	width: 100px;
@@ -95,7 +116,7 @@ h2 a {
 .btn_edit, .btn_before{
 	position:relative;
 	top: 30px;
-	background-color: orange;
+	background-color: #2d35af;
 	color:white;
 	border:0;
 	width: 100px;
@@ -108,7 +129,7 @@ h2 a {
 	position:relative;
 	left: 85%;
 	top: 30px;
-	background-color: orange;
+	background-color:#2d35af;
 	color:white;
 	border:0;
 	width: 100px;
@@ -121,13 +142,24 @@ h2 a {
 	position:relative;
 	left: 80%;
     bottom:20px;
-	background-color: orange;
+	background-color: #2d35af;
 	color:white;
 	border:0;
 	width: 100px;
 	height:50px;
 	font-size:25px;
 	border-radius: 20px;
+}
+.btn_review_save{
+	position:relative;
+	background-color: #2d35af;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
+	font-size:25px;
+	border-radius: 20px;
+	
 }
 
 .paging{
@@ -148,7 +180,7 @@ h2 a {
 	.pagination > .active > a
 	{
 	    color: white;
-	    background-color: blue !Important;
+	    background-color: #2d35af !Important;
 	    border: solid 1px #5A4181 !Important;
 	}
 	

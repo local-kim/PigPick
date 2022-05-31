@@ -14,5 +14,6 @@
 <body>
 	<br><br><br><br><br><br>
 	<h1>리뷰 관리</h1>
+	${list}
 </body>
 </html>

@@ -7,9 +7,16 @@
 		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
 		<put-attribute name="content" value="/WEB-INF/layout/home.jsp" />
 	</definition>
+	<definition name="layout2" template="/WEB-INF/layout/layout2.jsp">
+		<put-attribute name="popup" value="/WEB-INF/more/popup.jsp" />
+		
+	</definition>
 	
 	<definition name="/*/*" extends="layout">
 		<put-attribute name="content" value="/WEB-INF/{1}/{2}.jsp" />
 	</definition>
-	
+	<definition name="/more/*" extends="layout2">
+		<put-attribute name="popup" value="/WEB-INF/more/{1}.jsp" />
+	</definition>
+
 </tiles-definitions>

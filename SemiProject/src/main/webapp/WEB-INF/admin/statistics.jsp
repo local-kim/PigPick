@@ -14,5 +14,6 @@
 <body>
 	<br><br><br><br><br><br>
 	<h1>메뉴 통계</h1>
+	${list}
 </body>
 </html>
