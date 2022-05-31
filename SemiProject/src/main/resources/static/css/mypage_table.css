@@ -88,6 +88,15 @@ h2 a {
   padding: 0 0 8em 0;
    top: 600px;
 }
+.container_4 {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+ 	display: table;
+ 	padding: 0 0 8em 0;
+   	top: 600px;
+}
 .container_2 th{
 	 color:#2d35af;
 	 border-bottom: 1px solid #ddd;
@@ -97,12 +106,25 @@ h2 a {
 	 color:#2d35af;
 	 border-bottom: 2px solid #ddd;
 	 text-align: center;
+	 padding-bottom: 2%;
+   	 padding-top: 2%; 
 	
 }
 .container_3 td{
 	
 	 border-bottom: 1px solid #ddd;
 	 text-align: center;
+	padding-bottom: 1%;
+    padding-top: 1%;  
+	
+}
+.container_4 td{
+	
+	
+	 text-align: center;
+	 padding-bottom: 3%;
+     padding-top: 3%; 
+     
 	
 }
 

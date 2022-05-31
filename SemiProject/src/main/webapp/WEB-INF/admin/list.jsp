@@ -10,12 +10,9 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <style>
-*{
-	padding: 0px;
-	margin: 0px;
-}
 
 div.body {
  background-color: #FFFFFF;
@@ -85,10 +82,10 @@ div.nav	{
 
 #main {
 	font-family: HyhwpEq;
-	font-size: 12px;
+	font-size: 20px;
 	color: #464646;
 	overflow: hidden;
-	float: left;
+	
 	margin:70px;
 	border: 1px solid #ffff;
 	
@@ -130,6 +127,7 @@ div.nav	{
 	width: 100%;
 	height: 50px;
 	clear: both;
+
 }
 
 </style>
@@ -143,12 +141,12 @@ div.nav	{
 	color: #ffff;
 	text-align: center;
 	font-family : Segoe UI;">
-			<h1 style="padding-top: 10px;">ADMIN PAGE</h1>
+			<h1 style="padding-top: 10px;color:white;">ADMIN PAGE</h1>
 		</header>
 	</div>
 	
 	
-	<div id="navinavi">
+<!-- 	<div id="navinavi">
 	<nav>
 		<ul>
 			<li><a onclick="location.href='/'">HOME</a></li>
@@ -158,11 +156,11 @@ div.nav	{
 		</ul>
 	
 	</nav>
-	</div>
+	</div> -->
 	
 	<!-- /header -->
 	
-	<div id="left"> 
+	<!-- <div id="left"> 
 		
 			<aside id="aside">
 			<h1 style="color:#696969">시스템 관리</h1>
@@ -178,50 +176,51 @@ div.nav	{
 				</ul>
 			</aside>
 		</div>
-		<div id="main">
-		<a href="/admin/member" target="_blank">
-			<img src="../images/basic_home.png" alt="flag" style="width:80px; height:80px;">
-		</a>
-		<p style="text-align: center; padding: 10px;">HOME</p>
-		</div>
-		
+	 -->
 		
 		<div id="main">
-		<a href="/admin/member" target="_blank">
-			<img src="../images/basic_webpage_img_txt.png" alt="flag" style="width:80px; height:80px;">
-		</a>
-		<p style="text-align: center; padding: 10px;">회원 관리</p>
-		</div>
+		<table class="container_4">
+			<tr>
+				<td>
+					<a href="/admin/member">
+					<img src="../images/basic_webpage_img_txt.png" alt="flag">
+					</a>
+				</td>
+				<td>
+					<a href="/admin/member">
+					<img src="../images/basic_todo_txt.png" alt="flag">
+					</a>
+				</td>
+				<td>
+					<a href="/admin/stats">
+					<img src="../images/basic_mixer2.png" alt="flag">
+					</a>
+				</td>
+				<td>
+					<a href="/admin/menu">
+					<img src="../images/basic_magnifier_plus.png" alt="flag">
+					</a>
+				</td>
+			</tr>
+			<tr>
 		
+				<td>
+				회원 관리
+				</td>
+				<td>
+				리뷰 관리
+				</td>
+				<td>
+				메뉴 통계
+				</td>
+				<td>
+				메뉴 추가
+				</td>
+			</tr>
 			
-		<div id="main">
-		<a href="admin/review" target="_blank">
-			<img src="../images/basic_todo_txt.png" alt="flag" style="width:80px; height:80px;">
-		</a>
-		<p style="text-align: center; padding: 10px;">리뷰 관리</p>
-		</div>
+		</table>
 		
-		<div id="main">
-		<a href="/admin/stats" target="_blank">
-			<img src="../images/basic_mixer2.png" alt="flag" style="width:80px; height:80px;">
-		</a>
-		<p style="text-align: center; padding: 10px;">메뉴 통계</p>
-		</div>
-		
-		
-		<div id="main">
-		<a href="/admin/menu" target="_blank">
-			<img src="../images/basic_magnifier_plus.png" alt="flag" style="width:80px; height:80px;">
-		</a>
-		<p style="text-align: center; padding: 10px;">메뉴 추가</p>
-		</div>
-		
-			<div id="main">
-		<a href="/mypage/info" target="_blank">
-			<img src="../images/basic_star.png" alt="flag" style="width:80px; height:80px;">
-		</a>
-		<p style="text-align: center; padding: 10px;">My Profile</p>
-		</div>
+</div>
 		
 	<!-- 
 	<div class="nav">
@@ -268,9 +267,9 @@ div.nav	{
 	</div>
 	 -->
 
-		<div id="footer">
+		<!-- <div id="footer">
 		<footer style="background-color: #F5F5F5;">copyright (c) 2022 pigpick</footer>
-		</div>	
+		</div>	 -->
 </div>
 </body>
 </html>
