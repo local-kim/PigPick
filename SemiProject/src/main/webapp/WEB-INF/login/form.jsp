@@ -177,6 +177,12 @@ function naverLogout() {
 		      		</a>
 					</td>
 				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" onclick="location.href='findId'">아이디 찾기</button>
+						<button type="button" onclick="location.href='findPassword'">비밀번호 찾기</button>
+					</td>
+				</tr>
 			</table>
 		</form>
 	</div>

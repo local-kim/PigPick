@@ -10,4 +10,6 @@ public interface LoginMapperInter {
 	public int login(Map<String, String> map);
 	public List<Map<String, Object>> getLoginInfo(String id);
 	public int checkKakaoMember(String id);
+	public int checkPassword(Map<String, String> map);
+	public void changePassword(Map<String, String> map);
 }
