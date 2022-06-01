@@ -5,6 +5,21 @@
 		SELECT count(*) FROM member WHERE id = #{id} AND password = #{password}
 	</select>
 	<select id="getLoginInfo" parameterType="String" resultType="Map">
-		SELECT num, name FROM member WHERE id = #{id}
+		SELECT num, name, admin FROM member WHERE id = #{id}
 	</select>
+	<select id="checkKakaoMember" parameterType="String" resultType="int">
+		select count(*) from member where id = #{id}
+	</select>
+	<select id="checkId" parameterType="Map" resultType="int">
+		select count(*) from member where name = #{name} and email = #{email}
+	</select>
+	<select id="findId" parameterType="Map" resultType="String">
+		select id from member where name = #{name} and email = #{email}
+	</select>
+	<select id="checkPassword" parameterType="Map" resultType="int">
+		select count(*) from member where name = #{name} and id = #{id} and email = #{email}
+	</select>
+	<update id="changePassword" parameterType="Map">
+		update member set password = #{password} where id = #{id}
+	</update>
 </mapper>

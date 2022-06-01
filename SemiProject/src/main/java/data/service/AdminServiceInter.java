@@ -12,7 +12,6 @@ public interface AdminServiceInter {
 	public List<MemberDto> getMemberList();
 	public List<ReviewDto> getReviewList();
 	public List<MenuRankDto> getMenuRankList();
-	public void deleteMember(int member_num);
-	public void deleteReview(int review_num);
-	
+	public void deleteMember(String memberNum);
+	public void deleteReview(String reviewNum);
 }

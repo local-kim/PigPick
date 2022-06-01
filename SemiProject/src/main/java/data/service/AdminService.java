@@ -42,14 +42,14 @@ public class AdminService implements AdminServiceInter {
 	}
 	
 	@Override
-	public void deleteMember(int member_num) {
-		mapper.deleteMember(member_num);
+	public void deleteMember(String memberNum) {
+		mapper.deleteMember(memberNum);
 		
 	}
+	
 	@Override
-	public void deleteReview(int review_num) {
-		mapper.deleteReview(review_num);
+	public void deleteReview(String reviewNum) {
+		mapper.deleteReview(reviewNum);
 		
 	}
-
 }

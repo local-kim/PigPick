@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import data.dto.MemberDto;
 import data.dto.MenuDto;
@@ -39,6 +40,18 @@ public class AdminController {
 		
 		return "/admin/member";
 	}
+
+	@GetMapping("/member/delete")
+	@ResponseBody
+	public void memberDelete(
+			@RequestParam String nums
+			) {
+		String []memberNums = nums.split(",");
+		
+		for(String memberNum : memberNums) {
+			service.deleteMember(memberNum);
+		}
+	}
 	
 	@GetMapping("/review")
 	public String review(
@@ -49,6 +62,18 @@ public class AdminController {
 		model.addAttribute("list", list);
 		
 		return "/admin/review";
+	}
+
+	@GetMapping("/review/delete")
+	@ResponseBody
+	public void reviewDelete(
+			@RequestParam String nums
+			) {
+		String []reviewNums = nums.split(",");
+		
+		for(String reviewNum : reviewNums) {
+			service.deleteReview(reviewNum);
+		}
 	}
 	
 	@GetMapping("/stats")
@@ -76,19 +101,6 @@ public class AdminController {
 		
 		service.insertMenu(menu);
 		
-		return "redirect:/admin";
-	}
-	
-	@GetMapping("/member/delete")
-	public void memberDelete(
-			@RequestParam int member_num
-			) {
-		service.deleteMember(member_num);
-	}
-	@GetMapping("/review/delete")
-	public void reviewDelete(
-			@RequestParam int review_num
-			) {
-		service.deleteReview(review_num);
+		return "redirect:/admin/menu";
 	}
 }

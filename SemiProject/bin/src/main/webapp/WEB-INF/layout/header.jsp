@@ -47,7 +47,7 @@
 		<ul>
 			<!-- navigation -->
 			<!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
-			<li class="topnav"><a href="/popup"><b>Pop_up</b></a></li>
+		
 			<li class="topnav"><a href="/"><b>HOME</b></a></li>
 			<li class="topnav" style="margin-left:-15px;"><a href="#"><b>PIG PICK</b></a>
 				<ul>
@@ -64,6 +64,7 @@
 				</ul>
 			</li>
 			<li class="topnav" id="join"><a href="/join"><b>JOIN</b></a></li>
+			<li class="topnav" id="admin"><a href="/admin"><b>ADMIN</b></a></li>
 		</ul>
 	  </div>
 	</div>
@@ -83,6 +84,10 @@
 		
 		<c:if test="${sessionScope.loggedIn != null}">
 			<span>${sessionScope.loginName}(${sessionScope.loginId})님</span>
+			<c:if test="${sessionScope.loginAdmin == '2'}">
+				<span>관리자</span>
+			</c:if>
+			
 			&nbsp;
 			<button type="button" class="btnlogout" style="background-color: transparent;
 			border:0; width:100px" onclick="logout()">

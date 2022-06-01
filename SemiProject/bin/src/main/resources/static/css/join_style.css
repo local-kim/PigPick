@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+html {
+    overflow: hidden;
+    
+}
+.sign_up{
+	width: 150px;
+	margin-left: 500px;
+}
+.joinform{
+	width: 1000px;
+
+	margin:0 auto;
+}
+.joinbtn{
+	width:150px;
+	background-color:transparent;
+	line-height:1.42857143;
+	height:150px;
+	border:0;
+	margin-left: 25%;
+	
+}
+#photo{
+	background-color: transparent;
+	border: 0;
+}
+.tbljoin th{
+	height: 30px;
+	width: 120px;
+	padding: 10px;
+	background-color:transparent;
+	color: black;
+	
+}
+.tbljoin tr{
+	padding: 10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.tbljoin td{
+	padding: 10px;
+
+	background-color:  transparent;
+	
+	
+}
+
+.tbljoin {
+	height: 500px;
+	padding-bottom: 10px;
+
+	
+}
+#idcheck{
+	background-color:  #c6b6ea;
+	border: 1px solid black;
+}
+
+

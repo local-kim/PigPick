@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.AdminMapperInter">
+	<insert id="insertMenu" parameterType="menu">
+		insert into menu (name, category, type, spicy) values (#{name}, #{category}, #{type}, #{spicy})
+	</insert>
+	<select id="getMemberList" resultType="member">
+		select * from member
+	</select>
+	<select id="getReviewList" resultType="review">
+		select review.num, member.num as member_num, member.name as member_name, place_id, 
+		place.name as place_name, category, stars, content, created_at 
+		from review, member, place 
+		where review.member_num = member.num and review.place_id = place.id;
+	</select>
+	<select id="getMenuRankList" resultType="menu_rank">
+		select member_num, member.name as member_name, menu_num, menu.name as menu_name, count, category 
+		from menu_rank, menu, member 
+		where member.num=menu_rank.member_num and menu.num=menu_rank.menu_num order by count desc
+	</select>
+	<delete id="deleteMember" parameterType="int">
+		delete from member where num=#{member_num}
+	</delete>
+	<delete id="deleteReview" parameterType="int">
+		delete from review where num=#{review_num}
+	</delete>
+</mapper>
