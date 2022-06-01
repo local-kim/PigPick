@@ -18,10 +18,10 @@
 		from menu_rank, menu, member 
 		where member.num=menu_rank.member_num and menu.num=menu_rank.menu_num order by count desc
 	</select>
-	<delete id="deleteMember" parameterType="int">
+	<delete id="deleteMember" parameterType="String">
 		delete from member where num = #{member_num}
 	</delete>
-	<delete id="deleteReview" parameterType="int">
+	<delete id="deleteReview" parameterType="String">
 		delete from review where num = #{review_num}
 	</delete>
 </mapper>

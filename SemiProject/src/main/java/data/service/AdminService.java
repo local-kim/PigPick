@@ -44,12 +44,10 @@ public class AdminService implements AdminServiceInter {
 	@Override
 	public void deleteMember(String memberNum) {
 		mapper.deleteMember(memberNum);
-		
 	}
 	
 	@Override
 	public void deleteReview(String reviewNum) {
 		mapper.deleteReview(reviewNum);
-		
 	}
 }
