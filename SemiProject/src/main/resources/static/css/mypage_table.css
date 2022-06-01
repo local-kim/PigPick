@@ -216,6 +216,30 @@ position:relative;
 	border-radius: 20px;
 	
 }
+#btnreviewdel{
+	position:relative;
+	background-color: #2d35af;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
+	font-size:25px;
+	border-radius: 20px;
+	left: 90%;
+
+}
+#btnmemdel{
+	position:relative;
+	background-color: #2d35af;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
+	font-size:25px;
+	border-radius: 20px;
+	left: 90%;
+
+}
 
 .paging{
 	position:absolute;

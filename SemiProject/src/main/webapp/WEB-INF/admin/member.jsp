@@ -11,6 +11,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	$(function () {
+		$("#allcheck").click(function () {
+			var chk=$(this).is(":checked"); //체크상태확인
+			console.log(chk);
+			if(chk){
+				$(".member_del").prop("checked",true); //속성변경(true/false일 경우는 prop사용)
+				
+			}else{
+				$(".member_del").prop("checked",true); //속성 변경 (true/false 일 경우는 prop 사용)
+				$(".member_del").prop("checked",false);
+			}
+			
+		});
+		//delete 버튼
+		$("#btnmemdel").click(function () {
+			//체크한 인원수 구하기
+			var len=$(".member_del:checked").length;
+			//0명일 경우 "먼저 삭제할 회원을 선택해주세요"
+			if(len==0){
+				alert("삭제할 회원을 선택해주세요");
+				return;
+			}
+			//체크한 곳의 num값 가져오기
+			var nums="";
+			$(".member_del:checked").each(function (i,element) {
+				var num=$(this).attr("num");
+				console.log(num);
+				nums+=num+",";
+				
+			});
+			//마지막 컴마 제거
+			nums=nums.substring(0,nums.length-1);
+			//alert(nums);
+			
+			$.ajax({
+				type:"get",
+				dataType:"text",
+				data:{"nums":nums},
+				url:"/member/delete",
+				success:function(data){
+					alert("삭제 완료!")
+					//새로고침
+					location.reload();
+				}
+			});
+			
+		});
+		
+	});
+</script>
 </head>
 <body>
 	
@@ -22,7 +73,7 @@
 	<h1>회원 관리</h1>
 
 	<br><br><br>
-	
+	<button type="button" id="btnmemdel">Delete</button>
     <table class="container_3">
 	
 	
@@ -37,7 +88,9 @@
 			<th>연락처</th>
 			<th>주소</th>
 			<th>생일</th>
-			<th><button type="button" onclick="location.href='/member/delete'">삭제</button></th>
+			<th><input type="checkbox" id="allcheck">
+				전체선택
+			</th>
 		</tr>
 	
 		 </thead>
@@ -64,7 +117,7 @@
 							<td>${dto.tel}</td>
 							<td>${dto.address}</td>
 							<td>${dto.birthday}</td>
-							<td><input type="checkbox" name="" value="${dto.num}"></td>
+							<td><input type="checkbox" class="member_del" value="${dto.num}"></td>
 						</tr>
 						</c:forEach>
 				

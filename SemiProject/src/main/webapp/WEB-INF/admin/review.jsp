@@ -11,7 +11,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	$(function () {
+		$("#allcheck").click(function () {
+			var chk=$(this).is(":checked"); //체크상태확인
+			console.log(chk);
+			if(chk){
+				$(".review_del").prop("checked",true); //속성변경(true/false일 경우는 prop사용)
+				
+			}else{
+				$(".review_del").prop("checked",true); //속성 변경 (true/false 일 경우는 prop 사용)
+				$(".review_del").prop("checked",false);
+			}
+			
+		});
+		//delete 버튼
+		$("#btnreviewdel").click(function () {
+			//체크한 인원수 구하기
+			var len=$(".review_del:checked").length;
+			//0명일 경우 "먼저 삭제할 회원을 선택해주세요"
+			if(len==0){
+				alert("삭제할 리뷰를 선택해주세요");
+				return;
+			}
+			//체크한 곳의 num값 가져오기
+			var nums="";
+			$(".review_del:checked").each(function (i,element) {
+				var num=$(this).attr("num");
+				console.log(num);
+				nums+=num+",";
+				
+			});
+			//마지막 컴마 제거
+			nums=nums.substring(0,nums.length-1);
+			//alert(nums);
+			
+			$.ajax({
+				type:"get",
+				dataType:"text",
+				data:{"nums":nums},
+				url:"review/delete",
+				success:function(data){
+					alert("삭제 완료!")
+					//새로고침
+					location.reload();
+				}
+			});
+			
+		});
+		
+	});
+</script>
 </head>
+
 <body>
 
 <div class="section" id="section6">
@@ -19,6 +71,8 @@
 	<h1>리뷰 관리</h1>
 
 	<br><br><br>
+	<button type="button" id="btnreviewdel">Delete</button>
+	
 	
     <table class="container_3">
 	
@@ -34,7 +88,8 @@
 			<th>내용</th>
 			<th>사진</th>
 			<th>날짜</th>
-			<th><button type="button" onclick="location.href='/review/delete'">삭제</button></th>
+			<th><input type="checkbox" id="allcheck">
+				전체선택</th>
 			
 		</tr>
 	
@@ -44,7 +99,7 @@
 	     <tbody>
 	        
 				
-						<c:forEach var="dto" items="${list}">
+						<c:forEach var="dto" items="${list}" varStatus="i">
 						<tr>
 							<td>${dto.num}</td>
 							<td>${dto.member_name}</td>
@@ -54,14 +109,14 @@
 							<td>${dto.content}</td>
 							<td>${dto.photos}</td>
 							<td>${dto.created_at}</td>
-							<td><input type="checkbox" name="" value="${dto.num}"></td>
+							<td><input type="checkbox" class="review_del" value="${dto.num}"></td>
 							
 						</tr>
 						</c:forEach>
 				
 					</tbody>
 		</table>
-	
+		
 		
 	</div>
 
@@ -69,6 +124,6 @@
   
   
 	
-	</section>
+
 </body>
 </html>
