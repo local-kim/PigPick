@@ -187,7 +187,7 @@ div.nav	{
 					</a>
 				</td>
 				<td>
-					<a href="/admin/member">
+					<a href="/admin/review">
 					<img src="../images/basic_todo_txt.png" alt="flag">
 					</a>
 				</td>

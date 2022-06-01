@@ -26,6 +26,7 @@
 
       <thead>
 		<tr>
+			<th>리뷰번호</th>
 			<th>이름</th>
 			<th>장소</th>
 			<th>카테고리</th>
@@ -45,7 +46,7 @@
 				
 						<c:forEach var="dto" items="${list}">
 						<tr>
-							
+							<td>${dto.num}</td>
 							<td>${dto.member_name}</td>
 							<td>${dto.place_name}</td>
 							<td>${dto.category}</td>

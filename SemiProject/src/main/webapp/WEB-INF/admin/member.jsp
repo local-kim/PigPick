@@ -29,7 +29,7 @@
 
       <thead>
 		<tr>
-			<th>번호</th>
+			<th>회원번호</th>
 			<th>이름</th>
 			<th>ID</th>
 			<th>사진</th>
