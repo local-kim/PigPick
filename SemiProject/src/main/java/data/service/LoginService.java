@@ -37,6 +37,26 @@ public class LoginService implements LoginServiceInter {
 	}
 	
 	@Override
+	public boolean checkId(String name, String email) {
+		Map<String, String> map = new HashMap<>();
+		
+		map.put("name", name);
+		map.put("email", email);
+		
+		return (mapper.checkId(map) == 1) ? true : false;
+	}
+	
+	@Override
+	public String findId(String name, String email) {
+		Map<String, String> map = new HashMap<>();
+		
+		map.put("name", name);
+		map.put("email", email);
+		
+		return mapper.findId(map);
+	}
+	
+	@Override
 	public boolean checkPassword(String name, String id, String email) {
 		Map<String, String> map = new HashMap<>();
 		
@@ -48,20 +68,6 @@ public class LoginService implements LoginServiceInter {
 	}
 	
 	@Override
-	public boolean checkId(String name, String email) {
-		Map<String, String> map = new HashMap<>();
-		
-		map.put("name", name);
-
-		map.put("email", email);
-		
-		return (mapper.checkId(map) == 1) ? true : false;
-	}
-	
-	
-	
-	
-	@Override
 	public void changePassword(String id, String password) {
 		Map<String, String> map = new HashMap<>();
 		
@@ -69,16 +75,5 @@ public class LoginService implements LoginServiceInter {
 		map.put("password", Util.encode(password));
 		
 		mapper.changePassword(map);
-	}
-
-	@Override
-	public String findId(String name, String email) {
-		// TODO Auto-generated method stub
-		Map<String, String> map = new HashMap<>();
-		
-		map.put("name", name);
-
-		map.put("email", email);
-		return mapper.findId(map);
 	}
 }
