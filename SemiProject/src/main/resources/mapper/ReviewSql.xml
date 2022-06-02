@@ -2,7 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="data.mapper.ReviewMapperInter">
 	<select id="getTotalCount" resultType="int">
-		select count(*) from review
+		select count(*) 
+		from review, member, place 
+		where review.member_num = member.num and review.place_id = place.id
 	</select>
 	<select id="getReviewList" parameterType="Map" resultType="review">
 		select review.num as num, member.name as member_name, place_id, place.name as place_name, stars, content, created_at 
