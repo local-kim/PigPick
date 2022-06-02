@@ -141,46 +141,81 @@ function naverLogout() {
 }*/
 
 </script>
+<style type="text/css">
+.btnlogin_2{
+
+	background-color: white;
+	color:black;
+	border:3px solid #ddd;
+	border-radius:5px;
+	width: 120px;
+	height:35px;
+	font-size:15px;
+	
+}
+.loginform th{
+	text-align: center;
+}
+.btnfindid, .btnfindpass{
+	background-color: white;
+	color:black;
+	border:3px solid #ddd;
+	border-radius:5px;
+	width: 120px;
+	height:35px;
+	font-size:15px;
+	
+}
+</style>
 </head>
 <body>
 	<br><br><br><br><br><br><br>
-	<img src="../images/login.png" class="login_img" title="login"
-				 style="width: 300px;">
+	
 	<div class="loginform">
 		<form action="process" method="post" class="form-inline">
-			<table class="table" style="width: 450px">
+			<table class="table" style="width: 500px">
 				<tr>
-					<th>아이디</th>
-					<td>
-						<input type="text" name="id" class="form-control" required autofocus placeholder="아이디" value="${loginid}" id="lid">
-						<!-- <label><input type="checkbox" name="chkid">&nbsp;아이디 저장</label> -->
+					<td colspan="2"  style="text-align: center;">
+					<img src="../images/login.png" class="login_img" title="login"
+				 	style="width: 300px;">
 					</td>
 				</tr>
 				<tr>
-					<th>비밀번호</th>
+					<th style="text-align: right;">아이디&nbsp;&nbsp;&nbsp;
+					
+						<input type="text" name="id" class="form-control" required autofocus placeholder="아이디" value="${loginId}" id="lid">
+					</th>
 					<td>
+						<input type="checkbox" name="saveId"
+						${sessionScope.saveId==false?"":"checked" }>&nbsp;아이디저장
+					</td>
+				</tr>
+				<tr>
+					<th style="text-align: right;">비밀번호&nbsp;&nbsp;
 						<input type="password" name="password" class="form-control" required placeholder="비밀번호" id="lpw">
+					</th>
+					<td>
+					<button type="submit" class="btnlogin_2">로그인</button>
 					</td>
+					
 				</tr>
-				<tr>
-					<td align="center" colspan="2">
-						<button type="submit"  style="float:left; background-color: transparent;
-						border:0;width: 100px;">
-						&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/log-in.png" class="log-in-btn" title="login"
-					 	style="width: 100px;border: 0;"></button>
-					</td>
-				</tr>
-				<tr>
-					<td onclick="kakaoLogin(); kakaoSession();" colspan="2">
-						<a href="javascript:void(0)">
-		          <span><img src="../images/kakaologin.png"></span>
-		      		</a>
-					</td>
-				</tr>
-				<tr>
+				<tr style="text-align: center;">
 					<td colspan="2">
-						<button type="button" onclick="location.href='findId'">아이디 찾기</button>
-						<button type="button" onclick="location.href='findPassword'">비밀번호 찾기</button>
+						<a href="javascript:void(0)">
+		         		<span onclick="kakaoLogin(); kakaoSession();">
+		         		<img src="../images/kakaologin.png"
+		         		style="height: 70px;"></span>
+		      			</a>
+					</td>
+				
+					
+					
+					
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;">
+						<button type="button" class="btnfindid" onclick="location.href='findId'">아이디 찾기</button>
+						<button type="button" class="btnfindpass" onclick="location.href='findPassword'">비밀번호 찾기</button>
 					</td>
 				</tr>
 			</table>
