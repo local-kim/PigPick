@@ -64,7 +64,9 @@
 				</ul>
 			</li>
 			<li class="topnav" id="join"><a href="/join"><b>JOIN</b></a></li>
+			<c:if test="${sessionScope.loginAdmin == '2'}">
 			<li class="topnav" id="admin"><a href="/admin"><b>ADMIN</b></a></li>
+			</c:if>
 		</ul>
 	  </div>
 	</div>
@@ -88,8 +90,7 @@
 			</c:if>
 			
 			&nbsp;
-			<button type="button" class="btnlogout" onclick="logout()">Sign out
-			</button>
+			<button type="button" class="btnlogout" onclick="logout()"> Sign out</button>
 			<script>
 			$("li#mypage").css("display","inline-block");
 			$("li#join").css("display","none");
