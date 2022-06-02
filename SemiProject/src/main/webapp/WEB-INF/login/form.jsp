@@ -176,41 +176,48 @@ function naverLogout() {
 			<table class="table" style="width: 500px">
 				<tr>
 					<td colspan="2"  style="text-align: center;">
-					<img src="../images/login.png" class="login_img" title="login"
-				 	style="width: 300px;">
+						<img src="../images/login.png" class="login_img" title="login" style="width: 300px;">
 					</td>
 				</tr>
 				<tr>
-					<th style="text-align: right;">아이디&nbsp;&nbsp;&nbsp;
-					
-						<input type="text" name="id" class="form-control" required autofocus placeholder="아이디" value="${loginId}" id="lid">
+					<th style="text-align: right;" colspan="2">아이디&nbsp;&nbsp;&nbsp;
+						<c:if test="${sessionScope.saveId == 'true'}">
+							<input type="text" name="id" class="form-control" required value="${sessionScope.loginId}">
+							<label>
+								<input type="checkbox" name="saveId" checked>&nbsp;아이디 저장
+							</label>
+						</c:if>
+						<c:if test="${sessionScope.saveId != 'true'}">
+							<input type="text" name="id" class="form-control" required autofocus placeholder="아이디">
+							<label>
+								<input type="checkbox" name="saveId">&nbsp;아이디 저장
+							</label>
+						</c:if>
 					</th>
-					<td>
-						<input type="checkbox" name="saveId"
-						${sessionScope.saveId==false?"":"checked" }>&nbsp;아이디저장
-					</td>
+					<%-- <td>
+						<input type="checkbox" name="saveId" ${sessionScope.saveId == false ? "" : "checked"}>&nbsp;아이디저장
+					</td> --%>
 				</tr>
 				<tr>
 					<th style="text-align: right;">비밀번호&nbsp;&nbsp;
-						<input type="password" name="password" class="form-control" required placeholder="비밀번호" id="lpw">
+						<c:if test="${sessionScope.saveId == 'true'}">
+							<input type="password" name="password" class="form-control" required autofocus placeholder="비밀번호" id="lpw">
+						</c:if>
+						<c:if test="${sessionScope.saveId != 'true'}">
+							<input type="password" name="password" class="form-control" required placeholder="비밀번호" id="lpw">
+						</c:if>
 					</th>
 					<td>
-					<button type="submit" class="btnlogin_2">로그인</button>
+						<button type="submit" class="btnlogin_2">로그인</button>
 					</td>
-					
 				</tr>
 				<tr style="text-align: center;">
 					<td colspan="2">
 						<a href="javascript:void(0)">
-		         		<span onclick="kakaoLogin(); kakaoSession();">
-		         		<img src="../images/kakaologin.png"
-		         		style="height: 70px;"></span>
-		      			</a>
+	         		<span onclick="kakaoLogin(); kakaoSession();">
+	         		<img src="../images/kakaologin.png" style="height: 70px;"></span>
+		      		</a>
 					</td>
-				
-					
-					
-					
 				</tr>
 				<tr>
 					<td colspan="2" style="text-align: center;">
