@@ -13,6 +13,37 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 	
+	<style>
+	li{list-style:none;}
+	
+	/* div#menu_wrap{
+	
+	} */
+ 	div#menu_wrap div.info{
+    height: 80px;
+    
+}
+
+ul.placesList{
+ height: 157px;
+ /*  overflow: auto; */
+}
+
+li.item {
+    height: 85px;
+}
+div.info:hover{
+	cursor:pointer;
+	background-color: #dbdffd;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.search_place_name{
+	font-weight:bold;
+}
+	</style>
 </head>
 <body>
 
@@ -37,11 +68,12 @@
 							<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 							<div id="menu_wrap" class="bg_white">
 								<div class="option">
-		       				<input type="text" value="" id="keyword" size="20">
-		       				<button type="button" onclick="searchPlaces()">검색하기</button>
+		       				<input type="text" value="" id="keyword" size="20" onkeypress="javascript:if(event.keyCode==13){event.preventDefault(); searchPlaces();}">
+		       				<button type="button" id="searchbtn" onclick="searchPlaces()">검색하기</button>
 								</div>
 								<ul id="placesList"></ul>
-								<div id="pagination"></div>
+								<div id="pagination">
+								</div>
 							</div>
 						</div>
 					</td>
@@ -117,7 +149,7 @@
 		// 키워드 검색을 요청하는 함수입니다
 		function searchPlaces() {
 	    var keyword = document.getElementById('keyword').value;
-
+	    
 	    if (!keyword.replace(/^\s+|\s+$/g, '')) {
         alert('키워드를 입력해주세요!');
         return false;
@@ -131,6 +163,8 @@
 	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
 	    ps.keywordSearch(keyword, placesSearchCB, searchOption);
 		}
+
+		
 
 		// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 		function placesSearchCB(data, status, pagination) {

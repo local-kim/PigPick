@@ -70,7 +70,7 @@ a:hover{text-decoration:none;}
 					<c:set var="no" value="${no }"/>
 					<c:if test="${totalCount>0}"> <!-- 글이 있을때 -->
 						<c:forEach var="dto" items="${list}" varStatus="i">
-						<tr>
+						<tr class="trhover">
 							<input type="hidden" value="${dto.num}" />
 							<td>${no}</td>
 							<c:set var="no" value="${no-1}"/>

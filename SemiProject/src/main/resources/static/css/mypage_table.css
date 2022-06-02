@@ -299,8 +299,8 @@ position:relative;
 
 .container td:first-child { color: black; }
 
-.container tr:hover {
-   background-color: #dbdffd;;
+.container tr.trhover:hover {
+   background-color: #dbdffd;
 -webkit-box-shadow: 0 6px 6px -6px #0E1119;
      -moz-box-shadow: 0 6px 6px -6px #0E1119;
           box-shadow: 0 6px 6px -6px #0E1119;
