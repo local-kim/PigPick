@@ -13,6 +13,11 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+.btn_before:hover{
+	background-color: #df642b;
+}
+</style>
 <body>
 <br><br>
 <%-- <h3>${list}</h3> --%>
@@ -20,6 +25,11 @@
 		<!-- example -->
 		<h1>My Menu List</h1>
 		<br><br><br>
+		<div style="position: absolute; left: 10%; top: 60px;">
+				
+				<button type="button" class=btn_before onclick="history.back()">Before</button>
+				
+			</div>
 		<table class="container" >
 			<tr>
 				<th class="text-center" style="width: 100px;">No.</th>

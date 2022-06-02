@@ -44,6 +44,11 @@
 		});
 	});
 </script>
+<style>
+.btn_before:hover{
+	background-color: #df642b;
+}
+</style>
 <body>
 <br><br>
 	<div class="section" id="section6">
@@ -52,7 +57,11 @@
 		<br><br><br>
 		<button type="button" onclick="byStars()" id="star-btn">별점순</button>&nbsp;&nbsp;
 		<button type="button" onclick="byDate()" id="date-btn">최신순</button>
-		
+		<div style="position: absolute; left: 10%; top: 60px;">
+				
+			<button type="button" class=btn_before onclick="history.back()">Before</button>
+				
+		</div>
 		<table class="container" id="date-table">
 			<tr>
 				<th class="text-center">No.</th>
