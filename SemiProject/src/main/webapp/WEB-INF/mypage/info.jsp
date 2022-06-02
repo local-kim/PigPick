@@ -30,12 +30,22 @@ $(function(){
 		});
 });
 </script>
+<style>
+.btn_before:hover{
+	background-color: #df642b;
+}
+</style>
 <body>
 <%-- <h3>${info}</h3> --%>
 	<div class="section" id="section6">
 	<br><br><br>
 		<h1>My profile</h1>
 		<br><br><br>
+		<div style="position: absolute; left: 10%; top: 120px;">
+				
+				<button type="button" class=btn_before onclick="history.back()">Before</button>
+				
+		</div>
 		<table class="container" style="width:1000px;">
 			 <tr>
 			 <th class="text-center" style=" width:200px; height:200px;">
@@ -90,11 +100,9 @@ $(function(){
 			<div style="position: absolute; left: 45%;">
 				<button type="button" class=btn_edit onclick="location.href='/mypage/edit'">Edit</button>
 				&nbsp;&nbsp;
-				<button type="button" class=btn_before onclick="history.back()">Before</button>
-				&nbsp;&nbsp;
 				<button type="button" class=btn_run onclick="location.href='/mypage/delete'">Delete</button>
 			</div>
 		</div>
-		</div>
+		
 </body>
 </html>
