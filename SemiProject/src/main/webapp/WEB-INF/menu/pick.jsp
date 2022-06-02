@@ -171,7 +171,7 @@ $(function(){
 				</div>
 				
 				<button type="submit" id="like" >
-				<img src="images/find-01.png" class="menu_img3" id="menu3"></button>
+				추천 받기</button>
 			</form>
 		</div>
 

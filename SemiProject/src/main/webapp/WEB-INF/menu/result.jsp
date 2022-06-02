@@ -13,17 +13,18 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <style>
-b.cts{
-position:relative;
-left:50%;
-top:-266px;
+#rndmenu{
+	color: #2d35af;
+	font-size: 30px;
+
 }
+
 </style>
 <body>
 	<div class="section" id="section2">
 		
 		<h1 style="opacity:0;">${list}</h1>
-     	<b class="cts"></b>
+   
 		<!-- <img src="../images/menu_pick.png" alt=""
          class="menupicktag">
          
@@ -34,7 +35,9 @@ top:-266px;
 		<!-- <div class="round"></div> -->
 	</div>
 	<div class="menuname">
-	 <h3>&nbsp;추천메뉴는&nbsp;<b id="rndmenu"></b> 입니다.</h3>
+	 <p class="cts"></p>
+	
+	 <b id="rndmenu"></b>
 	 <input type="hidden" id="menunum">
 	<script>
 	
@@ -100,10 +103,10 @@ top:-266px;
 		  window.location.href = "/recommend/list?menuName="+ menuName + "&menuNum=" + menuNum + "&category=" + ${category};
 	 }
 	</script>
-	<img src="../images/kpop.png" class="menu_img4" id="menu2" title="좋아요"></button>
-		
+	식당 보기</button>
+	&nbsp;&nbsp;
 	<button type="button" class="reset" onclick="window.location.reload()">
-	<img src="../images/reset.png" class="menu_img4" id="menu2" title="다시찾기">
+	다시 찾기
 	</button>
 </body>
 </html>

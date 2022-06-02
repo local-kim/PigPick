@@ -13,6 +13,20 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+#star-btn, #date-btn{
+	position:relative;
+	background-color: white;
+	color:#2d35af;
+	border:2px solid #2d35af;
+	width: 100px;
+	height:50px;
+	font-size:15px;
+	border-radius: 10px;
+	left: 80%;
+}
+
+</style>
 <script>
 	$(function(){
 		$("#star-btn").click(function() {
@@ -36,8 +50,8 @@
 	
 		<h1>My Review</h1>
 		<br><br><br>
-		<button type="button" onclick="byStars()" id="star-btn">별점순</button>
-		<button type="button" onclick="byDate()" id="date-btn" style="color:red">최신순</button>
+		<button type="button" onclick="byStars()" id="star-btn">별점순</button>&nbsp;&nbsp;
+		<button type="button" onclick="byDate()" id="date-btn">최신순</button>
 		
 		<table class="container" id="date-table">
 			<tr>

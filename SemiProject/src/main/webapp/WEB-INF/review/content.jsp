@@ -25,11 +25,12 @@ $(window).on("load resize ", function() {
 	<div class="section" id="section6">
 	<br><br>
 	<h1>리뷰 상세보기</h1>
-	<br><br><br><br>
+	<br><br>
 <c:if test="${sessionScope.loginNum == review.member_num }">
 <button type="button" class="btn_review_edit" onclick="location.href='/review/edit?num=${review.num}'">Edit</button>
 <button type="button" class="btn_review_delete" onclick="location.href='/review/delete?num=${review.num}'">Delete</button>
       </c:if>
+    <br><br><br>
     <table class="container">
    
 		<tr>
