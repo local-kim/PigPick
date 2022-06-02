@@ -154,8 +154,8 @@ h2 a {
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 }
 .btn_edit, .btn_before{
 	position:relative;
@@ -165,8 +165,8 @@ h2 a {
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 	
 }
 .btn_run{
@@ -177,8 +177,8 @@ position:relative;
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 }
 
 .btnreview_update {
@@ -190,8 +190,8 @@ position:relative;
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 	
 }
 .btn_write{
@@ -203,8 +203,8 @@ position:relative;
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 }
 .btn_review_save{
 	position:relative;
@@ -213,8 +213,8 @@ position:relative;
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 	
 }
 #btnreviewdel{
@@ -224,8 +224,8 @@ position:relative;
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 	left: 90%;
 
 }
@@ -236,10 +236,21 @@ position:relative;
 	border:0;
 	width: 100px;
 	height:50px;
-	font-size:25px;
-	border-radius: 20px;
+	font-size:15px;
+	border-radius: 10px;
 	left: 90%;
 
+}
+.btnmenuadd
+{
+	background-color: #2d35af;
+	color:white;
+	border:0;
+	width: 100px;
+	height:50px;
+	font-size:15px;
+	border-radius: 10px;
+	
 }
 
 .paging{
@@ -289,13 +300,13 @@ position:relative;
 .container td:first-child { color: black; }
 
 .container tr:hover {
-   background-color: #c6b6ea;
+   background-color: #dbdffd;;
 -webkit-box-shadow: 0 6px 6px -6px #0E1119;
      -moz-box-shadow: 0 6px 6px -6px #0E1119;
           box-shadow: 0 6px 6px -6px #0E1119;
 }
 
-.container td:hover {
+/* .container td:hover {
   background-color: #98efbd;
   color:black;
   font-weight: bold;
@@ -307,7 +318,7 @@ position:relative;
     transition-property: all;
   transition-timing-function: line;
 }
-
+ */
 @media (max-width: 800px) {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }

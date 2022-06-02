@@ -101,7 +101,7 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<button type="submit">추가하기</button>
+					<button type="submit" class="btnmenuadd">추가하기</button>
 				</td>
 			</tr>
 		</table>

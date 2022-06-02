@@ -45,7 +45,7 @@ a:hover{text-decoration:none;}
 	
 	
 
-      <thead>
+      <thead class="thead">
 		<tr>
 			<th>번호</th>
 			<th>장소명</th>

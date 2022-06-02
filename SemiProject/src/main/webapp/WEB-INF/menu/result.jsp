@@ -12,19 +12,26 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+b.cts{
+position:relative;
+left:50%;
+top:-266px;
+}
+</style>
 <body>
 	<div class="section" id="section2">
 		
 		<h1 style="opacity:0;">${list}</h1>
      	<b class="cts"></b>
-		<img src="../images/menu_pick.png" alt=""
+		<!-- <img src="../images/menu_pick.png" alt=""
          class="menupicktag">
          
-		<img src="../images/tape.png" alt="" class="tape">
+		<img src="../images/tape.png" alt="" class="tape"> -->
 		<img src="../images/dish.png" alt="" class="dish">
 	
          
-		<div class="round"></div>
+		<!-- <div class="round"></div> -->
 	</div>
 	<div class="menuname">
 	 <h3>&nbsp;추천메뉴는&nbsp;<b id="rndmenu"></b> 입니다.</h3>

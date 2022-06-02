@@ -52,9 +52,9 @@
 				<tr>
 					<td>${i.count}</td>
 					<!-- 식당이름 -->
-					<td>${dto.place_name}</td>
+					<td><a href="/review/place?id=${dto.place_id}">${dto.place_name}</a></td>
 					<!-- 후기내용 -->
-					<td>${dto.content}</td>
+					<td><a href="/review/content?num=${dto.num}">${dto.content}</a></td>
 					<!-- 별점 -->
 					<td>${dto.stars}</td>
 					<!-- 작성날짜 -->
