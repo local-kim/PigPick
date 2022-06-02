@@ -12,22 +12,18 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="css/style.css"  rel="stylesheet" type="text/css" />
 	<link href="css/join_style.css"  rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="<c:url value='/resource/js/core.min.js'/>"></script>
-	<script type="text/javascript" src="<c:url value='/resource/js/sha256.min.js'/>"></script>
 	<script>
-
-
 	$(function(){
-	
-		
 		//비밀번호 체크
 		$("#pass2").keyup(function(){
 			var p1=$("#pass1").val();
 			var p2=$(this).val();
 			if(p1==p2){
-				$("b.passok").html("ok").css("color","green");
+				$("b.passok").html("ok").css("color","white");
+				$("p.passfailreaseon").css("color","white");
 			}else{
-				$("b.passok").html("fail").css("color","red");
+				$("b.passok").html("fail").css("color","white");
+				$("p.passfailreaseon").html("비밀번호가 일치하지 않습니다").css("color","red");
 				
 			}
 		});
@@ -49,12 +45,12 @@
 				type: "get",
 				dataType: "json",
 				url: "checkId",
-				data: {"id": $("#id").val()},
+				data: {"id":$("#id").val()},
 				success: function(data){
 					if(data.count == 0){
-						$("b.idok").text("ok");
-					}
-					else{
+						$("b.idok").text("ok").css("display","none");
+						alert("사용이 가능한 아이디입니다.");
+					}else{
 						alert("이미 존재하는 아이디입니다.\n다른 아이디로 입력해주세요");
 						$("#id").val("");
 						$("#id").focus();
@@ -65,14 +61,12 @@
 	});
 	
 	function check(){
-		/* var joinFormSubmitted = false; */
-		
+		var a=$("b.passok").text();
 		if($("b.idok").text()!='ok'){
 		alert("아이디체크 버튼을 눌러서 중복확인해주세요");
 		return false;
 		}
 		else if(a!='ok'){
-			alert("비밀번호를 제대로 입력해 주세요");
 			$("#pass1").val("");
 			$("#pass2").val("");
 			$("#pass1").focus();
@@ -81,8 +75,8 @@
 			return true;
 			alert("회원가입되셨습니다.");
 		}
-		
-		
+	}
+
 </script>
 </head>
 <body>
@@ -94,7 +88,9 @@
 				<tr>
 					<th>프로필사진</th>
 					<td>
+					<div style="width:100px; height:100px; border-radius:50px;overflow:hidden;">
 						<img src="../images/user.png" alt="미리보기" id="preview" style="max-width:100px;"><br><br>
+					</div>
 						<input type="file" name="upload" id="photo" style="width:300px;float: left" class="form-control jogin-control" accept="image/*">
 						
 					</td>
@@ -153,15 +149,15 @@
 				<tr>
 					<th>비밀번호 확인</th>
 					<td>
-						<b class="passok"></b>
-						<input type="password" id="pass2" style="width:400px;" required class="form-control jogin-control pass" placeholder="한 번 더 입력">
-						<!-- <input type="hidden" name="loginPwReal"> -->
+						<input type="password" id="pass2" style="width:400px;" required class="form-control jogin-control pass" placeholder="한 번 더 입력" style="position:fixed">
+						
 					</td>
 					<th>주소</th>
 					<td>
 						<input type="text" name="address" style="width:400px;" class="form-control jogin-control" placeholder="주소">
 					</td>
 				</tr>
+				<tr><td colspan="4" style="height:54px;"><p class="passfailreaseon" style="margin-left:120px"></p><b class="passok"></b></td></tr>
 				<tr>
 					<td colspan="4" style="background-color: transparent;">
 						<button type="submit" id="join" class="joinbtn">
@@ -170,30 +166,29 @@
 					</td>
 				</tr>
 			</table>
-				</form>
-	</div>
+		</form>
+		
+		<script>
+		function readURL(input)
+		{
+		   if (input.files && input.files[0])
+		   {
+		      var reader = new FileReader();
+		      reader.onload = function (e)
+		      {
+		         $("#preview").attr('src', e.target.result); 
+		      }
+
+		      reader.readAsDataURL(input.files[0]);
+		   }
+		}
+
+		$("#photo").change(function(){
+		   readURL(this); 
+		});
 		
 		
-			<script>
-			function readURL(input)
-			{
-			   if (input.files && input.files[0])
-			   {
-			      var reader = new FileReader();
-			      reader.onload = function (e)
-			      {
-			         $("#preview").attr('src', e.target.result); 
-			      }
-
-			      reader.readAsDataURL(input.files[0]);
-			   }
-			}
-
-			$("#photo").change(function(){
-			   readURL(this); 
-			});
-			</script>
-
-	
+		</script>
+	</div>	
 </body>
 </html>
