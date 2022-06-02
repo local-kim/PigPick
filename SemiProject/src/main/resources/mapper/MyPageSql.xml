@@ -10,7 +10,7 @@
 		ORDER BY count DESC
 	</select>
 	<select id="getReviewList" parameterType="int" resultType="review">
-		select review.num, place.name as place_name, stars, content, created_at 
+		select review.num as num, member.name as member_name, place_id, place.name as place_name, stars, content, created_at 
 		from review, place 
 		where review.place_id = place.id and member_num = #{member_num};
 	</select>
