@@ -78,11 +78,33 @@
 	}
 
 </script>
+<style>
+h1{
+	position:relative;
+
+	top:3%;
+	font-size:2em;
+	line-height:50px;
+	font-weight:bold;
+	color: white;
+	background-color: #2d35af;
+	height: 60px;
+	color: #ffff;
+	text-align: center;
+	font-family : GmarketSansTTFMedium;
+}
+
+</style>
 </head>
 <body>
+
 	<div class="section" id="section7">
+
+	
+		<h1>Join Us</h1>
+	
 		<form action="insert" method="post" style="bakckground-color:#ff0000; position:absolute; top:10%; left:10%;" enctype="multipart/form-data" class="joinform"  onsubmit="return check()">
-		
+		<br><br><br><br>
 			<!-- 회원가입 -->
 			<table class="tbljoin" style="width: 1100px;">
 				<tr>

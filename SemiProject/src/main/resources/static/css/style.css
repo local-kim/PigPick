@@ -365,7 +365,7 @@ div.round{
 	height:50px;
 	font-size:15px;
 	border-radius: 10px;
-	bottom: 150px;
+	bottom: 200px;
 	left: 42%;
 
 	
@@ -521,7 +521,7 @@ h1.user{
 div.loginform{
 	position:relative;
 	top:40%;
-	left:40%;
+	left:35%;
 }
 
 .btnlogin, .btnlogout{
