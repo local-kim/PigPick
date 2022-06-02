@@ -74,8 +74,7 @@
 		
 		<c:if test="${sessionScope.loggedIn == null}">
 			<button type="button" class="btnlogin" onclick="location.href='${root}/login'">
-			<img src="../images/key.png" class="login_icon" title="login"
-				 style="width: 100px;border: 0;"></button>
+			Sign In</button>
 		<script>
 		
 		$("li#mypage").css("display","none");
@@ -89,10 +88,8 @@
 			</c:if>
 			
 			&nbsp;
-			<button type="button" class="btnlogout" style="background-color: transparent;
-			border:0; width:100px" onclick="logout()">
-			<img src="../images/bye.png" class="logout_icon" title="logout"
-				 style="width: 100px;"></button>
+			<button type="button" class="btnlogout" onclick="logout()">Sign out
+			</button>
 			<script>
 			$("li#mypage").css("display","inline-block");
 			$("li#join").css("display","none");

@@ -36,10 +36,10 @@ a:hover{text-decoration:none;}
 	<section>
 	
 	<div class="section" id="section6">
-	<br><br><br><br>
+	<br><br><br>
 	
 	<h1>Review</h1>
-	<br><br><br>
+	<br><br><br><br>
 	<button type="button" class="btn_write" onclick="location.href='/review/new'">Write</button>
     <table class="container">
 	

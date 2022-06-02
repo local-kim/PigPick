@@ -163,9 +163,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4" style="background-color: transparent;">
+					<td colspan="4">
 						<button type="submit" id="join" class="joinbtn">
-							<img src="../images/signup.png" class="sign_up" id="sign_up" title="sign_up">
+							Sign Up
 						</button>
 					</td>
 				</tr>

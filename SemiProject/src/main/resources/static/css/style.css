@@ -511,17 +511,16 @@ div.loginform{
 	top:40%;
 	left:40%;
 }
-.login_img{
-	position:relative;
-	top:20%;
-	left:42%;
-	
-}
-.btnlogin{
-	clear:both;
-	background-color:transparent;
+
+.btnlogin, .btnlogout{
+	background-color: #df642b;
+	color: white;
 	border:0;
-	width:100px;
+	border-radius:5px;
+	width: 120px;
+	height:35px;
+	font-size:15px;
+	
 }
 .btnlogin:active{
  /* 	border: none !important; box-shadow: none !important; */
@@ -549,8 +548,12 @@ div.loginform{
 	top:6%;
 	font-size:3em;
 	font-weight:bold;
-	color: #2d35af;
-	
+	color: white;
+	background-color: #2d35af;
+	height: 60px;
+	color: #ffff;
+	text-align: center;
+	font-family : GmarketSansTTFMedium;
 }
 
 div.mymenulist{
@@ -614,6 +617,8 @@ div.mymenulistmore{
 	padding:0;
 	top:15%;
 	margin:10px 0 5px 0;
+	
+	
 }
 
 /*board*/
