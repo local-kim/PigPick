@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import data.dto.MemberDto;
@@ -35,7 +36,7 @@ public class MyPageController {
 	}
 	
 	@GetMapping("/rank")
-	public String mypage2(
+	public String menuRank(
 			Model model,
 			HttpSession session
 			) {
@@ -48,7 +49,7 @@ public class MyPageController {
 	}
 	
 	@GetMapping("/review")
-	public String mypage3(
+	public String review(
 			Model model,
 			HttpSession session
 			) {
@@ -60,8 +61,20 @@ public class MyPageController {
 		return "/mypage/review";
 	}
 	
+	@GetMapping("/review/star")
+	@ResponseBody
+	public List<ReviewDto> reviewByStars(
+			HttpSession session
+			) {
+		int memberNum = (int)session.getAttribute("loginNum");
+		
+		List<ReviewDto> list = service.getReviewListByStars(memberNum);
+		
+		return list;
+	}
+	
 	@GetMapping("/info")
-	public String mypage4(
+	public String info(
 			Model model,
 			HttpSession session
 			) {
@@ -74,7 +87,7 @@ public class MyPageController {
 	}
 	
 	@GetMapping("/edit")
-	public String mypage5(
+	public String infoEdit(
 			Model model,
 			HttpSession session
 			) {
@@ -87,7 +100,7 @@ public class MyPageController {
 	}
 	
 	@PostMapping("/update")
-	public String mypage6(
+	public String infoUpdate(
 			@ModelAttribute MemberDto member,
 			@RequestParam MultipartFile upload,
 			HttpServletRequest request,

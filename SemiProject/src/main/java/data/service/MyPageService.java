@@ -31,6 +31,11 @@ public class MyPageService implements MyPageServiceInter {
 	}
 	
 	@Override
+	public List<ReviewDto> getReviewListByStars(int memberNum) {
+		return mapper.getReviewListByStars(memberNum);
+	}
+	
+	@Override
 	public MemberDto getMemberInfo(int memberNum) {
 		return mapper.getMemberInfo(memberNum);
 	}

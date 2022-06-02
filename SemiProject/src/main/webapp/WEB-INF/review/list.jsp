@@ -67,7 +67,7 @@ a:hover{text-decoration:none;}
 	
 	     <tbody>
 	        
-					<c:set var="no" value="${totalCount}"/>
+					<c:set var="no" value="${no }"/>
 					<c:if test="${totalCount>0}"> <!-- 글이 있을때 -->
 						<c:forEach var="dto" items="${list}" varStatus="i">
 						<tr>

@@ -38,6 +38,7 @@ public class LoginController {
 	public String process(
 			@RequestParam String id,
 			@RequestParam String password,
+			@RequestParam(required = false) String saveId,
 			HttpSession session
 			) {
 		password = Util.encode(password);
@@ -51,6 +52,7 @@ public class LoginController {
 			session.setAttribute("loginNum", map.get(0).get("num"));
 			session.setAttribute("loginName", map.get(0).get("name"));
 			session.setAttribute("loginAdmin", map.get(0).get("admin"));
+			session.setAttribute("saveId", (saveId == null ? false : true));
 			
 			return "redirect:/";
 		}
