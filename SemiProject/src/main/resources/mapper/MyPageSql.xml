@@ -15,7 +15,7 @@
 		where review.place_id = place.id and member_num = #{member_num}
 	</select>
 	<select id="getReviewListByStars" parameterType="int" resultType="review">
-		select review.num, place.name as place_name, stars, content, created_at 
+		select review.num as num, place_id, place.name as place_name, stars, content, created_at 
 		from review, place where review.place_id = place.id and member_num = #{member_num} 
 		order by stars desc
 	</select>

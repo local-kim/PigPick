@@ -1,7 +1,9 @@
 package data.controller;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -55,23 +57,28 @@ public class MyPageController {
 			) {
 		int memberNum = (int)session.getAttribute("loginNum");
 		
-		List<ReviewDto> list = service.getReviewList(memberNum);
-		model.addAttribute("list", list);
+		List<ReviewDto> dateList = service.getReviewList(memberNum);
+		model.addAttribute("dateList", dateList);
+		
+		List<ReviewDto> starList = service.getReviewListByStars(memberNum);
+		model.addAttribute("starList", starList);
 		
 		return "/mypage/review";
 	}
 	
-	@GetMapping("/review/star")
-	@ResponseBody
-	public List<ReviewDto> reviewByStars(
-			HttpSession session
-			) {
-		int memberNum = (int)session.getAttribute("loginNum");
-		
-		List<ReviewDto> list = service.getReviewListByStars(memberNum);
-		
-		return list;
-	}
+//	@GetMapping("/review/star")
+//	@ResponseBody
+//	public Map<String, Object> reviewByStars(
+//			HttpSession session
+//			) {
+//		int memberNum = (int)session.getAttribute("loginNum");
+//		
+//		Map<String, Object> map = new HashMap<>();
+//		List<ReviewDto> list = service.getReviewListByStars(memberNum);
+//		map.put("list", list);
+//		
+//		return map;
+//	}
 	
 	@GetMapping("/info")
 	public String info(

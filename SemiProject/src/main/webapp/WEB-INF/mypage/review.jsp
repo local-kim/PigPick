@@ -13,17 +13,33 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
-<style>
-
-</style>
+<script>
+	$(function(){
+		$("#star-btn").click(function() {
+			$("#star-table").css("display", "");
+			$("#date-table").css("display", "none");
+			$(this).css("color", "red");
+			$("#date-btn").css("color", "black");
+		});
+		
+		$("#date-btn").click(function() {
+			$("#star-table").css("display", "none");
+			$("#date-table").css("display", "");
+			$(this).css("color", "red");
+			$("#star-btn").css("color", "black");
+		});
+	});
+</script>
 <body>
 <br><br>
-<%-- <h3>${list}</h3> --%>
 	<div class="section" id="section6">
 	
 		<h1>My Review</h1>
 		<br><br><br>
-		<table class="container">
+		<button type="button" onclick="byStars()" id="star-btn">별점순</button>
+		<button type="button" onclick="byDate()" id="date-btn" style="color:red">최신순</button>
+		
+		<table class="container" id="date-table">
 			<tr>
 				<th class="text-center">No.</th>
 				<th class="text-center">Place</th>
@@ -31,12 +47,10 @@
 				<th class="text-center" >★★★★★</th>
 				<th class="text-center" >
 				<span class="glyphicon glyphicon-calendar"></span></th>
-			
 			</tr>
-			<c:forEach var="dto" items="${list}" varStatus="i">
+			<c:forEach var="dto" items="${dateList}" varStatus="i">
 				<tr>
 					<td>${i.count}</td>
-					
 					<!-- 식당이름 -->
 					<td>${dto.place_name}</td>
 					<!-- 후기내용 -->
@@ -44,13 +58,35 @@
 					<!-- 별점 -->
 					<td>${dto.stars}</td>
 					<!-- 작성날짜 -->
-					<td><fmt:formatDate value="${dto.created_at}"
-							pattern="yyyy-MM-dd"/></td>
-					
+					<td><fmt:formatDate value="${dto.created_at}" pattern="yyyy-MM-dd"/></td>
 				</tr>
 			</c:forEach>	
 		</table>
-		</div>	
+		
+		<table class="container" id="star-table" style="display:none">
+			<tr>
+				<th class="text-center">No.</th>
+				<th class="text-center">Place</th>
+				<th class="text-center" >contents</th>
+				<th class="text-center" >★★★★★</th>
+				<th class="text-center" >
+				<span class="glyphicon glyphicon-calendar"></span></th>
+			</tr>
+			<c:forEach var="dto" items="${starList}" varStatus="i">
+				<tr>
+					<td>${i.count}</td>
+					<!-- 식당이름 -->
+					<td>${dto.place_name}</td>
+					<!-- 후기내용 -->
+					<td>${dto.content}</td>
+					<!-- 별점 -->
+					<td>${dto.stars}</td>
+					<!-- 작성날짜 -->
+					<td><fmt:formatDate value="${dto.created_at}" pattern="yyyy-MM-dd"/></td>
+				</tr>
+			</c:forEach>	
+		</table>
+		
 	</div>
 </body>
 </html>
