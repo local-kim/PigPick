@@ -68,7 +68,7 @@ div.info:hover{
 							<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 							<div id="menu_wrap" class="bg_white">
 								<div class="option">
-								<!-- 추가 -->
+								<!-- 추가2 -->
 		       				<input type="text" value="" id="keyword" size="20" onkeypress="javascript:if(event.keyCode==13){event.preventDefault(); searchPlaces();}">
 		       				<button type="button" id="searchbtn" onclick="searchPlaces()">검색하기</button>
 								</div>
