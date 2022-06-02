@@ -51,16 +51,16 @@
 	</style>
 </head>
 <body>
-	<div class="section" id="section2">
+	<div class="section" id="section6">
 	
 		<!-- <img src="images/menu_pick.png" alt=""
 		class="menupicktag">
  
 		<img src="images/tape.png" alt="" class="tape"> -->
 		
-		<br><br><br><br><br><br><br><br>
+		<br><br>
 		<h1>${menuName} 식당리스트</h1>
-
+		<br><br><br><br>
 		<div class="map_wrap">
 			<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 		</div>
