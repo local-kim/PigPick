@@ -9,6 +9,7 @@ import data.dto.ReviewDto;
 public interface MyPageServiceInter {
 	public List<MenuRankDto> getMenuRank(int memberNum);
 	public List<ReviewDto> getReviewList(int memberNum);
+	public List<ReviewDto> getReviewListByStars(int memberNum);
 	public MemberDto getMemberInfo(int memberNum);
 	public void updateMember(MemberDto member);
 	public void deleteMember(int memberNum);

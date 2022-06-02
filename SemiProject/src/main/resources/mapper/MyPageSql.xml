@@ -14,6 +14,11 @@
 		from review, place 
 		where review.place_id = place.id and member_num = #{member_num};
 	</select>
+	<select id="getReviewListByStars" parameterType="int" resultType="review">
+		select review.num, place.name as place_name, stars, content, created_at 
+		from review, place where review.place_id = place.id and member_num = #{member_num} 
+		order by stars desc
+	</select>
 	<select id="getMemberInfo" parameterType="int" resultType="member">
 		SELECT * FROM member  
 		WHERE num = #{member_num}
