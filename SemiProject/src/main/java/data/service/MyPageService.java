@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
+import data.dto.PlaceDto;
 import data.dto.ReviewDto;
 import data.mapper.MyPageMapperInter;
 import util.Util;
@@ -48,5 +49,10 @@ public class MyPageService implements MyPageServiceInter {
 	@Override
 	public void deleteMember(int memberNum) {
 		mapper.deleteMember(memberNum);
+	}
+	
+	@Override
+	public List<PlaceDto> getLikeList(int memberNum) {
+		return mapper.getLikeList(memberNum);
 	}
 }

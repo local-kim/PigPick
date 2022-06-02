@@ -31,4 +31,7 @@
 	<delete id="deleteMember" parameterType="int">
 		delete from member where num = #{member_num}
 	</delete>
+	<select id="getLikeList" parameterType="int" resultType="place">
+		select * from place_like, place where place.id = place_id and member_num = #{member_num} and `check` = 1
+	</select>
 </mapper>

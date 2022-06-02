@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import data.dto.InsertReviewDto;
@@ -152,18 +153,78 @@ public class ReviewController {
 	
 	@GetMapping("/place")
 	public String place(
-			@RequestParam int id,
-			Model model
+			@RequestParam String id,
+			Model model,
+			HttpSession session
 			) {
+		String memberNum = Integer.toString((int)session.getAttribute("loginNum"));
+		
 		List<ReviewDto> list = service.getReviewByPlace(id);
 		PlaceDto place = service.getPlace(id);
 		float stars = service.getAverageStar(id);
+		int likes = service.getPlaceLikes(id);
+		int like;
+		
+		if(!service.checkLike(id, memberNum)) {
+			like = 0;
+		}
+		else if(!service.getMemberLike(id, memberNum)) {
+			// 테이블에 없거나 좋아요 안누름
+			like = 0;
+		}
+		else {
+			like = 1;
+		}
 		
 		model.addAttribute("list", list);
 		model.addAttribute("place", place);
 		model.addAttribute("stars", stars);
+		model.addAttribute("likes", likes);
+		model.addAttribute("like", like);
 		
 		return "/review/place";
+	}
+	
+	@GetMapping("/place/like")
+	@ResponseBody
+	public int like(
+			@RequestParam String placeId,
+//			@RequestParam String memberNum,
+			@RequestParam int checked,
+			Model model,
+			HttpSession session
+			) {
+		String memberNum = Integer.toString((int)session.getAttribute("loginNum"));
+		
+//		System.out.println(service.checkLike(placeId, memberNum));
+		
+		// place_like 테이블에 있으면 
+		// 없으면 데이터 추가(기본값 0으로)
+		if(service.checkLike(placeId, memberNum)) {	// place_like 테이블에 있음
+			// 0 -> 1, 1 -> 0
+//			System.out.println("update");
+			
+			if(checked == 1) {
+//				System.out.println("increase");
+				// 좋아요 : place_like=1, likes 증가
+				service.increasePlaceLikes(placeId);
+				service.increaseLike(placeId, memberNum);
+			}
+			else if(checked == -1) {
+//				System.out.println("decrease");
+				// 좋아요 취소 : place_like=0, likes 감소
+				service.decreasePlaceLikes(placeId);
+				service.decreaseLike(placeId, memberNum);
+			}
+		}
+		else {	// place_like 테이블에 없음
+//			System.out.println("insert");
+			// 좋아요 : place_like에 인서트, likes 증가
+			service.insertLike(placeId, memberNum);
+			service.increasePlaceLikes(placeId);
+		}
+		
+		return service.getPlaceLikes(placeId);
 	}
 	
 	@GetMapping("/edit")

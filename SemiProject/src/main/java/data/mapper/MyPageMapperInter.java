@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
+import data.dto.PlaceDto;
 import data.dto.ReviewDto;
 
 @Mapper
@@ -16,4 +17,5 @@ public interface MyPageMapperInter {
 	public MemberDto getMemberInfo(int member_num);
 	public void updateMember(MemberDto member);
 	public void deleteMember(int member_num);
+	public List<PlaceDto> getLikeList(int member_num);
 }

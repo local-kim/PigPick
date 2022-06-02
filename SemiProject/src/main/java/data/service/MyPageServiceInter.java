@@ -4,6 +4,7 @@ import java.util.List;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
+import data.dto.PlaceDto;
 import data.dto.ReviewDto;
 
 public interface MyPageServiceInter {
@@ -13,4 +14,5 @@ public interface MyPageServiceInter {
 	public MemberDto getMemberInfo(int memberNum);
 	public void updateMember(MemberDto member);
 	public void deleteMember(int memberNum);
+	public List<PlaceDto> getLikeList(int memberNum);
 }

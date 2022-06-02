@@ -33,19 +33,94 @@ public class ReviewService implements ReviewServiceInter {
 	}
 	
 	@Override
-	public List<ReviewDto> getReviewByPlace(int place_id) {
-		return mapper.getReviewByPlace(place_id);
+	public List<ReviewDto> getReviewByPlace(String placeId) {
+		return mapper.getReviewByPlace(placeId);
 	}
 	
 	@Override
-	public PlaceDto getPlace(int id) {
+	public PlaceDto getPlace(String id) {
 		return mapper.getPlace(id);
 	}
 	
 	@Override
-	public float getAverageStar(int id) {
+	public float getAverageStar(String id) {
 		return mapper.getAverageStar(id);
 	}
+	
+	@Override
+	public boolean checkLike(String placeId, String memberNum) {
+		Map<String, String> map = new HashMap<>();
+		map.put("place_id", placeId);
+		map.put("member_num", memberNum);
+		
+		return (mapper.checkLike(map) == 0 ? false : true);
+	}
+	
+	@Override
+	public int getPlaceLikes(String id) {
+		return mapper.getPlaceLikes(id);
+	}
+	
+	@Override
+	public boolean getMemberLike(String placeId, String memberNum) {
+		Map<String, String> map = new HashMap<>();
+		map.put("place_id", placeId);
+		map.put("member_num", memberNum);
+		
+		return (mapper.getMemberLike(map) == 0 ? false : true);
+	}
+	
+	@Override
+	public void insertLike(String placeId, String memberNum) {
+		Map<String, String> map = new HashMap<>();
+		map.put("place_id", placeId);
+		map.put("member_num", memberNum);
+		
+		mapper.insertLike(map);
+	}
+	
+	@Override
+	public void increaseLike(String placeId, String memberNum) {
+		Map<String, String> map = new HashMap<>();
+		map.put("place_id", placeId);
+		map.put("member_num", memberNum);
+		
+		mapper.increaseLike(map);
+	}
+	
+	@Override
+	public void decreaseLike(String placeId, String memberNum) {
+		Map<String, String> map = new HashMap<>();
+		map.put("place_id", placeId);
+		map.put("member_num", memberNum);
+		
+		mapper.decreaseLike(map);
+	}
+	
+	@Override
+	public void increasePlaceLikes(String placeId) {
+		mapper.increasePlaceLikes(placeId);
+	}
+	
+	@Override
+	public void decreasePlaceLikes(String placeId) {
+		mapper.decreasePlaceLikes(placeId);
+	}
+	
+//	@Override
+//	public void updateLike(String placeId, String memberNum, String checked) {
+//		Map<String, String> map = new HashMap<>();
+//		map.put("place_id", placeId);
+//		map.put("member_num", memberNum);
+//		map.put("checked", checked);
+//		
+//		mapper.updateLike(map);
+//	}
+//	
+//	@Override
+//	public void updatePlaceLikes(String placeId, String checked) {
+//		mapper.updatePlaceLikes(placeId);
+//	}
 
 	@Override
 	public void insertReview(InsertReviewDto dto) {

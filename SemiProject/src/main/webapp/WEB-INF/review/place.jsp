@@ -12,13 +12,58 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
+<script>
+	$(function(){
+		$("span.heart").click(function(){
+			console.log("click");
+			var placeId = $("#placeId").val();
+			console.log(placeId);
+			var c = $(this).attr("class");
+			console.log(c);
+			var checked;
+			
+			
+			if(c == "glyphicon glyphicon-heart-empty heart"){
+				$(this).attr("class", "glyphicon glyphicon-heart heart");
+				checked = 1;
+			}
+			else{
+				$(this).attr("class", "glyphicon glyphicon-heart-empty heart");
+				checked = -1;
+			}
+			
+			console.log("ajax");
+			
+			$.ajax({
+				type: "get",
+				dataType: "json",
+				data: {"placeId" : placeId, "checked" : checked},
+				url: "place/like",
+				success: function(data){
+					$("#likes").text(data);
+					console.log("success");
+				}
+			});
+		});
+	});
+	
+</script>
 </head>
 <body>
 <div class="section" id="section6">
 	<br><br><br><br><br><br>
+	<input type="hidden" value="${place.id}" id="placeId">
 	
 	<div style="position:absolute; left: 5%;top: 200px;">
-		<h1 style="text-align: left;">${place.name} (${stars})</h1>
+		<h1 style="text-align: left;display: inline-block;">${place.name} (${stars})</h1>
+		<c:if test="${like == 0}">
+			<span class="glyphicon glyphicon-heart-empty heart" style="color:red;font-size:30px"></span>
+		</c:if>
+		<c:if test="${like == 1}">
+			<span class="glyphicon glyphicon-heart heart" style="color:red;font-size:30px"></span>
+		</c:if>
+		
+		<span id="likes">${likes}</span>
 		<h3 style="color:  #97caEf;text-decoration: underline;">
 		<b>${fn:length(list)}개</b>의 후기가 있습니다</h3>
 		<br>

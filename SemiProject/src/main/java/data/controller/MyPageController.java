@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import data.dto.MemberDto;
 import data.dto.MenuRankDto;
+import data.dto.PlaceDto;
 import data.dto.ReviewDto;
 import data.service.MyPageService;
 import util.FileUtil;
@@ -151,5 +152,17 @@ public class MyPageController {
 		session.removeAttribute("loggedIn");
 		
 		return "redirect:/";
+	}
+	
+	@GetMapping("/like")
+	public String like(
+			Model model,
+			HttpSession session
+			) {
+		int memberNum = (int)session.getAttribute("loginNum");
+		List<PlaceDto> list = service.getLikeList(memberNum);
+		model.addAttribute("list", list);
+		
+		return "/mypage/like";
 	}
 }

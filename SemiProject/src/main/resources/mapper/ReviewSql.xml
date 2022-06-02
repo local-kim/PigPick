@@ -18,16 +18,56 @@
 		from review, member, place 
 		where review.member_num = member.num and review.place_id = place.id and review.num = #{review_num}
 	</select>
-	<select id="getReviewByPlace" parameterType="int" resultType="review">
+	<select id="getReviewByPlace" parameterType="String" resultType="review">
 		select review.num, member.num as member_num, member.name as member_name, place_id, place.name as place_name, category, stars, content, created_at 
 		from review, member, place where review.member_num = member.num and review.place_id = place.id and place_id = #{place_id}
 	</select>
-	<select id="getPlace" parameterType="int" resultType="place">
-		select * from place where id = #{id}
+	<select id="getPlace" parameterType="String" resultType="place">
+		select * from place where id = #{place_id}
 	</select>
-	<select id="getAverageStar" parameterType="int" resultType="float">
-		select round(avg(stars), 2) from review where place_id = #{id}
+	<select id="getAverageStar" parameterType="String" resultType="float">
+		select round(avg(stars), 2) from review where place_id = #{place_id}
 	</select>
+	<!-- 좋아요 -->
+	<select id="checkLike" parameterType="Map" resultType="int">
+		select count(*) from place_like where place_id = #{place_id} and member_num = #{member_num}
+	</select>
+	<select id="getPlaceLikes" parameterType="String" resultType="int">
+		select likes from place where id = #{place_id}
+	</select>
+	<select id="getMemberLike" parameterType="Map" resultType="int">
+		select `check` from place_like where place_id = #{place_id} and member_num = #{member_num}
+	</select>
+	<insert id="insertLike" parameterType="Map">
+		insert into place_like (place_id, member_num) values (#{place_id}, #{member_num})
+	</insert>
+	<update id="increaseLike" parameterType="Map">
+		update place_like set `check` = 1 where place_id = #{place_id} and member_num = #{member_num}
+	</update>
+	<update id="decreaseLike" parameterType="Map">
+		update place_like set `check` = 0 where place_id = #{place_id} and member_num = #{member_num}
+	</update>
+	<update id="increasePlaceLikes" parameterType="String">
+		update place set likes = likes + 1 where id = #{place_id}
+	</update>
+	<update id="decreasePlaceLikes" parameterType="String">
+		update place set likes = likes - 1 where id = #{place_id}
+	</update>
+	<!-- <update id="updateLike" parameterType="Map">
+		update place_like set 
+		<if test="check == 1">
+			check = 0 
+		</if>
+		<if test="check == 0">
+			check = 1 
+		</if>
+		where place_id = #{place_id} and member_num = #{member_num}
+		update place_like set check = 1 where place_id = #{place_id} and member_num = #{member_num}
+	</update>
+	<update id="updatePlaceLikes" parameterType="String">
+		update place set 
+		update place set likes = likes + 1 where id = #{place_id}
+	</update> -->
 	<select id="checkPlace" parameterType="String" resultType="int">
 		select count(*) from place where id = #{place_id}
 	</select>
