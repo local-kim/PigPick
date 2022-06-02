@@ -39,8 +39,8 @@
 	<div  style="z-index:999999999; top:50%; position:absolute;">
 	
 	</div>
-	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');" id="pop">팝업창 열기</a>
-    <a href="/recommend1"><img src="images/logo-01.png" alt="피그램" id="menupick"></a>
+<!-- 	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');" id="pop">팝업창 열기</a> -->
+    <!-- <a href="/recommend"><img src="images/logo-01.png" alt="피그램" id="menupick"></a> -->
 	</div>
  
 	<div class="section" id="section3">
