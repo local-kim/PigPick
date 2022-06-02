@@ -15,6 +15,11 @@ public class MenuService implements MenuServiceInter {
 	
 	@Autowired
 	private MenuMapperInter mapper;
+	
+	@Override
+	public List<MenuDto> getMenu() {
+		return mapper.getMenu();
+	}
 
 	@Override
 	public List<MenuDto> getRecommendList(int category, int type, int spicy) {

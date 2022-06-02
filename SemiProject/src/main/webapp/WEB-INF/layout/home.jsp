@@ -42,6 +42,8 @@
 <!-- 	<a href="javascript:openWindowPop('more/popup.jsp', 'popup');" id="pop">팝업창 열기</a> -->
     <!-- <a href="/recommend"><img src="images/logo-01.png" alt="피그램" id="menupick"></a> -->
 	</div>
+	
+	${list}
  
 	<div class="section" id="section3">
 		<div id="con3"><a href="det_pt.html" target="_blank"><img class="hoverimg" src="images/det.png"></a></div>

@@ -9,6 +9,7 @@ import data.dto.MenuDto;
 
 @Mapper
 public interface MenuMapperInter {
+	public List<MenuDto> getMenu();
 	public List<MenuDto> getRecommendList(Map<String, Integer> map);
 	public int checkMenuRank(Map<String, Integer> map);
 	public void insertMenuCount(Map<String, Integer> map);
