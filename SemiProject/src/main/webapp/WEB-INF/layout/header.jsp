@@ -60,6 +60,7 @@
 					<li class="subnav"><a href="/mypage"><b>MY PAGE</b></a></li>
 					<li class="subnav"><a href="/mypage/rank"><b>MY MENU LIST</b></a></li>
 					<li class="subnav"><a href="/mypage/review"><b>MY REVIEW</b></a></li>
+					<li class="subnav"><a href="/mypage/like"><b>MY PLACE</b></a></li>
 					<li class="subnav"><a href="/mypage/info"><b>MY PROFILE</b></a></li>
 				</ul>
 			</li>
