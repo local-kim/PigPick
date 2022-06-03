@@ -157,23 +157,29 @@ public class ReviewController {
 			Model model,
 			HttpSession session
 			) {
-		String memberNum = Integer.toString((int)session.getAttribute("loginNum"));
-		
 		List<ReviewDto> list = service.getReviewByPlace(id);
 		PlaceDto place = service.getPlace(id);
 		float stars = service.getAverageStar(id);
 		int likes = service.getPlaceLikes(id);
 		int like;
 		
-		if(!service.checkLike(id, memberNum)) {
-			like = 0;
-		}
-		else if(!service.getMemberLike(id, memberNum)) {
-			// 테이블에 없거나 좋아요 안누름
-			like = 0;
+		// 로그인 중이면
+		if(session.getAttribute("loggedIn") != null && (boolean)session.getAttribute("loggedIn")) {
+			String memberNum = Integer.toString((int)session.getAttribute("loginNum"));
+			
+			if(!service.checkLike(id, memberNum)) {
+				like = 0;
+			}
+			else if(!service.getMemberLike(id, memberNum)) {
+				// 테이블에 없거나 좋아요 안누름
+				like = 0;
+			}
+			else {
+				like = 1;
+			}
 		}
 		else {
-			like = 1;
+			like = 0;
 		}
 		
 		model.addAttribute("list", list);
