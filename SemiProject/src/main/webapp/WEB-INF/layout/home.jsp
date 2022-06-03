@@ -44,7 +44,33 @@
 	</div>
 	
 	${list}
- 
+	<script type="text/javascript">
+	$(function () {
+		var list = new Array();
+			<c:forEach var="dto" items="${list}">
+			var rndv = list.push("${dto.name}");
+			</c:forEach>
+		
+			//console.log("rndv:"+typeof(rndv)); // number
+		
+		$("#random").click(function () {
+			console.log(list);
+			var rnd[] = new Array(rndv);
+			console.log(rnd);
+			const selected = list[Math.floor(Math.random() *"${dto.name}".length];
+			console.log(selected); 
+		});
+	});
+		
+	
+		
+			
+		
+
+	
+	</script>
+	<button type="button" id="random">랜덤뽑기</button>
+	
 	<div class="section" id="section3">
 		<div id="con3"><a href="det_pt.html" target="_blank"><img class="hoverimg" src="images/det.png"></a></div>
 		<div id="con4"><a href="fran_pt.html" target="_blank"><img class="hoverimg" src="images/fran.png"></a></div>

@@ -9,9 +9,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<h1>비밀번호 변경</h1>
+	<div class="section" id="section6">
+		<br><br><br>
+		<h1>아이디 찾기</h1>
+	
+		<br><br><br>
+	
 	<form action="/findPassword/result" method="post">
 		<div>
 			<span>변경할 비밀번호 입력</span>
@@ -20,6 +26,6 @@
 		</div>
 		<button>변경하기</button>
 	</form>
-		
+</div>
 </body>
 </html>
