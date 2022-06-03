@@ -13,8 +13,10 @@
 <link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
 	<%-- ${list} --%>
+	<h1>My Place</h1>
+	<br><br><br>
 	<table class="container" >
 		<tr>
 			<th class="text-center" style="width: 10px;">No.</th>

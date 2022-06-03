@@ -9,11 +9,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>   
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/mypage_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<br><br><br><br><br><br><br><br>
+	<h1 style="color: black;font-weight: bold;">아이디 찾기 결과</h1>
 	<br><br><br><br><br><br>
-	<h1>아이디 찾기 결과</h1>
-	<h1>회원님의 아이디는 ${id} 입니다.</h1>
+	<h1 style="color: black">회원님의 아이디는 <b>${id}</b> 입니다.</h1>
 	
 </body>
 
