@@ -101,7 +101,6 @@ public class LoginController {
 			HttpSession session
 			) {
 		session.removeAttribute("loggedIn");
-		session.invalidate();
 	}
 	
 	// 아이디 찾기
