@@ -65,7 +65,7 @@
 				</ul>
 			</li>
 			<li class="topnav" id="join"><a href="/join"><b>JOIN</b></a></li>
-			<c:if test="${sessionScope.loginAdmin == '2'}">
+			<c:if test="${sessionScope.loggedIn != null && sessionScope.loginAdmin == '2'}">
 			<li class="topnav" id="admin"><a href="/admin"><b>ADMIN</b></a></li>
 			</c:if>
 		</ul>
