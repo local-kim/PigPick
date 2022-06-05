@@ -15,13 +15,14 @@
 <script>
 	$(function(){
 		$("span.heart").click(function(){
-			console.log("click");
-			var placeId = $("#placeId").val();
-			console.log(placeId);
-			var c = $(this).attr("class");
-			console.log(c);
-			var checked;
+			if(${sessionScope.loggedIn == null}){
+				alert("로그인 후 좋아요를 눌러주세요");
+				return;
+			}
 			
+			var placeId = $("#placeId").val();
+			var c = $(this).attr("class");
+			var checked;
 			
 			if(c == "glyphicon glyphicon-heart-empty heart"){
 				$(this).attr("class", "glyphicon glyphicon-heart heart");
@@ -31,8 +32,6 @@
 				$(this).attr("class", "glyphicon glyphicon-heart-empty heart");
 				checked = -1;
 			}
-			
-			console.log("ajax");
 			
 			$.ajax({
 				type: "get",
@@ -46,7 +45,6 @@
 			});
 		});
 	});
-	
 </script>
 </head>
 <body>
@@ -57,14 +55,14 @@
 	<div style="position:absolute; left: 5%;top: 200px;">
 		<h1 style="text-align: left;display: inline-block;">${place.name} (${stars})</h1>
 		<c:if test="${like == 0}">
-			<span class="glyphicon glyphicon-heart-empty heart" style="color:red;font-size:30px"></span>
+			<span class="glyphicon glyphicon-heart-empty heart" style="color:red;font-size:25px;margin-left:20px;margin-right:5px"></span>
 		</c:if>
 		<c:if test="${like == 1}">
-			<span class="glyphicon glyphicon-heart heart" style="color:red;font-size:30px"></span>
+			<span class="glyphicon glyphicon-heart heart" style="color:red;font-size:25px;margin-left:20px;margin-right:5px"></span>
 		</c:if>
 		
-		<span id="likes">${likes}</span>
-		<h3 style="color:  #97caEf;text-decoration: underline;">
+		<span id="likes" style="font-size:25px;line-height:30px;font-weight:bold;">${likes}</span>
+		<h3 style="color: #97caEf;text-decoration: underline;">
 		<b>${fn:length(list)}개</b>의 후기가 있습니다</h3>
 		<br>
 		<h3>${place.category}</h3>
@@ -73,21 +71,19 @@
 	</div>
 	
 	<div id="map" style="position:absolute; width:800px;height:700px; left: 55%;"></div>
-		
-		
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=462602bfbf3fad68a3a7744b60ee4c02&libraries=services,clusterer,drawing"></script>
 	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		    mapOption = { 
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+		    mapOption = {
 		        center: new kakao.maps.LatLng(${place.y}, ${place.x}), // 지도의 중심좌표
 		        level: 2 // 지도의 확대 레벨
 		    };
 		
 		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 		
-		// 마커가 표시될 위치입니다 
-		var markerPosition  = new kakao.maps.LatLng(${place.y}, ${place.x}); 
+		// 마커가 표시될 위치입니다
+		var markerPosition  = new kakao.maps.LatLng(${place.y}, ${place.x});
 		
 		// 마커를 생성합니다
 		var marker = new kakao.maps.Marker({
@@ -98,9 +94,7 @@
 		marker.setMap(map);
 	</script>
 	
-	
 	<table class="container_2" style="position:absolute; left: 1%;background-color: white;">
-	
 		<tr>
 			<th>작성자</th>
 			<th>한줄평</th>
@@ -116,7 +110,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	</div>
-	</div>
+</div>
 </body>
 </html>
